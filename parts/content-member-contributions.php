@@ -32,7 +32,8 @@
 		<div class="card-content">
 		<span class="">Posted: <?php echo the_time('F j, Y');?></span>
 
-	  <h2 class=""><?php $post->post_title; ?></h2>
+	  <h2 class=""><?php echo $post->post_title; ?></h2>
+
 
 			<div class="authors col s6">
 

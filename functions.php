@@ -61,10 +61,6 @@ require_once(get_template_directory().'/assets/functions/custom-post-type.php');
 //     return $a;
 // }
 
-add_filter('show_admin_bar', '__return_false');
-
-show_admin_bar(false);
-
 
 function highlight_search_term($text){
     if(is_search()){
