@@ -48,13 +48,7 @@ require_once(get_template_directory().'/assets/functions/custom-post-type.php');
 // require_once(get_template_directory().'/assets/functions/admin.php');
 
 
-add_filter('um_countries_predefined_field_options','um_countries_predefined_field_options');
-function um_countries_predefined_field_options( $countries ) {
 
-    $countries[] = array("XV" => "Xtland");
-
-    return $countries;
-}
 // function Users() {
 //
 //   $blogusers = get_users( array( 'fields' => array('display_name', ID ) ) );
@@ -66,28 +60,18 @@ function um_countries_predefined_field_options( $countries ) {
 //
 //     return $a;
 // }
-//
-// function my_search_form() {
-//     $args = array();
-//     $args['debug'] = false;
-//     $args['wp_query'] = array('post_type' => 'post',
-//                               'posts_per_page' => 5);
-//     $args['fields'][] = array('type' => 'taxonomy',
-//                               'label' => 'Choose a category',
-//                               'taxonomy' => 'resource-category',
-//                               'format' => 'select',
-//                               'allow_null' => 'select');
-//     $args['fields'][] = array('type' => 'meta_key',
-//                               'label' => 'Choose an author',
-//                               'meta_key' => 'participants',
-//                               'format' => 'select',
-//                               'values' => Users(),
-//                               'data_type' => 'ARRAY<CHAR>',
-//                               'compare' => 'LIKE',
-//                               'allow_null' => 'select');
-//     $args['fields'][] = array( 'type' => 'submit',
-//                               'class' => 'btn',
-//                               'value' => 'Search' );
-//     register_wpas_form('my-form', $args);
-// }
-// add_action('init', 'my_search_form');
+
+add_filter('show_admin_bar', '__return_false');
+
+show_admin_bar(false);
+
+
+function highlight_search_term($text){
+    if(is_search()){
+		$keys = implode('|', explode(' ', get_search_query()));
+		$text = preg_replace('/(' . $keys .')/iu', '<span class="search-term">\0</span>', $text);
+	}
+    return $text;
+}
+add_filter('the_excerpt', 'highlight_search_term');
+add_filter('the_title', 'highlight_search_term');

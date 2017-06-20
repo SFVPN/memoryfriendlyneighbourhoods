@@ -14,16 +14,17 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 ?>
 
-<main class="container">
+<main class="row">
 
-	<div class="row" role="main">
 
-		<div class="col s12">
+
+
 <?php if ($url == $actual_link ) {?>
-			<header class="article-header">
+			<header class="resources-article-header center">
 
 
-				<h1 class="page-title center"><?php the_title(); ?></h1>
+				<h1 class="page-title"><?php the_title(); ?></h1>
+				<span id="excerpt"><?php the_excerpt(); ?></span>
 
 				<? //var_dump($post);?>
 			</header> <!-- end article header -->
@@ -32,9 +33,8 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 			    	<?php //get_template_part( 'parts/loop', 'page' ); ?>
-
+<div class="container">
 <?php
-
 
 get_template_part( 'parts/content', 'form' );
 
@@ -49,11 +49,11 @@ endwhile; endif;
   Thanks for your submission. It will be checked by our helper monkeys and published shortly.
   </h3><a href="'. $url . '" class="btn col s5">Add Another Resource</a><a href="'. get_permalink( get_page_by_path( 'Register' ) ) . '" class="btn col s5 push-s2">' . get_the_title(get_page_by_path( 'Register' )) . '</a></div>';
 }?>
-		</div> <!-- end s12 -->
+
 
 		    <?php // get_sidebar(); ?>
 
-	</div> <!-- end row -->
+</div>
 
 </main> <!-- end main -->
 

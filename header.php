@@ -10,7 +10,6 @@
 
 		<!-- Mobile Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta class="foundation-mq">
 
 		<!-- If Site Icon isn't set in customizer -->
 		<?php if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) { ?>
@@ -25,25 +24,21 @@
 	    	<meta name="theme-color" content="#121212">
 	    <?php } ?>
 
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+  		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<?php wp_head(); ?>
-
+  		<?php wp_head(); ?>
 		<!-- Drop Google Analytics here -->
 		<!-- end analytics -->
 
 	</head>
 
-	<!-- Uncomment this line if using the Off-Canvas Menu -->
+	<body id="body-normal-text" <?php body_class(); ?>>
 
-	<body <?php body_class(); ?>>
-
-					<header class="header navbar-fixed valign-wrapper" role="banner">
-
+		<header class="header  valign-wrapper">
 						 <!-- This navs will be applied to the topbar, above all content
 							  To see additional nav styles, visit the /parts directory -->
 						 <?php get_template_part( 'parts/nav', 'topbar' ); ?>
 
+             <?php //get_template_part( 'parts/content', 'accessibility' ); ?>
 
-
-					</header> <!-- end .header -->
+		</header> <!-- end .header -->

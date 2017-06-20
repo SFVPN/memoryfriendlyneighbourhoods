@@ -1,77 +1,114 @@
 <?php //if(  has_term( 'writing', 'category' ) ) { - this will be to output different styles depending on whether a video etc is being shown ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('card grey-text text-darken-2'); ?> role="article">
-	<section class="card-content">
+<article id="post-<?php the_ID(); ?>" <?php post_class('grey-text text-darken-4 card z-depth-0'); ?>>
+
+
 		<?php if( strtotime( $post->post_date ) > strtotime('-8 day') ) {
-										echo '<span class="badge new"></span>';
-								}?>
-		<h5 class="grey-text text-darken-2"><?php the_title(); ?></h5>
+				echo '<span class="badge new"></span>';
+				}
+		?>
+		<div class="card-content">
+		<span class="">Posted: <?php echo the_time('F j, Y');?></span>
+
+	  <h2 class=""><?php the_title(); ?></h2>
 
 
+			<div class="authors col s6">
 
-		<!-- This is where we'll have conditionals testing whether it's a video, link, document etc to either link externally or through to single.php -->
-		<div class="grey-text card-action">
+				<label class="card-sub-title">Authors <i class="grey-text tooltipped material-icons" data-position="right" data-delay="50" data-tooltip="This shows the resource authors">help</i></label>
 
-				<?php
+					<?php
+					$authors = get_field('participants');
+					$names = array();
+					$author_nick = array();
 
-				echo '<p class="intro">' . $post->post_content . '</p>';?>
+					if($authors) {
 
-		<?php	if ( in_category( 'writing' )) {?>
+					foreach ($authors as $author){
+						$last_name = get_user_meta( $author, 'last_name', true );
+						$first_name = get_user_meta( $author, 'first_name', true );
+						$nickname = get_user_meta( $author, 'nickname', true );
 
-			<a href="#" class="btn materialize-red lighten-2 tooltipped" data-position="right" data-delay="50" data-tooltip="This link takes you to an external website">View this link <i class="mdi mdi-open-in-new" > </i></a>
+						if(is_array($author)) {
 
-<?php } elseif ( in_category( 'video') ) {?>
+							$names[] = '<a href="/profile/' . $author[nickname] . '">' . $author[user_firstname] . ' ' . $author[user_lastname] . '</a>';
 
-			<a href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="This link takes you to an external website">View this video <i class="grey-text mdi mdi-video" > </i></a>
+						} else {
+							$names[] = '<a href="/profile/' . $nickname . '">' . $first_name . ' ' . $last_name . '</a>';
+						}
 
-<?php } else {?>
 
-			<a href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="This link takes you to an external website">View this video <i class="grey-text mdi mdi-video" > </i></a>
+						}
 
-<?php }
-?>
-		</div>
+						echo implode (' + ', $names);
+					}?>
 
-				<div id="byline" class="row card-action">
-
-					<div class="col s6">
-						<h6 class="card-sub-title">Authors <i class="grey-text tooltipped mdi mdi-help-circle" data-position="right" data-delay="50" data-tooltip="This shows the resource authors"> </i></h6>
-
-						<?php $authors = get_field('participants');
-						if($authors) {
-						foreach ($authors as $author){
-
-							echo '<p><a href="/profile/' . strtolower($author['user_nicename']) . '">' . $author['user_firstname'] . ' ' . $author['user_lastname'] . ' </a></p>';
-						}}?>
-
-					</div>
-					<div class="col s6">
-				<h6 class="card-sub-title">Areas of interest <i class="grey-text tooltipped mdi mdi-help-circle" data-position="right" data-delay="50" data-tooltip="Click on the links below to view related resources"> </i></h6>
+			</div>
+			<div class="col s6">
+				<label class="card-sub-title">Areas of interest <i class="grey-text tooltipped material-icons" data-position="right" data-delay="50" data-tooltip="Click on the links below to view related resources">help</i></label>
 
 						<?php
 
 						if(!is_single()){
 
-							echo get_the_term_list( $post->ID,'resource-category', '<p>', '</p><p>', '</p>');
+							echo get_the_term_list( $post->ID,'resource-category','',', ');
 
-						} else {
-							echo get_the_term_list( $post->ID,'resource-category','',', '); // category will be changed to whatever the resource taxonomy is
 						}
 						?>
 
-						<span class="card-title badge grey-text "><?php echo the_time('F j, Y');?></span>
 
 
+			</div>
+			<div class="col s12 info grey-text darken-4">
+				<?php the_excerpt();?>
+			</div>
+			<?php
 
-					</div>
+// check if the repeater field has rows of data
+if( have_rows('attachments') ):
+echo '<div class="row info grey-text darken-4">';
+ 	// loop through the rows of data
+    while ( have_rows('attachments') ) : the_row();
+			$file = get_sub_field('file');
+        // display a sub field value
 
+			echo '<div class="chip">
+    <i class="attachment material-icons">file_download</i><label>File to download: </label><a href="' . $file['url'] . '">' . $file['filename'] . '</a>
 
+  </div>';
 
-				</div>
+    endwhile;
+echo '</div>';
+else :
 
-	</section>
+    // no rows found
 
-	<?php get_template_part( 'parts/content', 'share' ); ?>
+endif;
 
-</article>
-<?php //}?>
+?>
+<div class="row">
+
+			<?php
+			if ( in_category( 'writing' )) {
+			?>
+
+			<a href="<?php the_permalink();?>" class="btn-flat amber tooltipped" data-position="right" data-delay="50" data-tooltip="This link takes you to an external website">View this link</a>
+
+			<?php } elseif ( in_category( 'videos') ) {
+			?>
+
+			<a href="<?php the_permalink();?>" class="btn-flat amber tooltipped" data-position="right" data-delay="50" data-tooltip="This link takes you to an external website"><i class="material-icons left">videocam</i>View this video</a>
+
+			<?php } else {
+			?>
+
+			<a href="<?php the_permalink();?>" class="btn-flat amber tooltipped" data-position="right" data-delay="50" data-tooltip="This link takes you to an external website"><i class="material-icons left">assignment</i>View this resource </a>
+
+			<?php }
+			?>
+			</div>
+			</div>
+
+	</article>
+
+	<?php //get_template_part( 'parts/content', 'share' ); ?>

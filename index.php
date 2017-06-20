@@ -2,69 +2,62 @@
 $title = single_cat_title("", false);
 ?>
 
+<main class="row">
+
+	<section>
+
+		<header class="article-header col s12 grey lighten-2 center">
 
 
-<main class="container">
+			<h1 class="page-title">Resources</h1>
 
-		<div class="row" role="main">
-
-		    <div class="col s12">
-
-					<header>
-						<h1 class="page-title center">Resources</h1>
-					</header>
-			    <?php if (have_posts()) : while (have_posts()) : the_post();
-
-					endwhile;
-
-					$res_categories = get_terms( array(
-    'taxonomy' => 'resource-category',
-    'hide_empty' => false,
-) );
-	echo '<h2 class="page-title center">Categories</h2>';
-	foreach( $res_categories as $res_category ) {?>
-		<div style="padding: 2em;" class=" col s6">
-			<div style="border-bottom: 4px solid teal; margin-bottom: 3em;"class="col s12">
-
-				<h3 class="center"><a href="<?php echo get_category_link( $res_category->term_id ); ?> "><?php echo $res_category->name;?></a></h3>
-				<span class="center">[<?php echo $res_category->count;?>]</span>
+			<div class="row center" style="padding: 3rem;">
+				<a href="#network" class="waves-effect teal lighten-2 btn-large waves-circle waves-light btn-floating"><i class="material-icons">keyboard_arrow_down</i></a>
 			</div>
-<?php //print_r($category);?>
+		</header> <!-- end article header -->
+
+		<div class="row">
+
+				<?php
+				$res_categories = get_terms( array('taxonomy' => 'resource-category','hide_empty' => false,) );
+
+				foreach( $res_categories as $key=>$value ) {
+				?>
+
+			<div id="cat-<?php echo $key;?>" style="padding: 2em;" class="resource-category center blue-grey darken-<?php echo $key;?> col s6">
+
+
+
+					<h3>
+							<a class="white-text" href="<?php echo get_category_link( $value->term_id ); ?> "><?php echo $value->name;?></a>
+					</h3>
+					<?php if($value->name == "Memory Services") {
+						echo '<i class="amber material-icons">update</i>';
+					} elseif ($value->name == "Technology"){
+						echo '<i class="amber material-icons">touch_app</i>';
+					} elseif ($value->name == "Wayfinding"){
+						echo '<i class="amber material-icons">transfer_within_a_station</i>';
+					 }
+					?>
+
+				<?php
+				if ($value->count == 1) {
+					echo '<span id="excerpt" class="white-text"><p><span class="count">' . $value->count . '</span> resource</p></span>';
+				} else {
+					echo '<span id="excerpt"class="white-text"><p><span class="count">' . $value->count . '</span> resources</p></span>';
+				}
+				?>
+
+
+			</div>
+
+			<?php }
+			?>
+
 		</div>
-	<?php } ?>
 
-	<?php
-	$categories = get_terms( array(
-'taxonomy' => 'category',
-'hide_empty' => false,
-) );
-echo '<h2 class="page-title center">Types</h2>';
-foreach( $categories as $category ) {?>
-<div style="padding: 2em;" class=" col s6">
-<div style="border-bottom: 4px solid teal; margin-bottom: 3em;"class="col s12">
+	</section>
 
-<h3 class="center"><a href="<?php echo get_category_link( $category->term_id ); ?> "><?php echo $category->name;?></a></h3>
-<span class="center">[<?php echo $category->count;?>]</span>
-</div>
-<?php //print_r($category);?>
-</div>
-<?php } ?>
-
-
-
-
-				<?php else : ?>
-
-					<?php get_template_part( 'parts/content', 'missing' ); ?>
-
-				<?php endif; ?>
-			</div>
-
-
-			</div> <!-- end row -->
-
-		</main> <!-- end main -->
-
-
+</main> <!-- end main -->
 
 <?php get_footer(); ?>

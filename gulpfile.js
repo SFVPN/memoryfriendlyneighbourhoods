@@ -12,7 +12,7 @@ var gulp  = require('gulp'),
     rename = require('gulp-rename'),
     plumber = require('gulp-plumber'),
     bower = require('gulp-bower'),
-    babel = require('gulp-babel').create();
+    babel = require('gulp-babel');
 
 // Compile Sass, Autoprefix and minify
 gulp.task('styles', function() {

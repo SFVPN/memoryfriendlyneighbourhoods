@@ -12,9 +12,7 @@ function site_scripts() {
     //wp_enqueue_script( 'what-input', get_template_directory_uri() . '/vendor/what-input/what-input.min.js', array(), '', true );
 
     // Adding Materialize scripts file in the footer
-  wp_enqueue_script( 'materialize-js', get_template_directory_uri() . '/assets/js/bin/materialize.js', array( 'jquery' ), '', true );
-
-    // Adding Cookie Consent scripts file in the footer
+  wp_enqueue_script( 'materialize-js', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js', array( 'jquery' ), '', true );
 
     wp_enqueue_script( 'cookie-js', 'https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js', array(), '', true );
 
@@ -23,8 +21,11 @@ function site_scripts() {
 
     // Register main stylesheet
 
+    // Register material icons stylesheet
+    wp_enqueue_style( 'material-icons', 'http://fonts.googleapis.com/icon?family=Material+Icons', array(), '', 'all' );
+
     // Register main stylesheet
-    wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/css/style.css', array(), '', 'all' );
+    wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/css/materialize.css', array(), '', 'all' );
 
     // Deregister admin stylesheet so that it doesn't load on the front-end form
 

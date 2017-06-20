@@ -1,5 +1,5 @@
 <div class="um-members">
-
+	
 	<div class="um-gutter-sizer"></div>
 
 	<?php $i = 0; foreach( um_members('users_per_page') as $member) { $i++; um_fetch_user( $member ); ?>

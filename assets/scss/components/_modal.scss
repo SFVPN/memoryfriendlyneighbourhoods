@@ -4,11 +4,11 @@
   display: none;
   position: fixed;
   left: 0;
-  right: 0;
+  right: 0px;
   background-color: #fafafa;
-  padding: 0;
-  max-height: 70%;
-  width: 55%;
+  padding: 1.5rem .5rem;
+  max-height: 80%;
+  width: 75%;
   margin: auto;
   overflow-y: auto;
 
@@ -24,38 +24,52 @@
   }
 
   .modal-content {
-    padding: 24px;
+
   }
   .modal-close {
     cursor: pointer;
   }
+}
 
-  .modal-footer {
-    border-radius: 0 0 2px 2px;
-    background-color: #fafafa;
-    padding: 4px 6px;
-    height: 56px;
-    width: 100%;
+#search_resources .modal-footer {
+  border-radius: 0 0 2px 2px;
+  background-color: #fafafa;
+  padding: 4px 6px;
+  height: 56px;
+  width: 100%;
 
-    .btn, .btn-flat {
-      float: right;
-      margin: 6px 0;
-    }
+  .btn, .btn-flat {
+    position: fixed;
+    top: 3rem;
+    right: 2rem;
   }
 }
-.lean-overlay {
-    position: fixed;
-    z-index:999;
-    top: -100px;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 125%;
-    width: 100%;
-    background: #000;
-    display: none;
 
-    will-change: opacity;
+#settings .modal-footer {
+  border-radius: 0 0 2px 2px;
+  background-color: #fafafa;
+  padding: 4px 6px;
+  height: 56px;
+  width: 100%;
+
+  .btn, .btn-flat {
+    width: 100% !important;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 999;
+  top: -100px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 125%;
+  width: 100%;
+  background: #000;
+  display: none !important;
+
+  will-change: opacity;
 }
 
 // Modal with fixed action footer
@@ -84,7 +98,7 @@
   bottom: -100%;
   margin: 0;
   width: 100%;
-  max-height: 45%;
+  max-height: 100%;
   border-radius: 0;
   will-change: bottom, opacity;
 }

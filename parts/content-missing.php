@@ -1,24 +1,27 @@
-<div id="post-not-found" class="hentry">
+<div id="post-not-found" class="row hentry">
+	<div class="col s12">
+		<?php if ( is_search() ) : ?>
 
-	<?php if ( is_search() ) : ?>
+			<header class="search-article-header center">
+				<h1 class="light"><?php _e("There is currently no content in this section", "jointstheme"); ?></h1>
+			</header>
 
-		<header class="article-header">
-			<h1><?php _e("Sorry, No Results.", "jointswp");?></h1>
-		</header>
-
-		<section class="entry-content">
-			<p><?php _e("Try your search again.", "jointswp");?></p>
-		</section>
-		
-
-	<?php else: ?>
-
-		<header class="article-header">
-			<h1><?php _e("Sorry, No Results", "jointstheme"); ?></h1>
-		</header>
+			<section class="entry-content">
+				<p><?php _e("Try your search again.", "jointswp");?></p>
+			</section>
 
 
+		<?php else: ?>
 
-	<?php endif; ?>
+			<header class="search-article-header center">
+				<h1 class="light"><?php _e("There is currently no content in this section", "jointstheme"); ?></h1>
+			</header>
+
+
+
+		<?php endif; ?>
+	</div>
+
+
 
 </div>

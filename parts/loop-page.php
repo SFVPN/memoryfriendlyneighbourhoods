@@ -1,17 +1,23 @@
-<?php get_template_part( 'parts/content', 'breadcrumbs' ); ?>
-
-<article id="post-<?php the_ID(); ?>" class="<?php echo $post->post_name;?>" role="article" itemscope itemtype="http://schema.org/WebPage">
-
-	<header class="article-header">
+<section class="<?php echo $post->post_name;?> row" itemscope itemtype="http://schema.org/WebPage">
+	<header class="article-header col s12 center">
 
 
-		<h1 class="page-title center"><?php the_title(); ?></h1>
+		<h1 class="page-title"><?php the_title(); ?></h1>
+		<span id="excerpt"><?php the_excerpt(); ?></span>
 
 		<? //var_dump($post);?>
+
+	
 	</header> <!-- end article header -->
 
-    <section class="entry-content" itemprop="articleBody">
-	    <?php the_content(); ?>
+
+
+
+    <section id="About-<?php echo $post->post_name;?>" class="entry-content col s12" itemprop="articleBody">
+	    <?php the_content();
+
+			 ?>
+
 	    <?php wp_link_pages(); ?>
 	</section> <!-- end article section -->
 
@@ -20,4 +26,4 @@
 
 
 
-</article> <!-- end article -->
+</section> <!-- end article -->
