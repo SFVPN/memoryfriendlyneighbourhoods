@@ -52,33 +52,9 @@
 		</div>
 	</header>
 
-    <section class="entry-content col s12" itemprop="articleBody">
-			<?php
-
-// check if the repeater field has rows of data
-if( have_rows('attachments') ):
-echo '<div class="col s12 info grey-text darken-4">';
-	// loop through the rows of data
-		while ( have_rows('attachments') ) : the_row();
-			$file = get_sub_field('file');
-				// display a sub field value
-
-			echo '<div class="chip">
-		<i class="attachment material-icons">file_download</i><label>File to download: </label><a href="' . $file['url'] . '">' . $file['filename'] . '</a>
-
-	</div>';
-
-		endwhile;
-echo '</div>';
-else :
-
-		// no rows found
-
-endif;
-
-?>
+    <section class="entry-content" itemprop="articleBody">
+			<div class="col s12">
 				<?php
-				the_post_thumbnail('large', array('class' => 'hide-on-large-only responsive-img'));
 				the_content(); ?>
 
 				<?php $video = get_field('video');
@@ -87,6 +63,55 @@ endif;
 					}
 
 				?>
+			</div>
+
+			<?php
+
+// check if the repeater field has rows of data
+if( have_rows('attachments') ):
+echo '<div class="col s12 info grey-text darken-4">';
+ 	// loop through the rows of data
+    while ( have_rows('attachments') ) : the_row();
+			$file = get_sub_field('file');
+        // display a sub field value
+
+			echo '<div class="chip">
+    <i class="attachment material-icons">file_download</i><label>File to download: </label><a class="tooltipped" href="' . $file['url'] . '" target="_blank" data-position="right" data-delay="50" data-tooltip="This will download the named file in a new tab">' . $file['filename'] . '</a>
+
+  </div>';
+
+    endwhile;
+echo '</div>';
+else :
+
+    // no rows found
+
+endif;
+
+if( have_rows('external_file') ):
+echo '<div class="col s12 info grey-text darken-4">';
+ 	// loop through the rows of data
+    while ( have_rows('external_file') ) : the_row();
+			$fileLink = get_sub_field('file_link');
+			$fileName = get_sub_field('file_link_name');
+        // display a sub field value
+
+			echo '<div class="chip">
+    <i class="attachment material-icons">file_download</i><label>External File to download: </label><a class="tooltipped" href="' . $fileLink . '" target="_blank" data-position="right" data-delay="50" data-tooltip="This will download the named file in a new tab">' . $fileName . '</a>
+
+  </div>';
+
+    endwhile;
+echo '</div>';
+else :
+
+    // no rows found
+
+endif;
+
+
+?>
+
 
 
 	<?php $link = get_field('external_link');
@@ -107,3 +132,4 @@ endif;
 	<?php //comments_template(); ?>
 
 </article> <!-- end article -->
+<?php get_sidebar('archives'); ?>

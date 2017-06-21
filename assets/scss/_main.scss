@@ -236,6 +236,10 @@ li.btn-flat {
   }
 }
 
+.col.s12.link {
+    padding-left: 0;
+}
+
 /*********************
 H1, H2, H3, H4, H5 P STYLES
 *********************/
@@ -458,6 +462,10 @@ ACF FORM OVERRIDES
       width: 100%;
     }
 }
+}
+
+.um-field-checkbox-state i, .um-field-radio-state i {
+  display: none;
 }
 
 .page-template-page-form .acf-switch-input ~ label {
@@ -898,6 +906,7 @@ body.home {
   margin-bottom: 0;
   & .white {
     padding: 1rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -1101,7 +1110,7 @@ h6.card-sub-title {
   animation: show 1s 1;
 }
 
-.entry-content.col.s12 {
+.single-resources .entry-content, .entry-content.col.s12 {
   animation: show 1s 1;
   padding: 3rem;
   background: white;
@@ -1563,6 +1572,14 @@ SIDEBARS & ASIDES
 
     }
   }
+}
+
+.expert {
+  margin-bottom: 2rem;
+}
+
+.default_avatar {
+  width: 80px;
 }
 
 .searchandfilter {

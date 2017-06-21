@@ -6578,6 +6578,9 @@ li.btn-flat {
     color: #212121;
     font-size: .9rem; }
 
+.col.s12.link {
+  padding-left: 0; }
+
 /*********************
 H1, H2, H3, H4, H5 P STYLES
 *********************/
@@ -6744,6 +6747,9 @@ ACF FORM OVERRIDES
   @media only screen and (max-width: 600px) {
     .acf-form .btn, .acf-form .btn-large {
       width: 100%; } }
+
+.um-field-checkbox-state i, .um-field-radio-state i {
+  display: none; }
 
 .page-template-page-form .acf-switch-input ~ label {
   clip: rect(1px, 1px, 1px, 1px);
@@ -7049,7 +7055,8 @@ body.home {
   padding: 3rem 0;
   margin-bottom: 0; }
   #child_pages .white, #child_pages a.dropdown-button.active, #child_pages .single #byline, .single #child_pages #byline, #child_pages .page-footer li a:hover .mdi, .page-footer li a:hover #child_pages .mdi, #child_pages .page-footer li a:focus .mdi, .page-footer li a:focus #child_pages .mdi {
-    padding: 1rem; }
+    padding: 1rem;
+    margin-bottom: 1rem; }
 
 .card-content h2 {
   font-size: 1.64rem; }
@@ -7193,32 +7200,32 @@ h6.card-sub-title {
 .home-entry-content {
   animation: show 1s 1; }
 
-.entry-content.col.s12 {
+.single-resources .entry-content, .entry-content.col.s12 {
   animation: show 1s 1;
   padding: 3rem;
   background: white; }
-  .entry-content.col.s12 img.hide-on-large-only {
+  .single-resources .entry-content img.hide-on-large-only, .entry-content.col.s12 img.hide-on-large-only {
     margin-top: 2rem; }
-  .entry-content.col.s12 img {
+  .single-resources .entry-content img, .entry-content.col.s12 img {
     max-width: 100%;
     height: auto; }
-  .entry-content.col.s12 .alignleft, .entry-content.col.s12 img.alignleft {
+  .single-resources .entry-content .alignleft, .single-resources .entry-content img.alignleft, .entry-content.col.s12 .alignleft, .entry-content.col.s12 img.alignleft {
     margin-right: 1.5em;
     display: inline;
     float: left; }
-  .entry-content.col.s12 .alignright, .entry-content.col.s12 img.alignright {
+  .single-resources .entry-content .alignright, .single-resources .entry-content img.alignright, .entry-content.col.s12 .alignright, .entry-content.col.s12 img.alignright {
     margin-left: 1.5em;
     display: inline;
     float: right; }
-  .entry-content.col.s12 .aligncenter, .entry-content.col.s12 img.aligncenter {
+  .single-resources .entry-content .aligncenter, .single-resources .entry-content img.aligncenter, .entry-content.col.s12 .aligncenter, .entry-content.col.s12 img.aligncenter {
     margin-right: auto;
     margin-left: auto;
     display: block;
     clear: both; }
-  .entry-content.col.s12 video, .entry-content.col.s12 object {
+  .single-resources .entry-content video, .single-resources .entry-content object, .entry-content.col.s12 video, .entry-content.col.s12 object {
     max-width: 100%;
     height: auto; }
-  .entry-content.col.s12 pre {
+  .single-resources .entry-content pre, .entry-content.col.s12 pre {
     background: #eee;
     border: 1px solid #cecece;
     padding: 10px; }
@@ -7443,6 +7450,12 @@ SIDEBARS & ASIDES
   background: transparent; }
   #sidebar1 a.chip:hover {
     color: #0fa4fc; }
+
+.expert {
+  margin-bottom: 2rem; }
+
+.default_avatar {
+  width: 80px; }
 
 .searchandfilter {
   padding: 0 1em; }

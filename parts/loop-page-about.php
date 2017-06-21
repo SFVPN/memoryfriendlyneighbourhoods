@@ -31,12 +31,13 @@
 
 <aside id="child_pages" class="row grey lighten-3">
 	<?php
-	  $children = get_pages('title_li=&child_of='.$post->ID.'&echo=0');
+	  $children = get_pages('title_li=&child_of='.$post->ID.'&echo=0&sort_column=post_date&sort_order=desc');
 	  if ($children) {
 		echo '<section class="col s12">';
 		foreach ($children as $child) {
-		$trimmed = wp_trim_words( $child->post_content, $num_words = 30, $more = null );
-	   echo '<div class="col s12 m6"><div class="white"><h3 class="light"><a href="' . $child->guid . '">' . $child->post_title . '</a></h3>' . $trimmed . '</div></div>';
+		//$trimmed = wp_trim_words( $child->post_content, $num_words = 30, $more = null );
+	   echo '<div class="col s12 m6"><div class="white"><h3 class="light"><a href="' . $child->guid . '">' . $child->post_title . '</a></h3>' . $child->post_excerpt . '</div></div>';
+
 		}
 		echo '</section>';
 	} ?>

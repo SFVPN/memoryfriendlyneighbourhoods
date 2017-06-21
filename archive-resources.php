@@ -40,16 +40,7 @@ $term = wp_count_posts('resources');
 
 							<?php echo $value->name . ' (' . $value->count . ')';?>
 
-					<?php if($value->name == "Memory Services") {
-						echo '<i class="material-icons float-left">update</i>';
-					} elseif ($value->name == "Technology"){
-						echo '<i class="float-left material-icons">touch_app</i>';
-					} elseif ($value->name == "Wayfinding"){
-						echo '<i class="float-left material-icons">transfer_within_a_station</i>';
-					} elseif ($value->name == "DFCs"){
- 						echo '<i class="float-left material-icons">nature_people</i>';
- 					 }
-					?>
+					
 
 
 				</a>

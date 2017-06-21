@@ -31,27 +31,7 @@ $term = get_queried_object();
 								foreach( $res_categories as $key=>$value ) {
 								?>
 
-							<div id="cat-<?php echo $key;?>" class="chip white">
-				<a class="whitetext" href="<?php echo get_category_link( $value->term_id ); ?> ">
-
-
-
-											<?php echo $value->name . ' (' . $value->count . ')';?>
-
-									<?php if($value->name == "Memory Services") {
-										echo '<i class="material-icons float-left">update</i>';
-									} elseif ($value->name == "Technology"){
-										echo '<i class="float-left material-icons">touch_app</i>';
-									} elseif ($value->name == "Wayfinding"){
-										echo '<i class="float-left material-icons">transfer_within_a_station</i>';
-									} elseif ($value->name == "DFCs"){
-				 						echo '<i class="float-left material-icons">nature_people</i>';
-				 					 }
-									?>
-
-
-								</a>
-							</div>
+					
 
 							<?php }
 							?>

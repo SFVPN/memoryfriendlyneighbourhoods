@@ -15,7 +15,7 @@ if (is_tax()){
 		'meta_key' => 'expertise', // expertise options and categories must be the same for this not to break
 		'meta_value' => $title, // matching the category title to its equivalent expertise field value
 		'meta_compare' => 'LIKE',
-		'orderby' => 'post_count', // ordering by highest post count
+		'orderby' => 'last_name', // ordering by highest post count
 		'order' => 'DESC',
 		'number' => 9 // getting max of 9 members
 		);
@@ -28,7 +28,13 @@ if (is_tax()){
 			foreach ( $user_query->results as $user ) {
 				um_fetch_user( $user->ID );
 				$avatar_uri = um_get_avatar_uri( um_profile('profile_photo'), 80 );
-				echo '<div class="col s12 m6 l4 center"><img class="circle" src="' . $avatar_uri . '" /><a class="chip z-depth-0 waves-effect waves-light center" href="/profile/' . $user->user_nicename . '">' . um_get_display_name( $user->ID ) . '</a></div>';
+				if ($avatar_uri) {
+					echo '<div class="col s12 m6 l4 expert center"><img class="circle" src="' . $avatar_uri . '" /><a class="chip z-depth-0 waves-effect waves-light center" href="/profile/' . $user->user_nicename . '">' . um_get_display_name( $user->ID ) . '</a></div>';
+				} else {
+					$default_uri = um_get_default_avatar_uri();
+					echo '<div class="col s12 m6 l4 expert center"><img class="circle default_avatar" src="' . $default_uri . '" /><a class="chip z-depth-0 waves-effect waves-light center" href="/profile/' . $user->user_nicename . '">' . um_get_display_name( $user->ID ) . '</a></div>';
+				}
+
 				}
 			}
 		}
