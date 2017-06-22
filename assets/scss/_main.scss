@@ -609,7 +609,7 @@ POSTS & CONTENT STYLES
   z-index: 1000;
 }
 
-#About, #Register, #Network {
+#About, #Register, #Resources, #Network {
   margin-bottom: 0px !important;
   padding: 2rem 0;
   opacity: 0;
@@ -798,7 +798,7 @@ color: color("grey", "darken-2");
 
 body.home {
     background-color: $primary-color; //#6e7d6d;
-    background-image: url("../images/cubes.png");
+    background-image: url("../images/swirl.png");
     background-attachment: fixed;
     #post-home {
       color: white;
@@ -1649,7 +1649,7 @@ FOOTER STYLES
 
 #logos {
   margin-top: -20px;
-  padding: 2rem 0;
+  padding: 4rem 0;
 }
 
 .page-footer {

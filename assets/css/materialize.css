@@ -6853,22 +6853,22 @@ POSTS & CONTENT STYLES
   padding: 1rem;
   z-index: 1000; }
 
-#About, #Register, #Network {
+#About, #Register, #Resources, #Network {
   margin-bottom: 0px !important;
   padding: 2rem 0;
   opacity: 0; }
-  #About p, #Register p, #Network p {
+  #About p, #Register p, #Resources p, #Network p {
     font-size: 1.85rem;
     font-weight: 200; }
     @media only screen and (max-width: 600px) {
-      #About p, #Register p, #Network p {
+      #About p, #Register p, #Resources p, #Network p {
         font-size: 1.25em; } }
-  #About img, #Register img, #Network img {
+  #About img, #Register img, #Resources img, #Network img {
     border-radius: 50%;
     width: 200px;
     height: 200px;
     margin-top: 2.28rem; }
-  #About .btn-large, #Register .btn-large, #Network .btn-large {
+  #About .btn-large, #Register .btn-large, #Resources .btn-large, #Network .btn-large {
     margin-top: 2rem;
     border-width: 1px;
     border-style: solid; }
@@ -6982,7 +6982,7 @@ h6.card-sub-title {
 
 body.home {
   background-color: #616161;
-  background-image: url("../images/cubes.png");
+  background-image: url("../images/swirl.png");
   background-attachment: fixed; }
   body.home #post-home {
     color: white; }
@@ -7498,7 +7498,7 @@ FOOTER STYLES
 
 #logos {
   margin-top: -20px;
-  padding: 2rem 0; }
+  padding: 4rem 0; }
 
 .page-footer {
   background: #616161;

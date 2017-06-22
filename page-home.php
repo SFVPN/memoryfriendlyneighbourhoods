@@ -17,7 +17,7 @@ get_header(); ?>
 
 
 
-					<a href="#About" class="waves-effect grey lighten-4 btn-large waves-circle waves-light btn-floating"><i class="material-icons black-text">keyboard_arrow_down</i></a>
+					<a href="#About" class="waves-effect grey lighten-4 btn-large waves-circle waves-light btn-floating tooltipped" data-position="bottom" data-delay="50" data-tooltip="Click on the button or scroll for more information"><i class="material-icons black-text">keyboard_arrow_down</i></a>
 
 
 

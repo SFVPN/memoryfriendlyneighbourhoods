@@ -17,10 +17,10 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 <main class="row">
 
 
-
+	<section class="row" itemscope itemtype="http://schema.org/WebPage">
 
 <?php if ($url == $actual_link ) {?>
-			<header class="resources-article-header center">
+			<header class="resources-article-header col s12 center">
 
 
 				<h1 class="page-title"><?php the_title(); ?></h1>
@@ -33,7 +33,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 			    	<?php //get_template_part( 'parts/loop', 'page' ); ?>
-<div class="container">
+<div class="entry-content col s12">
 <?php
 
 get_template_part( 'parts/content', 'form' );
@@ -55,6 +55,7 @@ endwhile; endif;
 
 </div>
 
+	</section>
 </main> <!-- end main -->
 
 
