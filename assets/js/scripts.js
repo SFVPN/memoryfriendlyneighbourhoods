@@ -39,6 +39,7 @@ var options = [
     {selector: '#About', offset: 0, callback: 'Materialize.fadeInImage("#About")' },
     {selector: '#Register', offset: 0, callback: 'Materialize.fadeInImage("#Register")' },
     {selector: '#Network', offset: 0, callback: 'Materialize.fadeInImage("#Network")' }
+    {selector: '#Network', offset: 0, callback: 'Materialize.fadeInImage("#Resources")' }
 ];
 Materialize.scrollFire(options);
 
@@ -78,7 +79,7 @@ var headerHeight = $("header").height();
 
         }, 1200, 'swing', function () {
             window.location.hash = target ;
-            
+
         });
     });
 

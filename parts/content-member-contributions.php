@@ -95,7 +95,7 @@ echo '<div class="col s12 info grey-text darken-4">';
         // display a sub field value
 
 			echo '<div class="chip">
-    <i class="attachment material-icons">file_download</i><label>File to download: </label><a class="tooltipped" href="' . $file['url'] . '" target="_blank" data-position="right" data-delay="50" data-tooltip="This will download the named file in a new tab">' . $file['filename'] . '</a>
+    <i class="attachment material-icons">file_download</i><label>File to download: </label><a class="tooltipped" href="' . $file['url'] . '" target="_blank" data-position="right" data-delay="50" data-tooltip="This will download the named file in a new tab">' . $file['title'] . '</a>
 
   </div>';
 

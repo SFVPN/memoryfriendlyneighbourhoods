@@ -17,7 +17,7 @@ get_header(); ?>
 
 
 
-					<a href="#About" class="waves-effect grey lighten-4 btn-large waves-circle waves-light btn-floating tooltipped" data-position="bottom" data-delay="50" data-tooltip="Click on the button or scroll for more information"><i class="material-icons black-text">keyboard_arrow_down</i></a>
+					<a href="#About" class="waves-effect grey lighten-4 btn-large waves-circle waves-light btn-floating tooltipped" data-position="bottom" data-delay="50" data-intro="Click on the button or scroll for more information"><i class="material-icons black-text">keyboard_arrow_down</i></a>
 
 
 
@@ -30,7 +30,7 @@ get_header(); ?>
 
 					while ( have_rows('front_page_sections') ) : the_row();?>
 					<div id="<?php the_sub_field('section_title'); ?>" class="row center" style="background: <?php the_sub_field('background_colour'); ?>;"  >
-						<div class="col s12 l8 push-l<?php the_sub_field('push_right'); ?>" style="color: <?php the_sub_field('text_colour'); ?>;">
+						<div class="col s12 l8 push-l<?php the_sub_field('push_right'); ?>" style="color: <?php the_sub_field('text_colour'); ?>;" data-intro='Hello step two!'>
 							<h4><?php the_sub_field('section_title'); ?></h4>
 								<?php the_sub_field('section_description'); ?>
 
