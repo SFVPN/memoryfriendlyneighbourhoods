@@ -6,7 +6,7 @@
 
 		<?php get_template_part( 'parts/content', 'actions' ); ?>
 
-	<div class="nav-wrapper container" data-intro='Hello step one!'><img id="logo"
+	<div class="nav-wrapper container"><img id="logo"
 		<?php
 		$logo_image = get_theme_mod( 'tcx_logo_image' );
 		if ($logo_image){?>
@@ -49,7 +49,7 @@
 	       </div>
 
 
-	 		<?php joints_top_nav(); ?>
+	 		<?php joints_mobile_nav(); ?>
 	   </ul>
 	   <a href="" data-activates="slide-out" class="button-collapse right"><i class="material-icons">menu</i></a>
 

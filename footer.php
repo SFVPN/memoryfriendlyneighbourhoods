@@ -1,13 +1,13 @@
-	
+
 
 		<footer id="contact" class="page-footer center">
 			<?php if (is_front_page()) {
 			echo '<div id="logos" class="row white center" role="banner">
-			<img alt="banner showing the logos of institutions participating in the Memory-Friendly Neighbourhoods project" src="http://memoryfriendly.org.uk/wp-content/uploads/2014/04/MFN-website-logo-banner.jpg" />
+			<img class="responsive-img" alt="banner showing the logos of institutions participating in the Memory-Friendly Neighbourhoods project" src="http://memoryfriendly.org.uk/wp-content/uploads/2014/04/MFN-website-logo-banner.jpg" />
 			</div>';
 		}?>
 			<div id="inner-footer" class="container">
-				<h4>Contact Us</h4>
+				<p>Contact Us</p>
 				<ul class="col s12 l12">
 					<?php
 					$email_contact = get_theme_mod('tcx_email_contact');

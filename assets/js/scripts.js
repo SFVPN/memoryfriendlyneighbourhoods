@@ -5,6 +5,7 @@ and Materialize play nice together.
 */
 
 $(document).ready(function(){
+
      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 
 // Remove empty P tags created by WP inside of Accordion and Orbit
@@ -38,8 +39,8 @@ $(document).ready(function(){
 var options = [
     {selector: '#About', offset: 0, callback: 'Materialize.fadeInImage("#About")' },
     {selector: '#Register', offset: 0, callback: 'Materialize.fadeInImage("#Register")' },
-    {selector: '#Network', offset: 0, callback: 'Materialize.fadeInImage("#Network")' }
-    {selector: '#Network', offset: 0, callback: 'Materialize.fadeInImage("#Resources")' }
+    {selector: '#Network', offset: 0, callback: 'Materialize.fadeInImage("#Network")' },
+    {selector: '#Resources', offset: 0, callback: 'Materialize.fadeInImage("#Resources")' }
 ];
 Materialize.scrollFire(options);
 
@@ -63,26 +64,40 @@ Materialize.scrollFire(options);
 //
 // });
 
-var headerHeight = $("header").height();
+// var headerHeight = $("#main-nav").height() + 10;
+//
+//
+//     $('a[href^="#About"]').on('click',function (e) {
+//         e.preventDefault();
+//
+//
+//         var target = this.hash,
+//         $target = $(target);
+//
+//         $('html, body').stop().animate({
+//
+//             'scrollTop': $target.offset().top - headerHeight
+//
+//         }, 1200, 'swing', function () {
+//             window.location.hash = target ;
+//
+//         });
+//     });
 
+// altered from above to prevent jumping in Microsoft Edge
+var scrollFrom = 0;
+var headerHeight = $("#main-nav").height();
+$('a[href*=#About]').click(function(e){
+    scrollFrom = $(window).scrollTop();
+});
 
-    $('a[href^="#About"]').on('click',function (e) {
-        e.preventDefault();
-
-
-        var target = this.hash,
-        $target = $(target);
-
-        $('html, body').stop().animate({
-
-            'scrollTop': $target.offset().top - headerHeight
-
-        }, 1200, 'swing', function () {
-            window.location.hash = target ;
-
-        });
-    });
-
+$(window).bind('hashchange',function(){
+    $(window).scrollTop(scrollFrom);
+    var target = '#' + location.hash.replace(/#/,'');
+    $('html,body').animate({
+        scrollTop: $(target).offset().top-headerHeight // modification
+    },1000);
+});
 
 window.cookieconsent_options = {
        learnMore: 'More info',

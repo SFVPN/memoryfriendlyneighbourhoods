@@ -263,7 +263,7 @@ h1, .h1 {
 
 .home h1 {
   @media #{$small-and-down} {
-    font-size: $h2-fontsize;
+    font-size: $h4-fontsize;
   }
 }
 
@@ -342,6 +342,9 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
+.nav-wrapper.container {
+    width: 90%;
+}
 
 i.mdi.mdi-menu {
   height: 37px;
@@ -538,10 +541,8 @@ input.add-image.btn {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-
-.home .container {
-  article {
-  }
+#homeIntro {
+  margin-bottom: 8rem;
 }
 
 .article-header .searchandfilter, .resources-article-header .searchandfilter {

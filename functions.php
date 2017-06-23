@@ -71,3 +71,30 @@ function highlight_search_term($text){
 }
 add_filter('the_excerpt', 'highlight_search_term');
 add_filter('the_title', 'highlight_search_term');
+
+
+
+function add_introjs_menu_atts( $atts, $item, $args ) {
+  $register = get_field('join_network', 'option');
+  $register = get_the_title($register);
+	if( $args->theme_location == 'main-nav' ) {
+    if ($item->title == 'Register') {
+      $atts['data-intro'] = 'Clicking on this menu item will take you to the page to "' . strtoupper($item->title) . '" for the network';
+    } elseif ($item->title == 'Network') {
+      $atts['data-intro'] = 'Clicking on this menu item will take you to the "' . strtoupper($item->title) . '" page where you can browse our members';
+    } elseif ($item->title == 'Events') {
+      $atts['data-intro'] = 'Clicking on this menu item will take you to the "' . strtoupper($item->title) . '" page where you can read about MFN gatherings';
+    } elseif ($item->title == 'Resources') {
+      $atts['data-intro'] = 'Clicking on this menu item will take you to the "' . strtoupper($item->title) . '" page where you can view dementia-related information';
+    } elseif ($item->title == 'About') {
+      $atts['data-intro'] = 'Clicking on this menu item will take you to the "' . strtoupper($item->title) . '" page where you can read about the background of MFN';
+    } elseif ($item->title == 'Accessibility') {
+      $atts['data-intro'] = 'Clicking on this menu item will take you to the "' . strtoupper($item->title) . '" page where you can change the text size for the website for easier reading';
+    } else {
+      $atts['data-intro'] = 'Clicking on this menu item will take you to the "' . strtoupper($item->title) . '" page';
+    }
+	}
+    return $atts;
+}
+
+add_filter( 'nav_menu_link_attributes', 'add_introjs_menu_atts', 10, 3 );

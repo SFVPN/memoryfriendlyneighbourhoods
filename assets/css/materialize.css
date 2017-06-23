@@ -6599,7 +6599,7 @@ h1, .h1 {
 
 @media only screen and (max-width: 600px) {
   .home h1 {
-    font-size: 3.56rem; } }
+    font-size: 2.28rem; } }
 
 header.search-article-header.center h1, .single-resources h1 {
   font-size: 2.28rem; }
@@ -6662,6 +6662,9 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
+.nav-wrapper.container {
+  width: 90%; }
+
 i.mdi.mdi-menu {
   height: 37px; }
 
@@ -6804,6 +6807,9 @@ input.add-image.btn, input.add-image.btn-large {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+#homeIntro {
+  margin-bottom: 8rem; }
+
 .article-header .searchandfilter, .resources-article-header .searchandfilter {
   width: 40%;
   margin-left: 30%;

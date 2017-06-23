@@ -8,7 +8,7 @@ get_header(); ?>
 
 	<main id="gettingSarted">
 			<div class="row center">
-				<div class="col s12" style="margin-bottom: 8rem;">
+				<div id="homeIntro" class="col s12">
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<?php get_template_part( 'parts/loop', 'page-home' ); ?>
@@ -17,7 +17,7 @@ get_header(); ?>
 
 
 
-					<a href="#About" class="waves-effect grey lighten-4 btn-large waves-circle waves-light btn-floating tooltipped" data-position="bottom" data-delay="50" data-intro="Click on the button or scroll for more information"><i class="material-icons black-text">keyboard_arrow_down</i></a>
+					<a href="#About" class="waves-effect grey lighten-4 btn waves-circle waves-light btn-floating tooltipped" data-position="bottom" data-delay="50" data-tooltip="Click here or scroll down the page for more information"><i class="material-icons black-text">keyboard_arrow_down</i></a>
 
 
 
@@ -30,7 +30,7 @@ get_header(); ?>
 
 					while ( have_rows('front_page_sections') ) : the_row();?>
 					<div id="<?php the_sub_field('section_title'); ?>" class="row center" style="background: <?php the_sub_field('background_colour'); ?>;"  >
-						<div class="col s12 l8 push-l<?php the_sub_field('push_right'); ?>" style="color: <?php the_sub_field('text_colour'); ?>;" data-intro='Hello step two!'>
+						<div class="col s12 l8 push-l<?php the_sub_field('push_right'); ?>" style="color: <?php the_sub_field('text_colour'); ?>;">
 							<h4><?php the_sub_field('section_title'); ?></h4>
 								<?php the_sub_field('section_description'); ?>
 
@@ -54,5 +54,29 @@ get_header(); ?>
 
 
 </main>
+
+<script>
+function startIntro(){
+	var intro = introJs();
+		intro.setOptions({
+			steps: [
+				{
+					element: document.querySelector('#menu-item-28'),
+					intro: "This is a tooltip."
+				},
+				{
+					element: document.querySelector('#menu-item-29'),
+					intro: "This is a tooltip."
+				},
+				{
+					element: document.querySelector('#menu-item-37'),
+					intro: "This is a tooltip."
+				},
+
+			]
+		});
+		intro.start();
+}
+</script>
 
 <?php get_footer(); ?>
