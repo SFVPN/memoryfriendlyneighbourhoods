@@ -19,7 +19,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 	<section class="row" itemscope itemtype="http://schema.org/WebPage">
 
-<?php if ($url == $actual_link ) {?>
+
 			<header class="resources-article-header col s12 center">
 
 
@@ -40,15 +40,7 @@ get_template_part( 'parts/content', 'form' );
 
 
 endwhile; endif;
-} elseif ($current_user->user_firstname) {
-  echo '<div class="container"><h3 class="">
-  Thanks for your submission ' . $current_user->user_firstname . '. It will be checked by our helper monkeys and published shortly.
-  </h3><a href="'. $url . '" class="btn">Add Another Resource</a></div>';
-} elseif (!is_user_logged_in ()) {
-	echo '<div class="container"><h3 class="">
-  Thanks for your submission. It will be checked by our helper monkeys and published shortly.
-  </h3><a href="'. $url . '" class="btn col s5">Add Another Resource</a><a href="'. get_permalink( get_page_by_path( 'Register' ) ) . '" class="btn col s5 push-s2">' . get_the_title(get_page_by_path( 'Register' )) . '</a></div>';
-}?>
+?>
 
 
 		    <?php // get_sidebar(); ?>

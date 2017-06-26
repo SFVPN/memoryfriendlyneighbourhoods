@@ -7,7 +7,7 @@
 
 		<? //var_dump($post);?>
 
-	
+
 	</header> <!-- end article header -->
 
 
@@ -18,10 +18,17 @@
 
 			 ?>
 
+			 <?php if(is_page('resource-submission-thank-you')) {
+	 			$page = get_field('add_resource', 'option');?>
+	 			<a class="amber btn-flat lighten-1 black-text" href="<?php echo get_permalink($page);?>">
+	 		 <i class="material-icons left">add_circle_outline</i><span class=""><?php echo get_the_title($page);?></span></a>
+	 		<?php }?>
+
 	    <?php wp_link_pages(); ?>
 	</section> <!-- end article section -->
 
-	<footer class="article-footer">
+	<footer class="article-footer center">
+
 	</footer> <!-- end article footer -->
 
 
