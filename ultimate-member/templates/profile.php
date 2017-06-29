@@ -52,4 +52,6 @@
 
 		<?php if ( um_is_on_edit_profile() ) { ?></form><?php } ?>
 
+		
+
 	</div>

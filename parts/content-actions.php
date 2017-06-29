@@ -25,7 +25,7 @@ $page = get_field('add_resource', 'option');
 	</ul>
 </div>
 		<?php }?>
-		<?php if(is_page('network') || is_page('profile')){?>
+		<?php if(is_page('network')) {?>
 			<div class="fixed-action-btn toolbar">
 		     <a class="btn-floating btn-large deep-purple darken-2">
 		       <i class="large material-icons">add</i>
