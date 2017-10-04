@@ -611,9 +611,16 @@ POSTS & CONTENT STYLES
 }
 
 #About, #Register, #Resources, #Network {
-  margin-bottom: 0px !important;
-  padding: 2rem 0;
   opacity: 0;
+}
+
+.our-networks.row, #child-wrapper.row {
+  margin-bottom: 0 !important;
+}
+
+#About, #Register, #Resources, #Network, .network-home-sections, .child-pages-sections {
+  margin-bottom: 0px !important;
+  padding: 2rem 0 !important;
   p {
     font-size: 1.85rem;
     font-weight: 200;
@@ -632,6 +639,12 @@ POSTS & CONTENT STYLES
     margin-top: 2rem;
     border-width: 1px;
     border-style: solid;
+  }
+}
+
+.child-pages-sections {
+  img {
+    margin-bottom: 2rem;
   }
 }
 
@@ -659,6 +672,10 @@ clip-path: circle(50% at 50% 50%);
 
 .um-member-name a{
   color: $link-color;
+}
+
+.um-field-radio-option {
+  display: inline-block !important;
 }
 
 

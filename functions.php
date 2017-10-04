@@ -98,3 +98,26 @@ function add_introjs_menu_atts( $atts, $item, $args ) {
 }
 
 add_filter( 'nav_menu_link_attributes', 'add_introjs_menu_atts', 10, 3 );
+
+
+
+function alter_participants_user_field($result, $user, $field, $post_id) {
+
+    $result = '';
+
+    if( $user->first_name ) {
+
+        $result .= $user->first_name;
+
+        if( $user->last_name ) {
+
+            $result .= ' ' . $user->last_name;
+
+        }
+
+        $result .= '';
+    }
+
+    return $result;
+}
+add_filter("acf/fields/user/result/key=field_57346973097e8", 'alter_participants_user_field', 10, 4);

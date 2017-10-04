@@ -1,7 +1,7 @@
 <!-- This adds some basic  functionality whereever the partial is included -->
 <?php
 $display_name = um_user('display_name');
-$register = get_field('join_network', 'option');
+$register = get_field('registration_page'); // for each network page, add the registration page as a post object field / return ID.
 $page = get_field('add_resource', 'option');
 
  //echo $display_name; // prints the user's display name?>
@@ -25,7 +25,7 @@ $page = get_field('add_resource', 'option');
 	</ul>
 </div>
 		<?php }?>
-		<?php if(is_page('network')) {?>
+		<?php if(is_page_template('page-network.php')) {?>
 			<div class="fixed-action-btn toolbar">
 		     <a class="btn-floating btn-large deep-purple darken-2">
 		       <i class="large material-icons">add</i>

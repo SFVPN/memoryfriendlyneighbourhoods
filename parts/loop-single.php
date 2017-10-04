@@ -116,7 +116,7 @@ endif;
 
 	<?php $link = get_field('external_link');
 		if($link) {
-			echo '<div><a class="btn-flat tooltipped grey lighten-2" data-position="right" data-delay="50" data-tooltip="Clicking on this button will open up a separate website in a new tab" target="_blank" href="' . $link . '"><i class="material-icons left">info</i>View more information about this resource</a></div>';
+			echo '<div><a class="btn-flat tooltipped grey lighten-2" data-position="bottom" data-delay="50" data-tooltip="Clicking on this button will open up a separate website in a new tab" target="_blank" href="' . $link . '"><i class="material-icons left">info</i>View more information</a></div>';
 		}
 
 	?>

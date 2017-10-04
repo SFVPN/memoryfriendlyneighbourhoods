@@ -1,4 +1,4 @@
-<section class="<?php echo $post->post_name;?> row" itemscope itemtype="http://schema.org/WebPage">
+<section class="<?php echo $post->post_name;?> row butt" itemscope itemtype="http://schema.org/WebPage">
 	<header class="article-header col s12 center">
 
 

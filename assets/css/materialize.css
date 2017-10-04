@@ -4541,7 +4541,7 @@ textarea {
   padding-left: 35px;
   cursor: pointer;
   display: inline-block;
-  height: 25px;
+  height: 20px;
   line-height: 25px;
   font-size: 1rem;
   transition: .28s ease;
@@ -6860,24 +6860,32 @@ POSTS & CONTENT STYLES
   z-index: 1000; }
 
 #About, #Register, #Resources, #Network {
-  margin-bottom: 0px !important;
-  padding: 2rem 0;
   opacity: 0; }
-  #About p, #Register p, #Resources p, #Network p {
+
+.our-networks.row, #child-wrapper.row {
+  margin-bottom: 0 !important; }
+
+#About, #Register, #Resources, #Network, .network-home-sections, .child-pages-sections {
+  margin-bottom: 0px !important;
+  padding: 2rem 0 !important; }
+  #About p, #Register p, #Resources p, #Network p, .network-home-sections p, .child-pages-sections p {
     font-size: 1.85rem;
     font-weight: 200; }
     @media only screen and (max-width: 600px) {
-      #About p, #Register p, #Resources p, #Network p {
+      #About p, #Register p, #Resources p, #Network p, .network-home-sections p, .child-pages-sections p {
         font-size: 1.25em; } }
-  #About img, #Register img, #Resources img, #Network img {
+  #About img, #Register img, #Resources img, #Network img, .network-home-sections img, .child-pages-sections img {
     border-radius: 50%;
     width: 200px;
     height: 200px;
     margin-top: 2.28rem; }
-  #About .btn-large, #Register .btn-large, #Resources .btn-large, #Network .btn-large {
+  #About .btn-large, #Register .btn-large, #Resources .btn-large, #Network .btn-large, .network-home-sections .btn-large, .child-pages-sections .btn-large {
     margin-top: 2rem;
     border-width: 1px;
     border-style: solid; }
+
+.child-pages-sections img {
+  margin-bottom: 2rem; }
 
 .hexagon {
   position: relative;
@@ -6900,6 +6908,9 @@ POSTS & CONTENT STYLES
 
 .um-member-name a {
   color: #0277bd; }
+
+.um-field-radio-option {
+  display: inline-block !important; }
 
 .intro {
   padding-bottom: 1em; }

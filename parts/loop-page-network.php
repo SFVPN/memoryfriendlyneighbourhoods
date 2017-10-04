@@ -1,13 +1,13 @@
-<section class="<?php echo $post->post_name;?>" itemscope itemtype="http://schema.org/WebPage">
-	<header class="<?php echo $post->post_name;?>-article-header col s12 grey lighten-2 center">
+<section class="<?php echo $post->post_name;?> nyr" itemscope itemtype="http://schema.org/WebPage">
+	<header class="<?php echo $post->post_name;?> article-header col s12 grey lighten-2 center">
 
 
 		<h1 class="page-title"><?php the_title(); ?></h1>
 
 
 			<?php
-
-			$count = count( get_users( array( 'role' => 'author' ) ) );
+			$role = get_field('network_role');
+			$count = count( get_users( array( 'role' => $role ) ) );
 
 			echo '<span id="excerpt"><p><span class="count">' . $count . '</span> members and counting</p></span>'  ;
 

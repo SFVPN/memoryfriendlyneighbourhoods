@@ -146,7 +146,7 @@ endif;
 			<?php } else {
 			?>
 
-			<a href="<?php echo $post->guid;?>" class="btn-flat amber"><i class="material-icons left">assignment</i>View more about this resource </a>
+			<a href="<?php echo $post->guid;?>" class="btn-flat amber"><i class="material-icons left">assignment</i>View more details </a>
 
 			<?php }
 			?>

@@ -17,7 +17,8 @@
 			$skills = um_user('expertise');
 			$country = um_user('country');
 			$work = um_user('work');
-			$show_email = um_user('show_email');
+			$show_email = um_user('show_email_true');
+			$show_email = implode(', ', $show_email);
 			$website = um_user('your_website');
 
 
@@ -29,7 +30,7 @@
 				}
 					echo '</p>';
 	 		}
-		 if($show_email){
+		 if($show_email == "Yes"){
 				echo '<p class="center"><a class="btn-flat waves-effect grey lighten-4 tooltipped" href="mailto:' . um_user('user_email') . '" data-position="right" data-delay="50" data-tooltip="This will open up a new email message" target="_blank"><i class="material-icons left">email</i>Email ' . um_user("first_name") . '</a></p>'; // returns the email of logged-in user
 		 }
 				$nav = $ultimatemember->profile->active_tab;
@@ -52,6 +53,6 @@
 
 		<?php if ( um_is_on_edit_profile() ) { ?></form><?php } ?>
 
-		
+
 
 	</div>
