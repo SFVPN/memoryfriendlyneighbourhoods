@@ -6,7 +6,7 @@
 
 
 			<?php
-			$role = get_field('network_role');
+			$role = $post->post_name . '_member';
 			$count = count( get_users( array( 'role' => $role ) ) );
 
 			echo '<span id="excerpt"><p><span class="count">' . $count . '</span> members and counting</p></span>'  ;

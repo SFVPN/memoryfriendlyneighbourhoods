@@ -121,3 +121,10 @@ function alter_participants_user_field($result, $user, $field, $post_id) {
     return $result;
 }
 add_filter("acf/fields/user/result/key=field_57346973097e8", 'alter_participants_user_field', 10, 4);
+
+$roles_enabled = get_field('roles_enabled', 'options');
+
+if($roles_enabled) { // let us turn this functionality off so we we're not checking whether a role exists every time the admin loads
+require_once(get_template_directory().'/assets/functions/create_roles.php');
+
+}
