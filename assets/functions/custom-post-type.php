@@ -29,7 +29,7 @@ function custom_resources() {
 			'exclude_from_search' => false,
 			'show_ui' => true,
 			'query_var' => true,
-			'menu_position' => 8, /* this is what order you want it to appear in on the left hand side menu */
+			'menu_position' => 9, /* this is what order you want it to appear in on the left hand side menu */
 			'menu_icon' => 'dashicons-clipboard', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
 			'rewrite'	=> array( 'slug' => 'resources', 'with_front' => false ), /* you can specify its url slug */
 			'has_archive' => 'resources', /* you can rename the slug here */
@@ -75,6 +75,198 @@ function custom_resources() {
     );
 
 
+
+
+		function custom_programmes() {
+			// creating (registering) the custom type
+			register_post_type( 'programmes', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+			 	// let's now add all the options for this post type
+				array('labels' => array(
+					'name' => __('Programmes', 'jointswp'), /* This is the Title of the Group */
+					'singular_name' => __('Programme', 'jointswp'), /* This is the individual type */
+					'all_items' => __('All Programmes', 'jointswp'), /* the all items menu item */
+					'add_new' => __('Add New', 'jointswp'), /* The add new menu item */
+					'add_new_item' => __('Add New Programme', 'jointswp'), /* Add New Display Title */
+					'edit' => __( 'Edit', 'jointswp' ), /* Edit Dialog */
+					'edit_item' => __('Edit Programme', 'jointswp'), /* Edit Display Title */
+					'new_item' => __('New Programme', 'jointswp'), /* New Display Title */
+					'view_item' => __('View Programme', 'jointswp'), /* View Display Title */
+					'search_items' => __('Search Programmes', 'jointswp'), /* Search Resource Title */
+					'not_found' =>  __('Nothing found in the Database.', 'jointswp'), /* This displays if there are no entries yet */
+					'not_found_in_trash' => __('Nothing found in Trash', 'jointswp'), /* This displays if there is nothing in the trash */
+					'parent_item_colon' => ''
+					), /* end of arrays */
+					'description' => __( 'This is the programmes custom post type', 'jointswp' ), /* Resource Description */
+					'public' => true,
+					'publicly_queryable' => true,
+					'show_in_rest' => true,
+					'exclude_from_search' => false,
+					'show_ui' => true,
+					'query_var' => true,
+					'menu_position' => 7, /* this is what order you want it to appear in on the left hand side menu */
+					'menu_icon' => 'dashicons-schedule', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
+					'rewrite'	=> array( 'slug' => 'programmes', 'with_front' => false ), /* you can specify its url slug */
+					'has_archive' => 'programmes', /* you can rename the slug here */
+					'capability_type' => 'page',
+					'hierarchical' => true,
+					/* the next one is important, it tells what's enabled in the post editor */
+					'supports' => array( 'title', 'editor', 'author', 'page-attributes', 'excerpt', 'thumbnail')
+			 	) /* end of options */
+			); /* end of register post type */
+
+			/* this adds your post categories to your custom post type */
+			register_taxonomy_for_object_type('category', 'programmes');
+			/* this adds your post tags to your custom post type */
+			//register_taxonomy_for_object_type('post_tag', 'custom_type');
+
+		}
+			// adding the function to the Wordpress init
+			add_action( 'init', 'custom_programmes');
+
+
+			function custom_projects() {
+				// creating (registering) the custom type
+				register_post_type( 'projects', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+					// let's now add all the options for this post type
+					array('labels' => array(
+						'name' => __('Projects', 'jointswp'), /* This is the Title of the Group */
+						'singular_name' => __('Project', 'jointswp'), /* This is the individual type */
+						'all_items' => __('All Projects', 'jointswp'), /* the all items menu item */
+						'add_new' => __('Add New', 'jointswp'), /* The add new menu item */
+						'add_new_item' => __('Add New Project', 'jointswp'), /* Add New Display Title */
+						'edit' => __( 'Edit', 'jointswp' ), /* Edit Dialog */
+						'edit_item' => __('Edit Project', 'jointswp'), /* Edit Display Title */
+						'new_item' => __('New Project', 'jointswp'), /* New Display Title */
+						'view_item' => __('View Project', 'jointswp'), /* View Display Title */
+						'search_items' => __('Search Projects', 'jointswp'), /* Search Resource Title */
+						'not_found' =>  __('Nothing found in the Database.', 'jointswp'), /* This displays if there are no entries yet */
+						'not_found_in_trash' => __('Nothing found in Trash', 'jointswp'), /* This displays if there is nothing in the trash */
+						'parent_item_colon' => ''
+						), /* end of arrays */
+						'description' => __( 'This is the Projects custom post type', 'jointswp' ), /* Resource Description */
+						'public' => true,
+						'publicly_queryable' => true,
+						'show_in_rest' => true,
+						'exclude_from_search' => false,
+						'show_ui' => true,
+						'query_var' => true,
+						'menu_position' => 7, /* this is what order you want it to appear in on the left hand side menu */
+						'menu_icon' => 'dashicons-welcome-widgets-menus', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
+						'rewrite'	=> array( 'slug' => 'projects', 'with_front' => false ), /* you can specify its url slug */
+						'has_archive' => 'projects', /* you can rename the slug here */
+						'capability_type' => 'page',
+						'hierarchical' => true,
+						/* the next one is important, it tells what's enabled in the post editor */
+						'supports' => array( 'title', 'editor', 'author', 'page-attributes', 'excerpt')
+					) /* end of options */
+				); /* end of register post type */
+
+				/* this adds your post categories to your custom post type */
+				register_taxonomy_for_object_type('category', 'projects');
+				/* this adds your post tags to your custom post type */
+				//register_taxonomy_for_object_type('post_tag', 'custom_type');
+
+			}
+
+				// adding the function to the Wordpress init
+				add_action( 'init', 'custom_projects');
+
+
+				function custom_dfcs() {
+					// creating (registering) the custom type
+					register_post_type( 'DFCs', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+						// let's now add all the options for this post type
+						array('labels' => array(
+							'name' => __('DFCs', 'jointswp'), /* This is the Title of the Group */
+							'singular_name' => __('DFC', 'jointswp'), /* This is the individual type */
+							'all_items' => __('All DFCs', 'jointswp'), /* the all items menu item */
+							'add_new' => __('Add New', 'jointswp'), /* The add new menu item */
+							'add_new_item' => __('Add New DFC', 'jointswp'), /* Add New Display Title */
+							'edit' => __( 'Edit', 'jointswp' ), /* Edit Dialog */
+							'edit_item' => __('Edit DFC', 'jointswp'), /* Edit Display Title */
+							'new_item' => __('New DFC', 'jointswp'), /* New Display Title */
+							'view_item' => __('View DFC', 'jointswp'), /* View Display Title */
+							'search_items' => __('Search DFCs', 'jointswp'), /* Search Resource Title */
+							'not_found' =>  __('Nothing found in the Database.', 'jointswp'), /* This displays if there are no entries yet */
+							'not_found_in_trash' => __('Nothing found in Trash', 'jointswp'), /* This displays if there is nothing in the trash */
+							'parent_item_colon' => ''
+							), /* end of arrays */
+							'description' => __( 'This is the DFCs custom post type', 'jointswp' ), /* Resource Description */
+							'public' => true,
+							'publicly_queryable' => true,
+							'show_in_rest' => true,
+							'exclude_from_search' => false,
+							'show_ui' => true,
+							'query_var' => true,
+							'menu_position' => 5, /* this is what order you want it to appear in on the left hand side menu */
+							'menu_icon' => 'dashicons-universal-access-alt', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
+							'rewrite'	=> array( 'slug' => 'dementia-friendly-communities', 'with_front' => false ), /* you can specify its url slug */
+							'has_archive' => 'dementia-friendly-communities', /* you can rename the slug here */
+							'capability_type' => 'page',
+							'hierarchical' => true,
+							/* the next one is important, it tells what's enabled in the post editor */
+							'supports' => array( 'title', 'editor', 'author', 'page-attributes', 'excerpt')
+						) /* end of options */
+					); /* end of register post type */
+
+					/* this adds your post categories to your custom post type */
+					register_taxonomy_for_object_type('category', 'DFCs');
+					/* this adds your post tags to your custom post type */
+					//register_taxonomy_for_object_type('post_tag', 'custom_type');
+
+				}
+
+					// adding the function to the Wordpress init
+					add_action( 'init', 'custom_dfcs');
+
+
+
+					function custom_research() {
+						// creating (registering) the custom type
+						register_post_type( 'research', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+							// let's now add all the options for this post type
+							array('labels' => array(
+								'name' => __('Research', 'jointswp'), /* This is the Title of the Group */
+								'singular_name' => __('Research', 'jointswp'), /* This is the individual type */
+								'all_items' => __('All Research', 'jointswp'), /* the all items menu item */
+								'add_new' => __('Add New', 'jointswp'), /* The add new menu item */
+								'add_new_item' => __('Add New Research Item', 'jointswp'), /* Add New Display Title */
+								'edit' => __( 'Edit', 'jointswp' ), /* Edit Dialog */
+								'edit_item' => __('Edit Research Item', 'jointswp'), /* Edit Display Title */
+								'new_item' => __('New Research Item', 'jointswp'), /* New Display Title */
+								'view_item' => __('View Research Item', 'jointswp'), /* View Display Title */
+								'search_items' => __('Search Research Items', 'jointswp'), /* Search Resource Title */
+								'not_found' =>  __('Nothing found in the Database.', 'jointswp'), /* This displays if there are no entries yet */
+								'not_found_in_trash' => __('Nothing found in Trash', 'jointswp'), /* This displays if there is nothing in the trash */
+								'parent_item_colon' => ''
+								), /* end of arrays */
+								'description' => __( 'This is the Research custom post type', 'jointswp' ), /* Resource Description */
+								'public' => true,
+								'publicly_queryable' => true,
+								'show_in_rest' => true,
+								'exclude_from_search' => false,
+								'show_ui' => true,
+								'query_var' => true,
+								'menu_position' => 7, /* this is what order you want it to appear in on the left hand side menu */
+								'menu_icon' => 'dashicons-analytics', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
+								'rewrite'	=> array( 'slug' => 'research', 'with_front' => false ), /* you can specify its url slug */
+								'has_archive' => 'research', /* you can rename the slug here */
+								'capability_type' => 'page',
+								'hierarchical' => true,
+								/* the next one is important, it tells what's enabled in the post editor */
+								'supports' => array( 'title', 'editor', 'author', 'page-attributes', 'excerpt')
+							) /* end of options */
+						); /* end of register post type */
+
+						/* this adds your post categories to your custom post type */
+						register_taxonomy_for_object_type('category', 'research');
+						/* this adds your post tags to your custom post type */
+						//register_taxonomy_for_object_type('post_tag', 'custom_type');
+
+					}
+
+						// adding the function to the Wordpress init
+						add_action( 'init', 'custom_research');
     /*
     	looking for custom meta boxes?
     	check out this fantastic tool:
@@ -107,6 +299,21 @@ function tgm_io_cpt_search( $query ) {
     return $query;
 
 }
+
+function namespace_programme_query_vars( $query ) {
+  if ( !is_admin() && $query->is_main_query() && is_post_type_archive('programmes')) {
+    if ( $query->query["post_type"] == 'programmes' ) {
+      $query->set( 'post_parent', 0 );
+    }
+  }
+	if ( !is_admin() && $query->is_main_query() && is_post_type_archive('projects')) {
+		if ( $query->query["post_type"] == 'projects' ) {
+			$query->set( 'post_parent', 0 );
+		}
+	}
+  return $query;
+}
+add_action( 'pre_get_posts', 'namespace_programme_query_vars' );
 
 if( function_exists('acf_add_options_page') ) {
 

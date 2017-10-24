@@ -13,16 +13,40 @@
 
 
 
-    <section class="entry-content col s12" itemprop="articleBody">
+    <div class="entry-content col s12" itemprop="articleBody">
 	    <?php the_content();
+
+			$video_alert_text = get_field('video_heading');
+			if ($video_alert_text) {
+				echo '<p>'
+				. $video_alert_text .
+				'</p>';
+			}
 
 			 ?>
 
-	    <?php wp_link_pages(); ?>
-	</section> <!-- end article section -->
+			 <?php
+ 		   if( have_rows('useful_links') ):
+ 		  echo '<div class="collection-links with-header"><h5 class="collection-header light center">Useful Links</h5>';
+ 		  		while ( have_rows('useful_links') ) : the_row();
+ 		  		$text = get_sub_field('link_text');
+ 		  		$link = get_sub_field('link_url');
+ 		  		?>
 
-	<footer class="article-footer">
-	</footer> <!-- end article footer -->
+
+		 <a class="collection-item" href="<?php echo $link; ?>" class="secondary-content"><?php echo $text; ?></a>
+
+
+
+ 		  	<?php
+ 		  	 endwhile;
+ 		  	 echo '</div>';
+ 		  	 endif;
+ 		   ?>
+
+	</div> <!-- end article section -->
+
+
 
 
 
@@ -66,17 +90,12 @@ echo '<aside id="child-wrapper" class="row purple">';
  ?>
 
 
+	<?php $video = get_field('video_url');
 
-<!-- <aside id="child_pages" class="row grey lighten-3">
-	<?php
-	  $children = get_pages('title_li=&child_of='.$post->ID.'&echo=0&sort_column=post_date&sort_order=desc');
-	  if ($children) {
-		echo '<section class="col s12">';
-		foreach ($children as $child) {
-		//$trimmed = wp_trim_words( $child->post_content, $num_words = 30, $more = null );
-	   echo '<div class="col s12 m6"><div class="white"><h3 class="light"><a href="' . $child->guid . '">' . $child->post_title . '</a></h3>' . $child->post_excerpt . '</div></div>';
+	if ($video){
+		echo '<aside>
+		<div class="video-container">' . $video . '
 
-		}
-		echo '</section>';
-	} ?>
-</aside> -->
+		</div>
+		</aside>';
+	}
