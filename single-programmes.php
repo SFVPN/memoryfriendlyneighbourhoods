@@ -15,32 +15,43 @@ get_header(); ?>
 
 	</main> <!-- end main -->
 
-	<div>
+<section class="panorama-section">
+	<h5 class="center"><?php the_field('image_title');?></h5>
+	<p>
+		<?php the_field('image_description');?>
+	</p>
+	<div class="row" id="panorama">
 
 
-	<img src="https://ichef.bbci.co.uk/news/624/cpsprodpb/A42A/production/_98462024_mediaitem98462023.jpg" width="750px" alt="Planets" usemap="#imgmap20171024215147">
+<?php
 
-	<map id="imgmap20171024215147" name="imgmap20171024215147"><area class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am a tooltip"  shape="circle"  title="" coords="97,170,57" href="#" target="" />
-<area class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am a tooltip"  shape="circle"  title="" coords="542,139,3" href="#" target="" />
-	</div>
+$image = get_field('panorama_image');
+
+if( !empty($image) ): ?>
+
+	<img class="responsive-img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+<?php endif; ?>
+
+<?php
+ if( have_rows('marker_details') ):
+
+		while ( have_rows('marker_details') ) : the_row();?>
+
+		<span class="tooltipped" data-position="<?php the_sub_field('text_position'); ?>" data-delay="50" data-tooltip="<?php the_sub_field('marker_text'); ?>" style="position: absolute; left: <?php the_sub_field('left_position'); ?>%; top: <?php the_sub_field('top_position'); ?>%;"></span>
 
 
-	 <div id="modal1" class="modal">
-	    <div class="modal-content">
-	      <h4>Modal Header</h4>
-	      <p>A bunch of text</p>
-	    </div>
-	    <div class="modal-footer">
-	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-	    </div>
-	  </div>
+	<?php
+	 endwhile;
+	 else :
+			 // no rows found
+	 endif;
+ ?>
 
-<script>
-$(document).ready(function(){
-// the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-$('.modal').modal();
-});
 
-</script>
+
+</div>
+
+</section>
 
 <?php get_footer(); ?>
