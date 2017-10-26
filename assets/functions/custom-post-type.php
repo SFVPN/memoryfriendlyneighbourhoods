@@ -200,7 +200,7 @@ function custom_resources() {
 							'query_var' => true,
 							'menu_position' => 5, /* this is what order you want it to appear in on the left hand side menu */
 							'menu_icon' => 'dashicons-universal-access-alt', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
-							'rewrite'	=> array( 'slug' => 'dementia-friendly-communities', 'with_front' => false ), /* you can specify its url slug */
+								'rewrite'	=> array( 'slug' => 'dementia-friendly-communities', 'with_front' => false ), /* you can specify its url slug */
 							'has_archive' => 'dementia-friendly-communities', /* you can rename the slug here */
 							'capability_type' => 'page',
 							'hierarchical' => true,

@@ -8,23 +8,45 @@ get_header(); ?>
 
 	<main id="gettingSarted">
 			<div class="row center">
-				<div id="homeIntro" class="col s12">
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<div id="homeIntro" style="background: url(<?php the_field('highlights_image');?>) no-repeat; background-size: cover; background-position: center center;" class="col s12">
 
 							<?php get_template_part( 'parts/loop', 'page-home' ); ?>
 
-
-
-
-
-					<a href="#About" class="waves-effect grey lighten-4 btn waves-circle waves-light btn-floating tooltipped" data-position="bottom" data-delay="50" data-tooltip="Click here or scroll down the page for more information"><i class="material-icons black-text">keyboard_arrow_down</i></a>
-
-
+					<a href="#us" class="waves-effect materialize-red lighten-2 btn waves-circle waves-light btn-floating pulse btn-large tooltipped" data-position="bottom" data-delay="50" data-tooltip="Click here or scroll down the page for more information"><i class="material-icons">keyboard_arrow_down</i></a>
 
 				</div>
+
+
+
+					<section id="us" class="col s12 center" itemscope itemtype="http://schema.org/WebPage">
+						<div class="row">
+							<header>
+								<h2 class="page-title"><?php the_field('main_header');?></h2>
+							</header> <!-- end article header -->
+
+							<div class="home-entry-content" itemprop="articleBody">
+							<p>
+								<?php the_field('main_text');?>
+							</p>
+							</div>
+							<?php $help = get_field('help', 'option');
+							if ($help) {?>
+								<div class="fixed-action-btn hide-on-med-and-down">
+						<a class="btn btn-large btn-floating" href="javascript:void(0);" onclick='javascript:introJs().setOption("overlayOpacity", 0.1).start();'><i class="material-icons">help</i></a>
+						</div>
+							<?php }?>
+
+						</div>
+
+
+
+
+					</section>
+
+
 			</div>
 
- <?php endwhile; endif; ?>
+
 			<?php
 			 if( have_rows('front_page_sections') ):
 

@@ -541,9 +541,7 @@ input.add-image.btn {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-#homeIntro {
-  margin-bottom: 8rem;
-}
+
 
 .article-header .searchandfilter, .resources-article-header .searchandfilter {
     width: 40%;
@@ -814,32 +812,45 @@ color: color("grey", "darken-2");
   }
 }
 
-body.home {
-    background-color: $primary-color; //#6e7d6d;
-    background-image: url("../images/swirl.png");
-    background-attachment: fixed;
-    #post-home {
-      color: white;
-    }
 
 
+#homeIntro {
+  height: calc(100vh - 64px);
+}
+
+#us {
+  padding: 8rem 2rem 7rem 2rem;
+   p:after {
+    content: ' ]';
+    color: color("materialize-red", "base");
+    font-weight: 900;
+  }
+   p:before {
+    content: '[ ';
+    color: color("materialize-red", "base");
+    font-weight: 900;
+  }
 }
 
 #post-home {
-  padding: 3rem 0;
-  p {
-    font-size: 1.5rem;
+  padding: 5rem 0 3rem 0;
+
+  #highlights {
+    background: rgba(255,255,255,.9);
+    padding: 0 1rem 1rem 1rem;
+    border-radius: 3px;
+    h1 {
+      font-size: $h3-fontsize;
+    }
+    .home-entry-content {
+      padding-bottom: 2rem;
+      p {
+        font-size: 1.5rem;
+      }
+    }
   }
-  p:after {
-    content: ' ]';
-    color: color("materialize-red", "lighten-2");
-    font-weight: 900;
-  }
-  p:before {
-    content: '[ ';
-    color: color("materialize-red", "lighten-2");
-    font-weight: 900;
-  }
+
+
 }
 
 

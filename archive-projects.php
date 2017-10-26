@@ -2,6 +2,7 @@
 get_header();
 $title = post_type_archive_title("", false);
 $slug = sanitize_title($title);
+$description = strtolower($title) . '_description';
 ?>
 <?php //get_template_part( 'parts/content', 'breadcrumbs' ); ?>
 
@@ -12,7 +13,10 @@ $slug = sanitize_title($title);
 			<h1 class="page-title light"><?php echo $title ?></h1>
 
 		</header>
-			<div id="parent-wrapper" class="no-padding col s12 purple">
+		<div class="col s12 entry-content">
+			<?php the_field( $description, 'option'); ?>
+		</div>
+			<div id="parent-wrapper" class="no-padding col s12">
 
 			<?php if (have_posts()) : while (have_posts()) : the_post();
 

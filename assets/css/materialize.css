@@ -3240,7 +3240,7 @@ em {
   font-style: italic; }
 
 strong {
-  font-weight: 400; }
+  font-weight: 600; }
 
 small {
   font-size: 75%; }
@@ -6866,9 +6866,6 @@ input.add-image.btn, input.add-image.btn-large {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-#homeIntro {
-  margin-bottom: 8rem; }
-
 .article-header .searchandfilter, .resources-article-header .searchandfilter {
   width: 40%;
   margin-left: 30%;
@@ -7056,25 +7053,32 @@ h6.card-sub-title {
   font-size: 1.35em;
   font-weight: 400; }
 
-body.home {
-  background-color: #616161;
-  background-image: url("../images/swirl.png");
-  background-attachment: fixed; }
-  body.home #post-home {
-    color: white; }
+#homeIntro {
+  height: calc(100vh - 64px); }
+
+#us {
+  padding: 8rem 2rem 7rem 2rem; }
+  #us p:after {
+    content: ' ]';
+    color: #e51c23;
+    font-weight: 900; }
+  #us p:before {
+    content: '[ ';
+    color: #e51c23;
+    font-weight: 900; }
 
 #post-home {
-  padding: 3rem 0; }
-  #post-home p {
-    font-size: 1.5rem; }
-  #post-home p:after {
-    content: ' ]';
-    color: #ee6e73;
-    font-weight: 900; }
-  #post-home p:before {
-    content: '[ ';
-    color: #ee6e73;
-    font-weight: 900; }
+  padding: 5rem 0 3rem 0; }
+  #post-home #highlights {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0 1rem 1rem 1rem;
+    border-radius: 3px; }
+    #post-home #highlights h1 {
+      font-size: 2.92rem; }
+    #post-home #highlights .home-entry-content {
+      padding-bottom: 2rem; }
+      #post-home #highlights .home-entry-content p {
+        font-size: 1.5rem; }
 
 .article-header p:after {
   content: ' ]';

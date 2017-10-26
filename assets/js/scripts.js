@@ -26,11 +26,7 @@ $(document).ready(function(){
 
 
   $('.modal').modal();
-  jQuery(window).scroll(function() {
-      var scroll = jQuery(window).scrollTop();
 
-
-});
 
 
 
@@ -85,19 +81,14 @@ Materialize.scrollFire(options);
 //     });
 
 // altered from above to prevent jumping in Microsoft Edge
-var scrollFrom = 0;
-var headerHeight = $("#main-nav").height();
-$('a[href*=#About]').click(function(e){
-    scrollFrom = $(window).scrollTop();
-});
 
-$(window).bind('hashchange',function(){
-    $(window).scrollTop(scrollFrom);
-    var target = '#' + location.hash.replace(/#/,'');
-    $('html,body').animate({
-        scrollTop: $(target).offset().top-headerHeight // modification
-    },1000);
-});
+$('body').on('click','a[href^="#"]',function(event){
+     event.preventDefault();
+     var target_offset = $(this.hash).offset() ? $(this.hash).offset().top : 0;
+     //change this number to create the additional off set
+     var customoffset = $("header").height();
+     $('html, body').animate({scrollTop:target_offset - customoffset}, 900);
+ });
 
 window.cookieconsent_options = {
        learnMore: 'More info',

@@ -2,6 +2,7 @@
 $title = post_type_archive_title("", false);
 $slug = sanitize_title($title);
 $term = wp_count_posts('resources');
+$description = strtolower($title) . '_description';
 ?>
 
 <main class="row">
@@ -40,7 +41,7 @@ $term = wp_count_posts('resources');
 
 							<?php echo $value->name . ' (' . $value->count . ')';?>
 
-					
+
 
 
 				</a>
