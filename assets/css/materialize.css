@@ -6961,6 +6961,11 @@ POSTS & CONTENT STYLES
   border-radius: 5%;
   border: 8px solid #26a69a; }
 
+.sub-pages h5 {
+  margin-top: 5rem; }
+.sub-pages p {
+  padding: 2rem; }
+
 .panorama-section p {
   padding: 2rem; }
 

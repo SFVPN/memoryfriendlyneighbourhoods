@@ -52,10 +52,58 @@
 
 </section> <!-- end article -->
 
+<?php $image = get_field('panorama_image');
+if( !empty($image) ):?>
+<section class="panorama-section">
+	<h5 class="center"><?php the_field('image_title');?></h5>
+	<p>
+		<?php the_field('image_description');?>
+	</p>
+	<div class="row" id="panorama">
+
+
+
+	<img class="responsive-img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+
 
 <?php
- if( have_rows('child_pages') ):
-echo '<aside id="child-wrapper" class="row purple">';
+ if( have_rows('marker_details') ):
+
+		while ( have_rows('marker_details') ) : the_row();?>
+
+		<span class="tooltipped" data-position="<?php the_sub_field('text_position'); ?>" data-delay="50" data-tooltip="<?php the_sub_field('marker_text'); ?>" style="position: absolute; left: <?php the_sub_field('left_position'); ?>%; top: <?php the_sub_field('top_position'); ?>%;"></span>
+
+
+	<?php
+	 endwhile;
+	 else :
+			 // no rows found
+	 endif;
+ ?>
+
+
+
+</div>
+
+</section>
+
+<?php endif; ?>
+
+<?php
+ if( have_rows('child_pages') ):?>
+<section class="sub-pages">
+<?php $sub_pages_title = get_field('sub_pages_title');
+if( ($sub_pages_title) ):?>
+	<h5 class="center"><?php echo $sub_pages_title;?></h5>
+<?php endif;?>
+<?php $sub_pages_desc = get_field('sub_pages_description');
+if( ($sub_pages_desc) ):?>
+<p><?php echo $sub_pages_desc;?></p>
+<?php endif;?>
+
+<aside id="child-wrapper" class="row purple">
+<?php
 		while ( have_rows('child_pages') ) : the_row();
 		$img = get_sub_field('subpage_image');
 		$section_title = get_sub_field('section_title');
@@ -74,7 +122,7 @@ echo '<aside id="child-wrapper" class="row purple">';
 
 	<?php
 	 endwhile;
-	 echo '</aside>';
+	 echo '</aside></section>';
 	 else :
 		 $children = get_pages('title_li=&child_of='.$post->ID.'&echo=0&sort_column=post_date&sort_order=desc');
 		if ($children) {
@@ -99,3 +147,4 @@ echo '<aside id="child-wrapper" class="row purple">';
 		</div>
 		</aside>';
 	}
+?>
