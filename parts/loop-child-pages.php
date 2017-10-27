@@ -55,13 +55,13 @@
 <?php $image = get_field('panorama_image');
 if( !empty($image) ):?>
 <section class="panorama-section">
-	<h5 class="center"><?php the_field('image_title');?></h5>
+	<h5 id="panorama-title" class="center"><?php the_field('image_title');?></h5>
 	<p>
 		<?php the_field('image_description');?>
 	</p>
 	<div class="row" id="panorama">
 
-
+"
 
 	<img class="responsive-img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
@@ -69,11 +69,23 @@ if( !empty($image) ):?>
 
 <?php
  if( have_rows('marker_details') ):
+$i = 0;
+		while ( have_rows('marker_details') ) : the_row();
+$i++;?>
 
-		while ( have_rows('marker_details') ) : the_row();?>
+<button data-target="modal-<?php echo $i;?>" class="btn-floating modal-trigger" style="background: rgba(0,0,0,.8); position: absolute; left: <?php the_sub_field('left_position'); ?>%; top: <?php the_sub_field('top_position'); ?>%;"><i class="material-icons">add</i></button>
 
-		<span class="tooltipped" data-position="<?php the_sub_field('text_position'); ?>" data-delay="50" data-tooltip="<?php the_sub_field('marker_text'); ?>" style="position: absolute; left: <?php the_sub_field('left_position'); ?>%; top: <?php the_sub_field('top_position'); ?>%;"></span>
+<div id="modal-<?php echo $i;?>" class="modal">
+		<div class="modal-content">
+			<p><?php the_sub_field('marker_text');?>
 
+			<a class="chip blue lighten-2 white-text" href="https://twitter.com/intent/tweet?url=<?php echo wp_get_shortlink(); ?>&via=<?php echo get_theme_mod( 'tcx_twitter_handle' );?>&text=<?php the_sub_field('marker_text');?>" aria-label="Click to share on Twitter" title="Share on Twitter" target="_blank">Share this on twitter</a>
+			</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#panorama" class="modal-action modal-close waves-effect btn-flat">Close</a>
+		</div>
+	</div>
 
 	<?php
 	 endwhile;

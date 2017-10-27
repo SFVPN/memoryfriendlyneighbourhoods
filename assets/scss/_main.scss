@@ -688,40 +688,6 @@ div#panorama {
 img {
   display: block;
 }
-
-span {
-display: block;
-background: rgba(255,0,0,.5);
-border-radius: 50%;
-width: 40px;
-height: 40px;
-z-index: 2;
-cursor: pointer;
-}
-
-a[data-title]:hover:after {
-  content: attr(data-title);
-  padding: 4px 8px;
-  color: #333;
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 130%;
-  z-index: 20;
-  white-space: nowrap;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow: 0px 0px 4px #222;
-  -webkit-box-shadow: 0px 0px 4px #222;
-  box-shadow: 0px 0px 4px #222;
-  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eeeeee),color-stop(1, #cccccc));
-  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
-}
 }
 
 .um-header {
