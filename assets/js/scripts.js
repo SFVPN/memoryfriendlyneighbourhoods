@@ -90,11 +90,7 @@ $('body').on('click','a[href^="#"]',function(event){
      $('html, body').animate({scrollTop:target_offset - customoffset}, 900);
  });
 
-window.cookieconsent_options = {
-       learnMore: 'More info',
-       theme: 'dark-bottom',
-       link: document.location.origin + '/privacy'
-   };
+
 
 
    var markers = document.querySelectorAll('input[type="radio"]'),

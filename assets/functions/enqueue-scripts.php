@@ -18,10 +18,20 @@ function site_scripts() {
     // Adding Materialize scripts file in the footer
   wp_enqueue_script( 'materialize-js', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js', array( 'jquery' ), '', true );
 
-  wp_enqueue_script( 'cookie-js', 'https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js', array(), '', true );
+  // Adding Cookie Consent scripts file in the footer
+    $cookies = get_field('information_collected', 'option');
 
+
+    $cookies_set = $cookies['cookies_set'];
+
+    if($cookies_set) {
+      wp_enqueue_script( 'cookie-js', '//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js', array(), '', true );
+      wp_enqueue_script( 'cookie-init-js', get_template_directory_uri() . '/assets/js/cookies.js', array( 'cookie-js' ), '', true );
+
+      wp_enqueue_style( 'slick-css', '//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css', array(), '', 'all' );
+    }
     // Adding scripts file in the footer
-    wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '', true );
+    //wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '', true );
 
     // Register main stylesheet
 

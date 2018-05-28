@@ -4,7 +4,7 @@
 
 <nav id="main-nav">
 
-		<?php get_template_part( 'parts/content', 'actions' ); ?>
+		<?php //get_template_part( 'parts/content', 'actions' ); ?>
 
 	<div class="nav-wrapper container"><img id="logo"
 		<?php

@@ -6568,51 +6568,8 @@ main {
   #body-large h1 {
     margin: .66em 1em 1em 1em; }
 
-#cookie-bar {
-  background: rgba(0, 0, 0, 0.8);
-  height: 2rem;
-  line-height: 2rem;
-  color: #eeeeee;
-  text-align: center;
-  padding: 3px 0; }
-  #cookie-bar.fixed {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%; }
-  #cookie-bar.fixed.bottom {
-    bottom: 0px;
-    top: auto; }
-
-#cookie-bar p {
-  margin: 0px;
-  padding: 0; }
-
-#cookie-bar a {
-  color: #ffffff;
-  display: inline-block;
-  border-radius: 3px;
-  text-decoration: none;
-  padding: 0 6px;
-  margin-left: 8px; }
-
-#cookie-bar .cb-enable {
-  background: #26a69a; }
-
-#cookie-bar .cb-enable:hover {
-  background: #26a69a; }
-
-#cookie-bar .cb-disable {
-  background: #26a69a; }
-
-#cookie-bar .cb-disable:hover {
-  background: #26a69a; }
-
-#cookie-bar .cb-policy {
-  background: #26a69a; }
-
-#cookie-bar .cb-policy:hover {
-  background: #26a69a; }
+.cc-revoke {
+  display: none !important; }
 
 /*********************
 LINK STYLES
