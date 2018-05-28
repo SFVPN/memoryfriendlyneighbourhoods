@@ -86,3 +86,57 @@ function charly_custom_admin_footer() {
 
 // adding it to the admin area
 add_filter('admin_footer_text', 'charly_custom_admin_footer');
+
+
+if (function_exists('acf_add_options_page')) {
+  acf_add_options_page(array(
+    'page_title' => 'SEO Details',
+    'menu_title' => 'SEO Details',
+    'menu_slug'  => 'seo-details',
+    'capability' => 'edit_posts',
+		'icon_url'   => 'dashicons-megaphone',
+    'redirect'   => false
+  ));
+
+	acf_add_options_page(array(
+	'page_title' 	=> 'Privacy + Cookies Settings',
+	'menu_title'	=> 'Privacy',
+	'menu_slug' 	=> 'privacy-settings',
+	'capability'	=> 'edit_posts',
+	'icon_url'   => 'dashicons-admin-network',
+	'redirect'		=> false
+));
+
+// acf_add_options_sub_page(array(
+// 	'page_title' 	=> 'Privacy + Cookies Settings',
+// 	'menu_title'	=> 'Privacy',
+// 	'parent_slug'	=> 'theme-general-settings',
+// ));
+
+}
+
+// add youtube-nocookie.com as a source for oembeds
+
+wp_embed_register_handler( 'ytnocookie', '#https?://www\.youtube\-nocookie\.com/embed/([a-z0-9\-_]+)#i', 'wp_embed_handler_ytnocookie' );
+ wp_embed_register_handler( 'ytnormal', '#https?://www\.youtube\.com/watch\?v=([a-z0-9\-_]+)#i', 'wp_embed_handler_ytnocookie' );
+ wp_embed_register_handler( 'ytnormal2', '#https?://www\.youtube\.com/watch\?feature=player_embedded&amp;v=([a-z0-9\-_]+)#i', 'wp_embed_handler_ytnocookie' );
+
+ function wp_embed_handler_ytnocookie( $matches, $attr, $url, $rawattr ) {
+   global $defaultoptions;
+   $defaultoptions['yt-content-width'] = '680';
+   $defaultoptions['yt-content-height'] = '510';
+   $defaultoptions['yt-norel'] = 1;
+   $relvideo = '';
+   if ($defaultoptions['yt-norel']==1) {
+       $relvideo = '?rel=0';
+   }
+   $embed = sprintf(
+     '<iframe src="https://www.youtube-nocookie.com/embed/%2$s%5$s" width="%3$spx" height="%4$spx" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe><p><a href="https://www.youtube.com/watch?v=%2$s" title="View video on YouTube">View video on YouTube</a></p>',
+      get_template_directory_uri(),
+      esc_attr($matches[1]),
+      $defaultoptions['yt-content-width'],
+      $defaultoptions['yt-content-height'],
+      $relvideo
+   );
+   return apply_filters( 'embed_ytnocookie', $embed, $matches, $attr, $url, $rawattr );
+ }
