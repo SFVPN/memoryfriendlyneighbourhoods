@@ -36,7 +36,7 @@ function site_scripts() {
     // Register main stylesheet
 
     // Register material icons stylesheet
-    wp_enqueue_style( 'material-icons', 'http://fonts.googleapis.com/icon?family=Material+Icons', array(), '', 'all' );
+    wp_enqueue_style( 'material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array(), '', 'all' );
 
 
     // Register Introjs stylesheet
