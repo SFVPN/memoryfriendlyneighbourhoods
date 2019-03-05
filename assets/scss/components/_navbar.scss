@@ -7,9 +7,9 @@ nav {
     }
   }
 
-  color: $navbar-font-color;
+  color: blue;
   @extend .z-depth-1;
-  background-color: $primary-color;
+  background-color: #fff;
   width: 100%;
   height: $navbar-height-mobile;
   line-height: $navbar-height-mobile;
@@ -104,7 +104,10 @@ nav {
       padding: 0;
 
       &.active {
-        background-color: rgba(0,0,0,.1);
+      
+      a {
+        text-decoration: underline;
+      }
       }
     }
     a {
@@ -122,7 +125,7 @@ nav {
       }
 
       &:hover {
-        background-color: rgba(0,0,0,.1);
+        background-color: color("grey", "lighten-4");
       }
     }
 

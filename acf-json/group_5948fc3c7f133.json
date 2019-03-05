@@ -1,0 +1,42 @@
+{
+    "key": "group_5948fc3c7f133",
+    "title": "Assign to MFN User",
+    "fields": [
+        {
+            "key": "field_539721d8bf4a2",
+            "label": "Participants",
+            "name": "participants",
+            "type": "user",
+            "instructions": "Please assign this to any relevant Memory Friendly Neighbourhoods user(s)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": "",
+            "allow_null": 0,
+            "multiple": true,
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "modified": 1551780845
+}

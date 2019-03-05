@@ -6,7 +6,7 @@
 
 
 
-				<?php //do_action('um_members_directory_search', $args ); ?>
+				<?php do_action('um_members_directory_search', $args ); ?>
 
 			<?php do_action('um_members_directory_head', $args ); ?>
 
@@ -19,7 +19,7 @@
 
 	<div id="search_network" class="um-form modal bottom-sheet">
 		<div class="modal-content">
-			<?php do_action('um_members_directory_search', $args ); ?>
+			<?php //do_action('um_members_directory_search', $args ); ?>
 		</div>
 
 

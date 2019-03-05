@@ -2,7 +2,7 @@
 	<div id="highlights" class="col s8 offset-s2">
 		<header class="home-header overlay" >
 
-			<h1 class="page-title"><?php the_field('highlights_header');?></h1>
+			<h1 class="page-title h3"><?php the_field('highlights_header');?></h1>
 		</header> <!-- end article header -->
 
 		<div class="home-entry-content" itemprop="articleBody">

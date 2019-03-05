@@ -7,28 +7,35 @@ get_header(); ?>
 
 
 	<main id="gettingSarted">
-			<div class="row center">
-				<div id="homeIntro" style="background: url(<?php the_field('highlights_image');?>) no-repeat; background-size: cover; background-position: center center;" class="col s12">
+			<div id="section-intro" class="row center">
+			<?php $highlights = get_field('highlights_header');
 
-							<?php get_template_part( 'parts/loop', 'page-home' ); ?>
+				if ($highlights) {
+					get_template_part( 'parts/loop', 'page-highlight' );
+				}
 
-					<a href="#us" class="waves-effect materialize-red lighten-2 btn waves-circle waves-light btn-floating pulse btn-large tooltipped" data-position="bottom" data-delay="50" data-tooltip="Click here or scroll down the page for more information"><i class="material-icons">keyboard_arrow_down</i></a>
+			?>
 
-				</div>
-
-
-
-					<section id="us" class="col s12 center" itemscope itemtype="http://schema.org/WebPage">
+					<section id="us" class="col s12 center" style="background: url(<?php the_field('main_image');?>) no-repeat; background-size: cover; background-position: center center;" itemscope itemtype="http://schema.org/WebPage">
 						<div class="row">
+							<div id="section-main" class="col s8 offset-s2">
+								<header class="home-header overlay" >
+
+									<h2 class="page-title h3"><?php the_field('main_header');?></h2>
+								</header> <!-- end article header -->
+
+								<div class="home-entry-content" itemprop="articleBody">
+								<p>
+									<?php the_field('main_text');?>
+								</p>
+								</div>
+
+							</div>
 							<header>
-								<h2 class="page-title"><?php the_field('main_header');?></h2>
+
 							</header> <!-- end article header -->
 
-							<div class="home-entry-content" itemprop="articleBody">
-							<p>
-								<?php the_field('main_text');?>
-							</p>
-							</div>
+
 							<?php $help = get_field('help', 'option');
 							if ($help) {?>
 								<div class="fixed-action-btn hide-on-med-and-down">
@@ -37,11 +44,17 @@ get_header(); ?>
 							<?php }?>
 
 						</div>
+						<?php if (!$highlights) {?>
+							<a href="#section-1" class="waves-effect materialize-red lighten-2 btn waves-circle waves-light btn-floating pulse btn-large tooltipped" data-position="bottom" data-delay="50" data-tooltip="Click here or scroll down the page for more information"><i class="material-icons">keyboard_arrow_down</i></a>
 
+						<?php }
 
+						?>
 
 
 					</section>
+
+
 
 
 			</div>
@@ -51,7 +64,7 @@ get_header(); ?>
 			 if( have_rows('front_page_sections') ):
 
 					while ( have_rows('front_page_sections') ) : the_row();?>
-					<div id="<?php the_sub_field('section_title'); ?>" class="row center" style="background: <?php the_sub_field('background_colour'); ?>;"  >
+					<div id="<?php echo "section-" . get_row_index();?>" class="row center" style="background: <?php the_sub_field('background_colour'); ?>;"  >
 						<div class="col s12 l8 push-l<?php the_sub_field('push_right'); ?>" style="color: <?php the_sub_field('text_colour'); ?>;">
 							<h4><?php the_sub_field('section_title'); ?></h4>
 								<?php the_sub_field('section_description'); ?>

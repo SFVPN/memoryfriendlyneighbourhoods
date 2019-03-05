@@ -1,58 +1,200 @@
+<div style="padding-top: 4rem;" class="um <?php echo $this->get_class( $mode ); ?> um-<?php echo esc_attr( $form_id ); ?> um-role-<?php echo um_user( 'role' ); ?> ">
 
-<div class="um <?php echo $this->get_class( $mode ); ?> um-<?php echo $form_id; ?> um-role-<?php echo um_user('role'); ?> " style="padding: 2rem;">
+	<div class="um-form">
 
-	<div class="um-form row">
+		<?php
+		/**
+		 * UM hook
+		 *
+		 * @type action
+		 * @title um_profile_before_header
+		 * @description Some actions before profile form header
+		 * @input_vars
+		 * [{"var":"$args","type":"array","desc":"Profile form shortcode arguments"}]
+		 * @change_log
+		 * ["Since: 2.0"]
+		 * @usage add_action( 'um_profile_before_header', 'function_name', 10, 1 );
+		 * @example
+		 * <?php
+		 * add_action( 'um_profile_before_header', 'my_profile_before_header', 10, 1 );
+		 * function my_profile_before_header( $args ) {
+		 *     // your code here
+		 * }
+		 * ?>
+		 */
+		do_action( 'um_profile_before_header', $args );
 
-		<?php do_action('um_profile_before_header', $args ); ?>
+		if ( um_is_on_edit_profile() ) { ?>
+			<form method="post" action="">
+		<?php }
 
-		<?php if ( um_is_on_edit_profile() ) { ?><form method="post" action=""><?php } ?>
+		/**
+		 * UM hook
+		 *
+		 * @type action
+		 * @title um_profile_header_cover_area
+		 * @description Profile header cover area
+		 * @input_vars
+		 * [{"var":"$args","type":"array","desc":"Profile form shortcode arguments"}]
+		 * @change_log
+		 * ["Since: 2.0"]
+		 * @usage add_action( 'um_profile_header_cover_area', 'function_name', 10, 1 );
+		 * @example
+		 * <?php
+		 * add_action( 'um_profile_header_cover_area', 'my_profile_header_cover_area', 10, 1 );
+		 * function my_profile_header_cover_area( $args ) {
+		 *     // your code here
+		 * }
+		 * ?>
+		 */
+		do_action( 'um_profile_header_cover_area', $args );
 
-			<?php do_action('um_profile_header_cover_area', $args ); ?>
+		/**
+		 * UM hook
+		 *
+		 * @type action
+		 * @title um_profile_header
+		 * @description Profile header area
+		 * @input_vars
+		 * [{"var":"$args","type":"array","desc":"Profile form shortcode arguments"}]
+		 * @change_log
+		 * ["Since: 2.0"]
+		 * @usage add_action( 'um_profile_header', 'function_name', 10, 1 );
+		 * @example
+		 * <?php
+		 * add_action( 'um_profile_header', 'my_profile_header', 10, 1 );
+		 * function my_profile_header( $args ) {
+		 *     // your code here
+		 * }
+		 * ?>
+		 */
+		do_action( 'um_profile_header', $args );
 
-			<?php do_action('um_profile_header', $args ); ?>
+		/**
+		 * UM hook
+		 *
+		 * @type filter
+		 * @title um_profile_navbar_classes
+		 * @description Additional classes for profile navbar
+		 * @input_vars
+		 * [{"var":"$classes","type":"string","desc":"UM Posts Tab query"}]
+		 * @change_log
+		 * ["Since: 2.0"]
+		 * @usage
+		 * <?php add_filter( 'um_profile_navbar_classes', 'function_name', 10, 1 ); ?>
+		 * @example
+		 * <?php
+		 * add_filter( 'um_profile_navbar_classes', 'my_profile_navbar_classes', 10, 1 );
+		 * function my_profile_navbar_classes( $classes ) {
+		 *     // your code here
+		 *     return $classes;
+		 * }
+		 * ?>
+		 */
+		$classes = apply_filters( 'um_profile_navbar_classes', '' ); ?>
 
-			<?php //do_action('um_profile_navbar', $args ); ?>
-
+		<div class="um-profile-navbar <?php echo $classes ?>">
 			<?php
-			$skills = um_user('expertise');
-			$country = um_user('country');
-			$work = um_user('work');
-			$show_email = um_user('show_email_true');
-			$show_email = implode(', ', $show_email);
-			$website = um_user('your_website');
+			/**
+			 * UM hook
+			 *
+			 * @type action
+			 * @title um_profile_navbar
+			 * @description Profile navigation bar
+			 * @input_vars
+			 * [{"var":"$args","type":"array","desc":"Profile form shortcode arguments"}]
+			 * @change_log
+			 * ["Since: 2.0"]
+			 * @usage add_action( 'um_profile_navbar', 'function_name', 10, 1 );
+			 * @example
+			 * <?php
+			 * add_action( 'um_profile_navbar', 'my_profile_navbar', 10, 1 );
+			 * function my_profile_navbar( $args ) {
+			 *     // your code here
+			 * }
+			 * ?>
+			 */
+			do_action( 'um_profile_navbar', $args ); ?>
+			<div class="um-clear"></div>
+		</div>
+
+		<?php
+		/**
+		 * UM hook
+		 *
+		 * @type action
+		 * @title um_profile_menu
+		 * @description Profile menu
+		 * @input_vars
+		 * [{"var":"$args","type":"array","desc":"Profile form shortcode arguments"}]
+		 * @change_log
+		 * ["Since: 2.0"]
+		 * @usage add_action( 'um_profile_menu', 'function_name', 10, 1 );
+		 * @example
+		 * <?php
+		 * add_action( 'um_profile_menu', 'my_profile_navbar', 10, 1 );
+		 * function my_profile_navbar( $args ) {
+		 *     // your code here
+		 * }
+		 * ?>
+		 */
+		do_action( 'um_profile_menu', $args );
+
+		$nav = UM()->profile()->active_tab;
+		$subnav = ( get_query_var('subnav') ) ? get_query_var('subnav') : 'default';
+
+		print "<div class='um-profile-body $nav $nav-$subnav'>";
+
+			// Custom hook to display tabbed content
+		/**
+		 * UM hook
+		 *
+		 * @type action
+		 * @title um_profile_content_{$nav}
+		 * @description Custom hook to display tabbed content
+		 * @input_vars
+		 * [{"var":"$args","type":"array","desc":"Profile form shortcode arguments"}]
+		 * @change_log
+		 * ["Since: 2.0"]
+		 * @usage add_action( 'um_profile_content_{$nav}', 'function_name', 10, 1 );
+		 * @example
+		 * <?php
+		 * add_action( 'um_profile_content_{$nav}', 'my_profile_content', 10, 1 );
+		 * function my_profile_content( $args ) {
+		 *     // your code here
+		 * }
+		 * ?>
+		 */
+		do_action("um_profile_content_{$nav}", $args);
+
+		/**
+		 * UM hook
+		 *
+		 * @type action
+		 * @title um_profile_content_{$nav}_{$subnav}
+		 * @description Custom hook to display tabbed content
+		 * @input_vars
+		 * [{"var":"$args","type":"array","desc":"Profile form shortcode arguments"}]
+		 * @change_log
+		 * ["Since: 2.0"]
+		 * @usage add_action( 'um_profile_content_{$nav}_{$subnav}', 'function_name', 10, 1 );
+		 * @example
+		 * <?php
+		 * add_action( 'um_profile_content_{$nav}_{$subnav}', 'my_profile_content', 10, 1 );
+		 * function my_profile_content( $args ) {
+		 *     // your code here
+		 * }
+		 * ?>
+		 */
+		do_action( "um_profile_content_{$nav}_{$subnav}", $args );
+
+		print "<div class=\"clear\"></div></div>";
+
+		if ( um_is_on_edit_profile() ) { ?>
+			</form>
+		<?php }
 
 
-
-				if($skills) {
-					echo '<p class="grey-text center"><span class="profile-interest">Areas of interest: </span>';
-					foreach ($skills as $skill) {
-					echo ' <span><i class="tiny material-icons">check</i> ' . $skill . '</span>';
-				}
-					echo '</p>';
-	 		}
-		 if($show_email == "Yes"){
-				echo '<p class="center"><a class="btn-flat waves-effect grey lighten-4 tooltipped" href="mailto:' . um_user('user_email') . '" data-position="right" data-delay="50" data-tooltip="This will open up a new email message" target="_blank"><i class="material-icons left">email</i>Email ' . um_user("first_name") . '</a></p>'; // returns the email of logged-in user
-		 }
-				$nav = $ultimatemember->profile->active_tab;
-				$subnav = ( get_query_var('subnav') ) ? get_query_var('subnav') : 'default';
-
-				print "<div class='um-profile-body $nav $nav-$subnav'><p>";
-				echo um_user('description');
-
-				// Custom hook to display tabbed content
-				do_action("um_profile_content_{$nav}", $args);
-				do_action("um_profile_content_{$nav}_{$subnav}", $args);
-
-				if($website && !um_is_on_edit_profile()){
-					echo '<p class=""><a class="tooltipped btn" href="' . $website . '" data-position="right" data-delay="20" data-tooltip="This will open up an external website" target="_blank">Read more about ' . um_user("first_name") . '</a></p>'; // returns the email of logged-in user
-			 }
-
-			print "</p></div>";
-
-			?>
-
-		<?php if ( um_is_on_edit_profile() ) { ?></form><?php } ?>
-
-
-
+		do_action( 'um_profile_footer', $args ); ?>
 	</div>
+</div>

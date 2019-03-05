@@ -585,15 +585,15 @@ POSTS & CONTENT STYLES
   z-index: 1000;
 }
 
-#About, #Register, #Resources, #Network {
+#About, #section-1, #section-2, #section-3 {
   opacity: 0;
 }
 
-.our-networks.row, #child-wrapper.row {
+.our-networks.row {
   margin-bottom: 0 !important;
 }
 
-#About, #Register, #Resources, #Network, .network-home-sections, .child-pages-sections {
+#About, #section-1, #section-2, #section-3, .network-home-sections {
   margin-bottom: 0px !important;
   padding: 2rem 0 !important;
   p {
@@ -617,9 +617,34 @@ POSTS & CONTENT STYLES
   }
 }
 
-.child-pages-sections {
+#child-wrapper {
+  padding-bottom: 2rem;
+  .s10 {
+    border: 1px solid color("grey", "lighten-3");
+    border-radius: 3px;
+    min-height: 290px
+  }
+}
+
+ .child-pages-sections {
+  margin-bottom: 2rem;
+  p {
+    font-size: 1.85rem;
+    font-weight: 200;
+    @media #{$small-and-down} {
+      font-size: 1.25em;
+    }
+
+  }
   img {
-    margin-bottom: 2rem;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 1rem 0;
+  }
+  .btn {
+    border-width: 1px;
+    border-style: solid;
   }
 }
 
@@ -821,16 +846,18 @@ color: color("grey", "darken-2");
 
 #us {
   padding: 8rem 2rem 7rem 2rem;
-   p:after {
-    content: ' ]';
-    color: color("materialize-red", "base");
-    font-weight: 900;
+  #section-main {
+    background: rgba(255,255,255,.9);
+    padding: 0 1rem 1rem 1rem;
+    border-radius: 3px;
+    .home-entry-content {
+      padding-bottom: 2rem;
+      p {
+        font-size: 1.5rem;
+      }
+    }
   }
-   p:before {
-    content: '[ ';
-    color: color("materialize-red", "base");
-    font-weight: 900;
-  }
+
 }
 
 #post-home {
@@ -927,7 +954,7 @@ color: color("grey", "darken-2");
 
 
 
-.home #gettingStarted {
+.home #gettingStarted, #section-intro {
   margin-bottom: 0em;
 }
 
@@ -964,12 +991,20 @@ article section {
   }
 }
 
-.article-header, .register-article-header, .programmes-article-header {
-  background: #232526;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-color: white;
-padding: 0 !important;
+.single-programmes .article-header {
+  position: relative;
+  h1 {
+    padding: 4rem 0 5rem 0;
+  }
+  span#excerpt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
 }
 
 .single-article-header {
@@ -1144,6 +1179,7 @@ h6.card-sub-title {
   animation: show 1s 1;
   padding: 3rem;
   background: white;
+  font-size: 1.25rem;
   img.hide-on-large-only {
     margin-top: 2rem;
   }
@@ -1684,7 +1720,7 @@ FOOTER STYLES
 
 .page-footer {
   background: $footer-bg-color;
-  @extend .white-text;
+  @extend .teal-text;
   font-weight: 400;
   ul {
     font-size: 0; // this removes white space between li children for application of side borders. Margin needs to reapplied hence...
@@ -1699,7 +1735,7 @@ FOOTER STYLES
       padding: 5px 0;
     }
     a {
-      @extend .white-text;
+      @extend .teal-text;
       .mdi {
         border-radius: 50%;
         width: 1.75em;
@@ -1735,7 +1771,7 @@ FOOTER STYLES
         height: 12px;
     }
     a {
-      @extend .white-text;
+      @extend .teal-text;
       border-bottom: 1px dotted;
     }
   }

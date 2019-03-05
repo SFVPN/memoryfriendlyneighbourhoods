@@ -1,11 +1,23 @@
+
+<?php $backgroundImage = get_the_post_thumbnail_url(get_the_ID(),'full');?>
 <section class="<?php echo $post->post_name;?> row" itemscope itemtype="http://schema.org/WebPage">
-	<header class="<?php echo $post->post_name;?> article-header col s12 center">
+	<header class="<?php echo $post->post_name;?> article-header col s12 center grey lighten-3"
+	<?php if ($backgroundImage) {?>
+		style="background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'full')?>) no-repeat; background-size: cover;"
+	<?php } ?>
+	>
 
 
 		<h1 class="page-title"><?php the_title(); ?></h1>
-			<span id="excerpt"><?php the_excerpt(); ?></span>
+		<?php $byline = get_field("byline");
+		if ($byline) {?>
+			<span id="excerpt" class="teal white-text"><?php echo $byline; ?></span>
+		<?php } ?>
 
-		<? //var_dump($post);?>
+		<?php $register = get_field("network_registration");
+		if ($register) {?>
+			<div id="excerpt" class="fixed-action-btn"><a class="btn-flat red white-text" href="<?php echo get_field("network_registration"); ?>">Join</a></div>
+		<?php } ?>
 
 
 	</header> <!-- end article header -->
@@ -14,6 +26,7 @@
 
 
     <div class="entry-content col s12" itemprop="articleBody">
+			<div class="container">
 	    <?php the_content();
 
 			$video_alert_text = get_field('video_heading');
@@ -43,7 +56,7 @@
  		  	 echo '</div>';
  		  	 endif;
  		   ?>
-
+		 </div>
 	</div> <!-- end article section -->
 
 
@@ -114,21 +127,23 @@ if( ($sub_pages_desc) ):?>
 <p><?php echo $sub_pages_desc;?></p>
 <?php endif;?>
 
-<aside id="child-wrapper" class="row purple">
+<aside id="child-wrapper" class="row">
 <?php
 		while ( have_rows('child_pages') ) : the_row();
 		$img = get_sub_field('subpage_image');
 		$section_title = get_sub_field('section_title');
 		?>
-		<div id="<?php echo $section_title; ?>" class="col s12 l6 child-pages-sections center" style="background: <?php the_sub_field('background_colour'); ?>;"  >
+		<div id="<?php echo $section_title; ?>" class="col s12 l4 child-pages-sections center"  >
+			<div class="col s10 offset-s1" style="padding: 1rem; background: <?php the_sub_field('background_colour'); ?>; ">
 			<div class="" style="color: <?php the_sub_field('text_colour'); ?>;">
-				<h4><?php the_sub_field('section_title'); ?></h4>
+				<h2 class="h5"><?php the_sub_field('section_title'); ?></h4>
 
 					<img src="<?php echo $img; ?>" alt="<?php echo $section_title; ?> representative image">
 			</div>
 			<div class="col s12">
-				<a class="btn-large transparent z-depth-0 waves-effect" style="color: <?php the_sub_field('text_colour'); ?>;" href="<?php the_sub_field('page_link'); ?>"><?php the_sub_field('button_text'); ?></a>
+				<a class="btn transparent z-depth-0 waves-effect" style="color: <?php the_sub_field('text_colour'); ?>;" href="<?php the_sub_field('page_link'); ?>"><?php the_sub_field('button_text'); ?></a>
 			</div>
+		</div>
 
 		</div>
 

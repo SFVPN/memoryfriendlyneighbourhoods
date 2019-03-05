@@ -34,9 +34,9 @@ $(document).ready(function(){
 
 var options = [
     {selector: '#About', offset: 0, callback: 'Materialize.fadeInImage("#About")' },
-    {selector: '#Register', offset: 0, callback: 'Materialize.fadeInImage("#Register")' },
-    {selector: '#Network', offset: 0, callback: 'Materialize.fadeInImage("#Network")' },
-    {selector: '#Resources', offset: 0, callback: 'Materialize.fadeInImage("#Resources")' }
+    {selector: '#section-1', offset: 0, callback: 'Materialize.fadeInImage("#section-1")' },
+    {selector: '#section-2', offset: 0, callback: 'Materialize.fadeInImage("#section-2")' },
+    {selector: '#section-3', offset: 0, callback: 'Materialize.fadeInImage("#section-3")' }
 ];
 Materialize.scrollFire(options);
 
