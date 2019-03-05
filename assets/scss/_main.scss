@@ -993,16 +993,14 @@ article section {
 
 .single-programmes .article-header {
   position: relative;
-  h1 {
-    padding: 4rem 0 5rem 0;
-  }
+  padding: 3rem 2rem 4rem 2rem;
   span#excerpt {
-    position: absolute;
+    position:absolute;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 300;
 }
 }

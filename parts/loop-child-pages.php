@@ -3,7 +3,12 @@
 <section class="<?php echo $post->post_name;?> row" itemscope itemtype="http://schema.org/WebPage">
 	<header class="<?php echo $post->post_name;?> article-header col s12 center grey lighten-3"
 	<?php if ($backgroundImage) {?>
-		style="background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'full')?>) no-repeat; background-size: cover;"
+		style="background:
+		  linear-gradient(
+      rgba(255, 255, 255, 0.65),
+      rgba(255, 255, 255, 0.65)
+    ),
+		url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'full')?>) no-repeat; background-size: cover;"
 	<?php } ?>
 	>
 
@@ -13,6 +18,8 @@
 		if ($byline) {?>
 			<span id="excerpt" class="teal white-text"><?php echo $byline; ?></span>
 		<?php } ?>
+
+
 
 		<?php $register = get_field("network_registration");
 		if ($register) {?>
