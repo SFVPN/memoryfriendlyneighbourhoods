@@ -22,6 +22,49 @@
             "maxlength": ""
         },
         {
+            "key": "field_5c80e054b8f5e",
+            "label": "Elevator Pitch",
+            "name": "elevator_pitch",
+            "type": "textarea",
+            "instructions": "Use this content field if you want a short, prominent statement to appear on the page (rather than the content you would see on a normal page - use the main text field below for that). Do NOT use the two together.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 5,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5c80e9794c6fe",
+            "label": "Elevator Image",
+            "name": "elevator_image",
+            "type": "image",
+            "instructions": "Use this image field if you want an image to accompany you elevator pitch.  This image is centred and sized 120px x 120px so make sure whatever you upload is a square format",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5c7e7bb2c273b",
             "label": "Network Registration Link",
             "name": "network_registration",
@@ -60,5 +103,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1551793111
+    "modified": 1551952362
 }

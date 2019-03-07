@@ -1002,6 +1002,9 @@ article section {
     padding: 1rem;
     font-size: 1.25rem;
     font-weight: 300;
+    @media #{$medium-and-down} {
+      font-size: .95rem;
+    }
 }
 }
 
@@ -1013,6 +1016,10 @@ article section {
     padding: 3rem 0;
 }
 
+.elevator_pitch {
+  font-size: 1.85rem;
+  font-weight: 300;
+}
 
 .resources-article-header {
 background: color("amber", "base");  /* fallback for old browsers */
@@ -1718,7 +1725,7 @@ FOOTER STYLES
 
 .page-footer {
   background: $footer-bg-color;
-  @extend .teal-text;
+  @extend .indigo-text;
   font-weight: 400;
   ul {
     font-size: 0; // this removes white space between li children for application of side borders. Margin needs to reapplied hence...
@@ -1733,7 +1740,7 @@ FOOTER STYLES
       padding: 5px 0;
     }
     a {
-      @extend .teal-text;
+      @extend .indigo-text;
       .mdi {
         border-radius: 50%;
         width: 1.75em;
@@ -1769,7 +1776,7 @@ FOOTER STYLES
         height: 12px;
     }
     a {
-      @extend .teal-text;
+      @extend .indigo-text;
       border-bottom: 1px dotted;
     }
   }

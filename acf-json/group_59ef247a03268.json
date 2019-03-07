@@ -7,7 +7,7 @@
             "label": "Add Useful Links",
             "name": "add_useful_links",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "Enable this switch to add a block of useful links to your page.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -130,7 +130,7 @@
             "label": "Add Video",
             "name": "add_video",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "Enable this switch to embed a video on the page.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -194,255 +194,6 @@
             },
             "width": "",
             "height": ""
-        },
-        {
-            "key": "field_59f1cf396ded2",
-            "label": "Add Panorama Image",
-            "name": "panorama_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_59f1cf6c6ded3",
-            "label": "Panorama Image Title",
-            "name": "image_title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_59f1df56a7912",
-            "label": "Panorama Image Description",
-            "name": "image_description",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_59f1cf906ded4",
-            "label": "Panorama Marker Details",
-            "name": "marker_details",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "row",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_59f1cfa66ded5",
-                    "label": "Top Position",
-                    "name": "\n\t\t\t\ttop_position\t\t",
-                    "type": "text",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "0": false,
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_59f1cfa66ded5",
-                    "label": "Top Position",
-                    "name": "top_position",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_59f1cfba6ded6",
-                    "label": "Left Position",
-                    "name": "\n\t\t\t\tleft_position\t\t",
-                    "type": "text",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "0": false,
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_59f1cfba6ded6",
-                    "label": "Left Position",
-                    "name": "left_position",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_59f1cfd76ded7",
-                    "label": "Text to show on click",
-                    "name": "\n\t\t\t\tmarker_text\t\t",
-                    "type": "text",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "0": false,
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_59f1cfd76ded7",
-                    "label": "Text to show on click",
-                    "name": "marker_text",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "br"
-                },
-                {
-                    "key": "field_59f1fd9eb7444",
-                    "label": "Tooltip Position",
-                    "name": "\n\t\t\t\ttext_position\t\t",
-                    "type": "text",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "0": false,
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_59f1fd9eb7444",
-                    "label": "Tooltip Position",
-                    "name": "text_position",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "bottom": "bottom",
-                        "left": "left",
-                        "right": "right",
-                        "top": "top"
-                    },
-                    "default_value": [
-                        "bottom"
-                    ],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "return_format": "value",
-                    "placeholder": ""
-                }
-            ]
         }
     ],
     "location": [
@@ -479,5 +230,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1551790692
+    "modified": 1551950060
 }

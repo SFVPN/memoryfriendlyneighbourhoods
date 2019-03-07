@@ -1,6 +1,6 @@
 <?php //if(  has_term( 'writing', 'category' ) ) { - this will be to output different styles depending on whether a video etc is being shown ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('grey-text row text-darken-4 card z-depth-0'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('row card z-depth-0'); ?>>
 
 
 		<?php if( strtotime( $post->post_date ) > strtotime('-8 day') ) {
@@ -59,14 +59,14 @@
 
 
 			</div>
-			<div class="col s12 info grey-text darken-4">
+			<div class="col s12 info">
 				<?php the_excerpt();?>
 			</div>
 			<?php
 
 // check if the repeater field has rows of data
 if( have_rows('attachments') ):
-echo '<div class="col s12 info grey-text darken-4">';
+echo '<div class="col s12 info">';
  	// loop through the rows of data
     while ( have_rows('attachments') ) : the_row();
 			$file = get_sub_field('file');
@@ -86,7 +86,7 @@ else :
 endif;
 
 if( have_rows('external_file') ):
-echo '<div class="col s12 info grey-text darken-4">';
+echo '<div class="col s12 info">';
  	// loop through the rows of data
     while ( have_rows('external_file') ) : the_row();
 			$fileLink = get_sub_field('file_link');
@@ -113,17 +113,17 @@ endif;
 			if ( in_category( 'writing' )) {
 			?>
 
-			<a href="<?php the_permalink();?>" class="btn-flat amber">View this link</a>
+			<a href="<?php the_permalink();?>" class="btn-flat indigo white-text">View this link</a>
 
 			<?php } elseif ( in_category( 'videos') ) {
 			?>
 
-			<a href="<?php the_permalink();?>" class="btn-flat amber"><i class="material-icons left">videocam</i>View this video</a>
+			<a href="<?php the_permalink();?>" class="btn-flat indigo white-text"><i class="material-icons left">videocam</i>View this video</a>
 
 			<?php } else {
 			?>
 
-			<a href="<?php the_permalink();?>" class="btn-flat amber"><i class="material-icons left">assignment</i>View this resource </a>
+			<a href="<?php the_permalink();?>" class="btn-flat indigo white-text"><i class="material-icons left">assignment</i>View this resource </a>
 
 			<?php }
 			?>

@@ -26,7 +26,7 @@ $description = strtolower($title) . '_description';
 
 			?>
 
-		<div class="center col s12" style="">
+		<!-- <div class="center col s12" style="">
 
 				<?php
 				$res_categories = get_terms( array('taxonomy' => 'resource-category','hide_empty' => false,) );
@@ -50,7 +50,7 @@ $description = strtolower($title) . '_description';
 			<?php }
 			?>
 
-		</div>
+		</div> -->
 
 </header> <!-- end article header -->
 <section id="About-<?php echo $slug;?>" class="archive-container col s12">
