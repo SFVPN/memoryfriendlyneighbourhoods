@@ -232,6 +232,13 @@
                 "operator": "==",
                 "value": "parent"
             }
+        ],
+        [
+            {
+                "param": "user_role",
+                "operator": "==",
+                "value": "administrator"
+            }
         ]
     ],
     "menu_order": 0,
@@ -254,5 +261,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1551781075
+    "modified": 1556707205
 }

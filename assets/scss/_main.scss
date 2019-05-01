@@ -1725,7 +1725,6 @@ FOOTER STYLES
 
 .page-footer {
   background: $footer-bg-color;
-  @extend .indigo-text;
   font-weight: 400;
   ul {
     font-size: 0; // this removes white space between li children for application of side borders. Margin needs to reapplied hence...

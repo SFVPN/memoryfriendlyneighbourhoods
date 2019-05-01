@@ -397,85 +397,85 @@
 .indigo {
   background-color: #3f51b5 !important; }
 
-.indigo-text, .page-footer, .page-footer li a, .page-footer .copyright a {
+.indigo-text, .page-footer li a, .page-footer .copyright a {
   color: #3f51b5 !important; }
 
 .indigo.lighten-5 {
   background-color: #e8eaf6 !important; }
 
-.indigo-text.text-lighten-5, .text-lighten-5.page-footer, .page-footer li a.text-lighten-5, .page-footer .copyright a.text-lighten-5 {
+.indigo-text.text-lighten-5, .page-footer li a.text-lighten-5, .page-footer .copyright a.text-lighten-5 {
   color: #e8eaf6 !important; }
 
 .indigo.lighten-4 {
   background-color: #c5cae9 !important; }
 
-.indigo-text.text-lighten-4, .text-lighten-4.page-footer, .page-footer li a.text-lighten-4, .page-footer .copyright a.text-lighten-4 {
+.indigo-text.text-lighten-4, .page-footer li a.text-lighten-4, .page-footer .copyright a.text-lighten-4 {
   color: #c5cae9 !important; }
 
 .indigo.lighten-3 {
   background-color: #9fa8da !important; }
 
-.indigo-text.text-lighten-3, .text-lighten-3.page-footer, .page-footer li a.text-lighten-3, .page-footer .copyright a.text-lighten-3 {
+.indigo-text.text-lighten-3, .page-footer li a.text-lighten-3, .page-footer .copyright a.text-lighten-3 {
   color: #9fa8da !important; }
 
 .indigo.lighten-2 {
   background-color: #7986cb !important; }
 
-.indigo-text.text-lighten-2, .text-lighten-2.page-footer, .page-footer li a.text-lighten-2, .page-footer .copyright a.text-lighten-2 {
+.indigo-text.text-lighten-2, .page-footer li a.text-lighten-2, .page-footer .copyright a.text-lighten-2 {
   color: #7986cb !important; }
 
 .indigo.lighten-1, a.indigo.dropdown-button.active {
   background-color: #5c6bc0 !important; }
 
-.indigo-text.text-lighten-1, .text-lighten-1.page-footer, .page-footer li a.text-lighten-1, .page-footer .copyright a.text-lighten-1 {
+.indigo-text.text-lighten-1, .page-footer li a.text-lighten-1, .page-footer .copyright a.text-lighten-1 {
   color: #5c6bc0 !important; }
 
 .indigo.darken-1 {
   background-color: #3949ab !important; }
 
-.indigo-text.text-darken-1, .text-darken-1.page-footer, .page-footer li a.text-darken-1, .page-footer .copyright a.text-darken-1 {
+.indigo-text.text-darken-1, .page-footer li a.text-darken-1, .page-footer .copyright a.text-darken-1 {
   color: #3949ab !important; }
 
 .indigo.darken-2 {
   background-color: #303f9f !important; }
 
-.indigo-text.text-darken-2, .text-darken-2.page-footer, .page-footer li a.text-darken-2, .page-footer .copyright a.text-darken-2 {
+.indigo-text.text-darken-2, .page-footer li a.text-darken-2, .page-footer .copyright a.text-darken-2 {
   color: #303f9f !important; }
 
 .indigo.darken-3 {
   background-color: #283593 !important; }
 
-.indigo-text.text-darken-3, .text-darken-3.page-footer, .page-footer li a.text-darken-3, .page-footer .copyright a.text-darken-3 {
+.indigo-text.text-darken-3, .page-footer li a.text-darken-3, .page-footer .copyright a.text-darken-3 {
   color: #283593 !important; }
 
 .indigo.darken-4 {
   background-color: #1a237e !important; }
 
-.indigo-text.text-darken-4, .text-darken-4.page-footer, .page-footer li a.text-darken-4, .page-footer .copyright a.text-darken-4 {
+.indigo-text.text-darken-4, .page-footer li a.text-darken-4, .page-footer .copyright a.text-darken-4 {
   color: #1a237e !important; }
 
 .indigo.accent-1 {
   background-color: #8c9eff !important; }
 
-.indigo-text.text-accent-1, .text-accent-1.page-footer, .page-footer li a.text-accent-1, .page-footer .copyright a.text-accent-1 {
+.indigo-text.text-accent-1, .page-footer li a.text-accent-1, .page-footer .copyright a.text-accent-1 {
   color: #8c9eff !important; }
 
 .indigo.accent-2 {
   background-color: #536dfe !important; }
 
-.indigo-text.text-accent-2, .text-accent-2.page-footer, .page-footer li a.text-accent-2, .page-footer .copyright a.text-accent-2 {
+.indigo-text.text-accent-2, .page-footer li a.text-accent-2, .page-footer .copyright a.text-accent-2 {
   color: #536dfe !important; }
 
 .indigo.accent-3 {
   background-color: #3d5afe !important; }
 
-.indigo-text.text-accent-3, .text-accent-3.page-footer, .page-footer li a.text-accent-3, .page-footer .copyright a.text-accent-3 {
+.indigo-text.text-accent-3, .page-footer li a.text-accent-3, .page-footer .copyright a.text-accent-3 {
   color: #3d5afe !important; }
 
 .indigo.accent-4 {
   background-color: #304ffe !important; }
 
-.indigo-text.text-accent-4, .text-accent-4.page-footer, .page-footer li a.text-accent-4, .page-footer .copyright a.text-accent-4 {
+.indigo-text.text-accent-4, .page-footer li a.text-accent-4, .page-footer .copyright a.text-accent-4 {
   color: #304ffe !important; }
 
 .blue {

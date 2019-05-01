@@ -92,6 +92,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "programmes"
+            },
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "top_level"
             }
         ]
     ],
@@ -103,5 +108,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1551952362
+    "modified": 1556705840
 }

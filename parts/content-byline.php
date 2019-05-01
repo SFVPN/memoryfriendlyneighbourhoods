@@ -6,11 +6,12 @@
 	$authors = get_field('participants');
 	if ($authors){
 				echo ' - <i class="mdi mdi-account-multiple tooltipped" data-position="below" data-delay="50" data-tooltip="This resource was posted by the following"></i> ';
-	}
+
 	foreach ($authors as $author){
 		$fn =  $author['user_firstname'];
 		$ln = $author['user_lastname'];
 		echo '<span aria-label="Author name"><a href="/profile/' . strtolower($fn) . '-' . strtolower($ln) . '">' . $fn . ' ' . $ln . ', </a></span>';
+	}
 	}
 	?>
 

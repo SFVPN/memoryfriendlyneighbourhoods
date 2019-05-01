@@ -1,6 +1,6 @@
 
 
-		<footer id="contact" class="page-footer center">
+		<footer id="contact" class="page-footer center text-grey darken-3">
 			<?php if (is_front_page()) {
 			echo '<div id="logos" class="row white center" role="banner">
 			<img class="responsive-img" alt="banner showing the logos of institutions participating in the Memory-Friendly Neighbourhoods project" src="http://memoryfriendly.org.uk/wp-content/uploads/2014/04/MFN-website-logo-banner.jpg" />
@@ -8,7 +8,7 @@
 		}?>
 			<div id="inner-footer" class="container">
 				<p>Contact Us</p>
-				
+
 				<ul class="col s12 l12">
 					<?php
 					$email_contact = get_theme_mod('tcx_email_contact');
