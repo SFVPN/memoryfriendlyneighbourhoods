@@ -29,11 +29,13 @@ get_header(); ?>
 			<?php
 $programme_blog = get_pages( array( 'child_of' => $post->ID, 'post_type' => 'programmes', 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
 
+if ($programme_blog) {
+
 foreach( $programme_blog as $page ) {
 
 
 ?>
-    <div class="col s12" style="padding: 2rem 0;">
+    <article class="col s12 programme-blog">
 			<h2 class="h5"><a href="<?php echo get_permalink( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
 			<div id="byline" class="grey-text" role="contentinfo">
 				<i class="mdi mdi-clock" aria-hidden="true"></i> Posted on
@@ -54,10 +56,14 @@ foreach( $programme_blog as $page ) {
 
 			?>
 			<hr style="color: whitesmoke;" />
-		</div>
+		</article>
 
 <?php
     }
+
+	} else {
+	echo	'<div class="col s12 programme-blog">We are reguarly adding content. Please check again soon.</div>';
+	}
 ?>
 </div>
 

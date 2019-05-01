@@ -7156,6 +7156,9 @@ footer.card-content {
   article section {
     padding: .5em 0; } }
 
+.col.programme-blog {
+  padding: 2rem 0; }
+
 .single-programmes .article-header {
   position: relative;
   padding: 3rem 2rem 4rem 2rem; }
