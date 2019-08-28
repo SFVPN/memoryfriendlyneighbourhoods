@@ -62,7 +62,7 @@ foreach( $programme_blog as $page ) {
     }
 
 	} else {
-	echo	'<div class="col s12 programme-blog">We are reguarly adding content. Please check again soon.</div>';
+	echo	'<div class="col s12 programme-blog">We are regularly adding content. Please check again soon.</div>';
 	}
 ?>
 </div>

@@ -7214,6 +7214,9 @@ footer.card-content {
 .toolbar #network-actions a:hover {
   background: #7e57c2 !important; }
 
+.container.profile {
+  margin-top: 4rem; }
+
 .resource-page-title {
   font-size: 2.92rem; }
 
