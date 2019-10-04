@@ -41,7 +41,7 @@ foreach( $programme_blog as $page ) {
 				<i class="mdi mdi-clock" aria-hidden="true"></i> Posted on
 
 				<?php
-				the_time('F j, Y');
+				echo get_the_date( 'F j, Y', $page->ID );
 
 				?>
 
