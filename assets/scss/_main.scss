@@ -1025,7 +1025,7 @@ article section {
   font-weight: 300;
 }
 
-.resources-article-header {
+.resources-article-header, .category .article-header {
 background: color("amber", "base");  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, color("amber", "lighten-2"), color("amber", "base"));  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, color("amber", "lighten-2"), color("amber", "base")); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

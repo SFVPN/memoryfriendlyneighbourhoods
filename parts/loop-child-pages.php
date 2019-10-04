@@ -118,6 +118,8 @@ if( ($sub_pages_desc) ):?>
 		while ( have_rows('child_pages') ) : the_row();
 		$img = get_sub_field('subpage_image');
 		$section_title = get_sub_field('section_title');
+		$page_url = get_sub_field('page_link');
+		
 		?>
 		<div id="<?php echo $section_title; ?>" class="col s12 m6 l4 child-pages-sections center"  >
 			<div class="col s10 offset-s1" style="padding: 1rem; background: <?php the_sub_field('background_colour'); ?>; ">
@@ -127,7 +129,7 @@ if( ($sub_pages_desc) ):?>
 					<img src="<?php echo $img; ?>" alt="<?php echo $section_title; ?> representative image">
 			</div>
 			<div class="col s12">
-				<a class="btn transparent z-depth-0 waves-effect" style="color: <?php the_sub_field('text_colour'); ?>;" href="<?php the_sub_field('page_link'); ?>"><?php the_sub_field('button_text'); ?></a>
+				<a class="btn transparent z-depth-0 waves-effect" style="color: <?php the_sub_field('text_colour'); ?>;" href="<?php echo $page_url; ?>"><?php the_sub_field('button_text'); ?></a>
 			</div>
 		</div>
 

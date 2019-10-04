@@ -270,7 +270,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; ?>
 			$skills = um_user('expertise');
 			$country = um_user('country');
 			$work = um_user('work');
-			$show_email = um_user('show_email_true');
+			//$show_email = um_user('show_email_true');
 			//$show_email = implode(', ', $show_email);
 			$website = um_user('your_website');
 

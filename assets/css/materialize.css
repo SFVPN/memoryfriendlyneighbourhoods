@@ -1978,7 +1978,7 @@ a {
 
 .card a.btn-flat:hover {
   color: #414141;
-  background: #ffd54f !important; }
+  background: #212121 !important; }
 
 .valign-wrapper {
   display: flex;
@@ -7188,7 +7188,7 @@ footer.card-content {
   font-size: 1.85rem;
   font-weight: 300; }
 
-.resources-article-header {
+.resources-article-header, .category .article-header {
   background: #ffc107;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #ffd54f, #ffc107);

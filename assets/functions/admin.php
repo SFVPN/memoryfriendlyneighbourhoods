@@ -140,3 +140,8 @@ wp_embed_register_handler( 'ytnocookie', '#https?://www\.youtube\-nocookie\.com/
    );
    return apply_filters( 'embed_ytnocookie', $embed, $matches, $attr, $url, $rawattr );
  }
+
+add_action('user_register', 'setNetworkrole');
+function setNetworkrole( $user_id ) {
+           update_user_meta( $user_id, 'convener', 'Member' ); 
+}

@@ -19,8 +19,8 @@
                 "Convener": "Convener",
                 "Member": "Member"
             },
-            "allow_null": 0,
-            "default_value": "Member",
+            "allow_null": 1,
+            "default_value": "",
             "layout": "horizontal",
             "return_format": "value"
         }
@@ -42,5 +42,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1567154006
+    "modified": 1570180959
 }

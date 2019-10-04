@@ -125,7 +125,7 @@
                     "key": "field_59d4b64ec4ba9",
                     "label": "Page Link",
                     "name": "page_link",
-                    "type": "page_link",
+                    "type": "link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -134,15 +134,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": [
-                        "programmes",
-                        "projects",
-                        "page"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "allow_archives": 1,
-                    "multiple": 0
+                    "return_format": "url"
                 },
                 {
                     "key": "field_59d4b64ec4d7e",
@@ -261,5 +253,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1556707205
+    "modified": 1570177974
 }
