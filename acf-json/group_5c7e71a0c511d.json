@@ -97,6 +97,16 @@
                 "param": "page_type",
                 "operator": "==",
                 "value": "top_level"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "page-activities.php"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "page-blog.php"
             }
         ]
     ],
@@ -108,5 +118,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1556705840
+    "modified": 1571675493
 }

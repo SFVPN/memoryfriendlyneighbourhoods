@@ -61,6 +61,49 @@ require_once(get_template_directory().'/assets/functions/admin.php');
 //     return $a;
 // }
 
+add_action('acf/save_post', 'my_save_post');
+
+    function my_save_post( $post_id ) {
+
+      // bail early if not a contact_form post
+      if( get_post_type($post_id) !== 'programmes' ) {
+
+        return;
+
+      }
+
+
+      // bail early if editing in admin
+      if( is_admin() ) {
+
+        return;
+
+      }
+
+      $blogID = get_field('cdn_blog_page', 'option');
+      $eventsID = get_field('cdn_events_page', 'option');
+      $date = get_field('event_date', $post_id);
+
+      if($date) {
+        $my_post = array(
+            'ID'           => $post_id,
+            'post_parent'   => $eventsID
+        );
+      } else {
+        $my_post = array(
+            'ID'           => $post_id,
+            'post_parent'   => $blogID
+        );
+      }
+
+
+      add_action('acf/save_post', 'my_save_post');
+
+      wp_update_post( $my_post );
+
+    }
+
+
 
 function highlight_search_term($text){
     if(is_search()){

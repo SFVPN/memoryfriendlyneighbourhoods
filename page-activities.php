@@ -1,17 +1,17 @@
 <?php
 
 /**
- * Template Name: Blog
+ * Template Name: Activities
  * Template Post Type: programmes
  */
 
  add_filter( 'document_title_parts', function( $title_parts_array ) {
- 		$id = get_the_ID();
- 	 $parent = get_post_ancestors( $id );
+     $id = get_the_ID();
+ 		$parent = get_post_ancestors( $id );
 
- 				$title_parts_array['title'] = get_the_title($id) . ' - ' . get_the_title($parent[0]);
- 		//}
- 		return $title_parts_array;
+         $title_parts_array['title'] = get_the_title($id) . ' - ' . get_the_title($parent[0]);
+     //}
+     return $title_parts_array;
  } );
 
 get_header(); ?>
@@ -47,10 +47,13 @@ foreach( $programme_blog as $page ) {
     <article class="col s12 programme-blog">
 			<h2 class="h5"><a href="<?php echo get_permalink( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
 			<div id="byline" class="grey-text" role="contentinfo">
-				<i class="material-icons left" aria-hidden="true">access_time</i> Posted on
-
-				<?php
-				echo get_the_date( 'F j, Y', $page->ID );
+				<i class="material-icons left" aria-hidden="true">access_time</i>
+				<?php $event_date = get_field('event_date', $page->ID);
+				if($event_date) {
+					echo $event_date;
+				} else {
+					echo 'Posted on ' . get_the_date( 'F j, Y', $page->ID );
+				}
 
 				?>
 

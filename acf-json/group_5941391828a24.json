@@ -8,7 +8,7 @@
             "name": "add_resource",
             "type": "post_object",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -18,7 +18,7 @@
             "post_type": [
                 "page"
             ],
-            "taxonomy": [],
+            "taxonomy": "",
             "allow_null": 0,
             "multiple": 0,
             "return_format": "id",
@@ -30,7 +30,7 @@
             "name": "join_network",
             "type": "post_object",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -38,10 +38,9 @@
                 "id": ""
             },
             "post_type": [
-                "page",
                 "page"
             ],
-            "taxonomy": [],
+            "taxonomy": "",
             "allow_null": 0,
             "multiple": 0,
             "return_format": "id",
@@ -49,8 +48,8 @@
         },
         {
             "key": "field_5950d38224f21",
-            "label": "Add redirect page for submissions",
-            "name": "redirect_page",
+            "label": "Add submission page",
+            "name": "submission_page",
             "type": "post_object",
             "instructions": "",
             "required": 0,
@@ -60,9 +59,55 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [],
-            "taxonomy": [],
-            "allow_null": 0,
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_5daeca0826b71",
+            "label": "CDN Blog Page",
+            "name": "cdn_blog_page",
+            "type": "post_object",
+            "instructions": "Set the CDN Blog Page to enable front-end submissions of content",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "programmes"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_5daeca4dd2dff",
+            "label": "CDN Events Page",
+            "name": "cdn_events_page",
+            "type": "post_object",
+            "instructions": "Set the CDN Events Page to enable front-end submissions of content",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "programmes"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
             "multiple": 0,
             "return_format": "id",
             "ui": 1
@@ -83,7 +128,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": 1,
     "description": "",
-    "modified": 1551780848
+    "modified": 1571741543
 }

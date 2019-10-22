@@ -7,8 +7,7 @@
 			</div>';
 		}?>
 			<div id="inner-footer" class="container">
-				<p>Contact Us</p>
-
+				
 				<ul class="col s12 l12">
 					<?php
 					$email_contact = get_theme_mod('tcx_email_contact');

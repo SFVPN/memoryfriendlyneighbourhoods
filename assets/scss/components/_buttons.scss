@@ -78,6 +78,14 @@
 }
 
 // Floating button
+
+#fixed-sub {
+  width: $button-floating-size;
+  .btn-floating {
+    margin-bottom: .25rem;
+  }
+}
+
 .btn-floating {
   display: inline-block;
   color: $button-floating-color;

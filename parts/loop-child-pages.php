@@ -26,11 +26,23 @@
 			<div id="excerpt" class="fixed-action-btn"><a class="btn-flat red white-text" href="<?php echo get_field("network_registration"); ?>">Join</a></div>
 		<?php } ?>
 
+		<?php $register = get_field("network_registration");
+		if ($register) {?>
+			<div id="excerpt" class="fixed-action-btn"><a class="btn-flat red white-text" href="<?php echo get_field("network_registration"); ?>">Join</a></div>
+		<?php }
+		if(is_user_logged_in() || current_user_can('editor'))  {
+			$subID = get_field('submission_page', 'option');?>
+			<div id="fixed-sub" class="fixed-action-btn"><a class="btn-floating red white-text" href="<?php echo get_permalink($subID); ?>"><i class="material-icons">add</i></a>
+			<?php edit_post_link( __( '<i class="material-icons">mode_edit</i>', 'textdomain' ), '', '', null, 'btn-floating grey darken-3 btn-edit-post-link' );?>
+			</div>
+
+		<?php
+
+	 }?>
+
+
 
 	</header> <!-- end article header -->
-
-
-
 
     <div class="entry-content col s12" itemprop="articleBody">
 			<div class="container">
@@ -50,7 +62,34 @@
 				<?php
 				}
 
+				$event_date = get_field('event_date');
+				if ($event_date) {
+					echo '<p>Event Date: '
+					. $event_date .
+					'</p>';
+				}
+
 				the_content();
+
+				if( have_rows('attachments_files') ):
+				echo '<div class="col s12 info grey-text darken-4">';
+				 	// loop through the rows of data
+				    while ( have_rows('attachments_files') ) : the_row();
+							$file = get_sub_field('file_upload');
+				        // display a sub field value
+
+							echo '<div class="chip">
+				    <i class="attachment material-icons">file_download</i><label>Event information: </label><a class="tooltipped" href="' . $file['url'] . '" target="_blank" data-position="right" data-delay="50" data-tooltip="This will download the named file in a new tab">' . $file['title'] . '</a>
+
+				  </div>';
+
+				    endwhile;
+				echo '</div>';
+				else :
+
+				    // no rows found
+
+				endif;
 
 			$video_alert_text = get_field('video_heading');
 			if ($video_alert_text) {
@@ -94,12 +133,7 @@
 
 	</div> <!-- end article section -->
 
-
-
-
-
 </section> <!-- end article -->
-
 
 <?php
  if( have_rows('child_pages') ):?>
@@ -119,7 +153,7 @@ if( ($sub_pages_desc) ):?>
 		$img = get_sub_field('subpage_image');
 		$section_title = get_sub_field('section_title');
 		$page_url = get_sub_field('page_link');
-		
+
 		?>
 		<div id="<?php echo $section_title; ?>" class="col s12 m6 l4 child-pages-sections center"  >
 			<div class="col s10 offset-s1" style="padding: 1rem; background: <?php the_sub_field('background_colour'); ?>; ">

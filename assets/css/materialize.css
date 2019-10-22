@@ -3666,6 +3666,11 @@ small {
   .btn:hover, .btn-large:hover {
     background-color: #4d5ec1; }
 
+#fixed-sub {
+  width: 40px; }
+  #fixed-sub .btn-floating {
+    margin-bottom: .25rem; }
+
 .btn-floating {
   display: inline-block;
   color: #fff;

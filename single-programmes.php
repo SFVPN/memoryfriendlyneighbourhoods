@@ -1,4 +1,19 @@
 <?php
+
+
+add_filter( 'document_title_parts', function( $title_parts_array ) {
+    $id = get_the_ID();
+		$parent = get_post_ancestors( $id );
+		if($parent) {
+			$title_parts_array['title'] = get_the_title($id) . ' - ' . get_the_title($parent[1]);
+		} else {
+			$title_parts_array['title'] = get_the_title($id);
+		}
+
+    //}
+    return $title_parts_array;
+} );
+
 get_header(); ?>
 <?php //get_template_part( 'parts/content', 'breadcrumbs' ); ?>
 
@@ -17,4 +32,6 @@ get_header(); ?>
 
 
 
-<?php get_footer(); ?>
+<?php
+
+get_footer(); ?>
