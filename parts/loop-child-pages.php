@@ -1,7 +1,7 @@
 
 <?php $backgroundImage = get_the_post_thumbnail_url(get_the_ID(),'full');?>
 <section class="<?php echo $post->post_name;?> row" itemscope itemtype="http://schema.org/WebPage">
-	<header class="<?php echo $post->post_name;?> article-header col s12 center grey lighten-3"
+	<header class="<?php echo $post->post_name;?> article-header col s12 center blue lighten-3"
 	<?php if ($backgroundImage) {?>
 		style="background:
 		  linear-gradient(
@@ -62,11 +62,14 @@
 				<?php
 				}
 
-				$event_date = get_field('event_date');
-				if ($event_date) {
-					echo '<p>Event Date: '
-					. $event_date .
-					'</p>';
+				$start_date = get_field('event_date_start');
+				$end_date = get_field('event_date_end');
+				if ($start_date) {
+					echo '<p><strong>Event Date</strong> ' . $start_date;
+					if($end_date) {
+						echo ' to ' . $end_date;
+					}
+					echo '</p>';
 				}
 
 				the_content();

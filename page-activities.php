@@ -48,7 +48,7 @@ foreach( $programme_blog as $page ) {
 			<h2 class="h5"><a href="<?php echo get_permalink( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
 			<div id="byline" class="grey-text" role="contentinfo">
 				<i class="material-icons left" aria-hidden="true">access_time</i>
-				<?php $event_date = get_field('event_date', $page->ID);
+				<?php $event_date = get_field('event_date_start', $page->ID);
 				if($event_date) {
 					echo $event_date;
 				} else {
