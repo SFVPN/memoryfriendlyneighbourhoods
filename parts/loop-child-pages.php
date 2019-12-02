@@ -94,6 +94,33 @@
 
 				endif;
 
+				if( have_rows('videos') ):
+					 while ( have_rows('videos') ) : the_row();
+					 echo '<div class="video-wrapper">';
+					 $video_title = get_sub_field('video_title');
+					 $video_description = get_sub_field('video_description');
+					 $video_link = get_sub_field('video_link');
+
+					 if($video_title) {
+						 echo '<h2 class="h5">' . $video_title . '</h2>';
+					 }
+
+					 if($video_description) {
+						 echo $video_description;
+					 }
+
+					 echo '<div class="video-container">' . $video_link . '
+
+					 </div>';
+					 ?>
+
+
+
+				 <?php
+				 	echo '</div>';
+					endwhile;
+					endif;
+
 			$video_alert_text = get_field('video_heading');
 			if ($video_alert_text) {
 				echo '<p>'
@@ -113,20 +140,22 @@
 
 			 <?php
  		   if( have_rows('useful_links') ):
- 		  echo '<div class="collection-links with-header"><h3 class="h5 collection-header light center">Useful Links</h3>';
+ 		  echo '<ul class="collection-links grey lighten-4 "><h2 class="h5">Useful Links</h3>';
  		  		while ( have_rows('useful_links') ) : the_row();
  		  		$text = get_sub_field('link_text');
  		  		$link = get_sub_field('link_url');
  		  		?>
 
 
-		 <a class="collection-item" href="<?php echo $link; ?>" class="secondary-content"><?php echo $text; ?></a>
+		 <li class="link-item">
+			 <a href="<?php echo $link; ?>"><?php echo $text; ?></a>
+		 </li>
 
 
 
  		  	<?php
  		  	 endwhile;
- 		  	 echo '</div>';
+ 		  	 echo '</ul>';
  		  	 endif;
  		   ?>
 

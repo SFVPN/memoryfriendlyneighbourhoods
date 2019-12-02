@@ -1012,6 +1012,13 @@ article section {
 }
 }
 
+.video-wrapper {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 3rem 4rem;
+  margin: 2rem 0;
+}
+
 .single-article-header {
     background: color("amber", "base");  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, color("amber", "lighten-2"), color("amber", "base"));  /* Chrome 10-25, Safari 5.1-6 */

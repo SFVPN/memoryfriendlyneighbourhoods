@@ -2356,23 +2356,28 @@ td, th {
   .collection.with-header .collection-item.avatar {
     padding-left: 72px; }
 
-.collection-links {
+ul.collection-links {
+  padding: 3rem 4rem;
   margin: 3.5rem 0 1rem 0;
   border: 1px solid #e0e0e0;
-  border-radius: 2px;
+  border-radius: 3px;
   overflow: hidden;
   position: relative; }
-  .collection-links .collection-item {
+  ul.collection-links .link-item {
+    line-height: 2; }
+    ul.collection-links .link-item a:hover, ul.collection-links .link-item a:focus {
+      text-decoration: underline; }
+  ul.collection-links .collection-item {
     background-color: #fff;
     line-height: 1.5rem;
     padding: 10px 20px;
     margin: 0;
     border-bottom: 1px solid #e0e0e0; }
-    .collection-links .collection-item.avatar {
+    ul.collection-links .collection-item.avatar {
       min-height: 84px;
       padding-left: 72px;
       position: relative; }
-      .collection-links .collection-item.avatar .circle {
+      ul.collection-links .collection-item.avatar .circle {
         position: absolute;
         width: 42px;
         height: 42px;
@@ -2380,39 +2385,39 @@ td, th {
         left: 15px;
         display: inline-block;
         vertical-align: middle; }
-      .collection-links .collection-item.avatar i.circle {
+      ul.collection-links .collection-item.avatar i.circle {
         font-size: 18px;
         line-height: 42px;
         color: #fff;
         background-color: #999;
         text-align: center; }
-      .collection-links .collection-item.avatar .title {
+      ul.collection-links .collection-item.avatar .title {
         font-size: 16px; }
-      .collection-links .collection-item.avatar p {
+      ul.collection-links .collection-item.avatar p {
         margin: 0; }
-      .collection-links .collection-item.avatar .secondary-content {
+      ul.collection-links .collection-item.avatar .secondary-content {
         position: absolute;
         top: 16px;
         right: 16px; }
-    .collection-links .collection-item:last-child {
+    ul.collection-links .collection-item:last-child {
       border-bottom: none; }
-    .collection-links .collection-item.active {
+    ul.collection-links .collection-item.active {
       background-color: #3f51b5;
       color: white; }
-      .collection-links .collection-item.active .secondary-content {
+      ul.collection-links .collection-item.active .secondary-content {
         color: #fff; }
-  .collection-links a.collection-item {
+  ul.collection-links a.collection-item {
     display: block;
     transition: .25s;
     color: #3f51b5; }
-    .collection-links a.collection-item:not(.active):hover {
+    ul.collection-links a.collection-item:not(.active):hover {
       background-color: #ddd; }
-  .collection-links.with-header .collection-header {
+  ul.collection-links.with-header .collection-header {
     background-color: #fff;
     padding: 10px 20px; }
-  .collection-links.with-header .collection-item {
+  ul.collection-links.with-header .collection-item {
     padding-left: 30px; }
-  .collection-links.with-header .collection-item.avatar {
+  ul.collection-links.with-header .collection-item.avatar {
     padding-left: 72px; }
 
 .secondary-content {
@@ -7178,6 +7183,12 @@ footer.card-content {
     @media only screen and (max-width: 992px) {
       .single-programmes .article-header span#excerpt {
         font-size: .95rem; } }
+
+.video-wrapper {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 3rem 4rem;
+  margin: 2rem 0; }
 
 .single-article-header {
   background: #ffc107;

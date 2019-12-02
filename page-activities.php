@@ -36,11 +36,11 @@ get_header(); ?>
 		</header> <!-- end article header -->
 <div class="container">
 			<?php
-$programme_blog = get_pages( array( 'child_of' => $post->ID, 'post_type' => 'programmes', 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
+$programme_activities = get_pages( array( 'child_of' => $post->ID, 'post_type' => 'programmes', 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
 
-if ($programme_blog) {
+if ($programme_activities) {
 
-foreach( $programme_blog as $page ) {
+foreach( $programme_activities as $page ) {
 
 
 ?>
