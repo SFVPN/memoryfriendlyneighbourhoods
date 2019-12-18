@@ -597,9 +597,8 @@ td, th{
 
 }
 
-ul.collection-links {
+ul.collection-links.col.s12 {
   padding: 3rem 4rem;
-  margin: 3.5rem 0 $element-bottom-margin 0;
   border: 1px solid $collection-border-color;
   border-radius: 3px;
   overflow: hidden;

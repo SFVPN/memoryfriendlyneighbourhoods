@@ -74,29 +74,9 @@
 
 				the_content();
 
-				if( have_rows('attachments_files') ):
-				echo '<div class="col s12 info grey-text darken-4">';
-				 	// loop through the rows of data
-				    while ( have_rows('attachments_files') ) : the_row();
-							$file = get_sub_field('file_upload');
-				        // display a sub field value
-
-							echo '<div class="chip">
-				    <i class="attachment material-icons">file_download</i><label>Event information: </label><a class="tooltipped" href="' . $file['url'] . '" target="_blank" data-position="right" data-delay="50" data-tooltip="This will download the named file in a new tab">' . $file['title'] . '</a>
-
-				  </div>';
-
-				    endwhile;
-				echo '</div>';
-				else :
-
-				    // no rows found
-
-				endif;
-
 				if( have_rows('videos') ):
 					 while ( have_rows('videos') ) : the_row();
-					 echo '<div class="video-wrapper">';
+					 echo '<div class="video-wrapper col s12">';
 					 $video_title = get_sub_field('video_title');
 					 $video_description = get_sub_field('video_description');
 					 $video_link = get_sub_field('video_link');
@@ -112,35 +92,48 @@
 					 echo '<div class="video-container">' . $video_link . '
 
 					 </div>';
-					 ?>
-
-
-
-				 <?php
+					
 				 	echo '</div>';
 					endwhile;
 					endif;
 
-			$video_alert_text = get_field('video_heading');
-			if ($video_alert_text) {
-				echo '<p>'
-				. $video_alert_text .
-				'</p>';
-			}
+				$video_alert_text = get_field('video_heading');
+				if ($video_alert_text) {
+					echo '<p>'
+					. $video_alert_text .
+					'</p>';
+				}
 
-			 ?>
-			 <?php $video = get_field('video_url');
+				$video = get_field('video_url');
 
-		if ($video){
-			echo '<div class="video-container">' . $video . '
+				if ($video){
+					echo '<div class="video-container">' . $video . '
 
-			</div>';
-		}
-	 ?>
+					</div>';
+				}
 
-			 <?php
+			 if( have_rows('attachments_files') ):
+			 echo '<div class="col s12 info grey-text darken-4">';
+				 // loop through the rows of data
+					 while ( have_rows('attachments_files') ) : the_row();
+						 $file = get_sub_field('file_upload');
+							 // display a sub field value
+
+						 echo '<div class="chip">
+					 <i class="attachment material-icons">file_download</i><label>Event information: </label><a class="tooltipped" href="' . $file['url'] . '" target="_blank" data-position="right" data-delay="50" data-tooltip="This will download the named file in a new tab">' . $file['title'] . '</a>
+
+				 </div>';
+
+					 endwhile;
+			 echo '</div>';
+			 else :
+
+					 // no rows found
+
+			 endif;
+
  		   if( have_rows('useful_links') ):
- 		  echo '<ul class="collection-links grey lighten-4 "><h2 class="h5">Useful Links</h3>';
+ 		  echo '<ul class="collection-links col s12 grey lighten-4 "><h2 class="h5">Useful Links</h3>';
  		  		while ( have_rows('useful_links') ) : the_row();
  		  		$text = get_sub_field('link_text');
  		  		$link = get_sub_field('link_url');

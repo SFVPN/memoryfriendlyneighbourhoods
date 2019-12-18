@@ -12,7 +12,7 @@
       'post_id'		=> 'new_post',
       'post_content' => true,
       'post_title' => true,
-      'fields' => array(field_5dadde0971dab, field_5daddc49010b7,field_5daf03621ebf0, field_5dade67da6945, field_5dade6a4a6946),
+      'fields' => array(field_5dadde0971dab, field_5daddc49010b7,field_5daf03621ebf0, field_5dade67da6945, field_5dade6a4a6946, field_59ef253bd3320, field_59ef256ad3321, field_59ef24b7d331e, field_5de5171c85ded),
       'new_post'		=> array(
         'post_type'		=> 'programmes',
         'post_status'		=> 'publish'),

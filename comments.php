@@ -11,9 +11,19 @@
 	<?php if ( have_comments() ) : ?>
 		<h5 class="comments-title">
 			<?php
+
+			add_filter( 'comments_clauses', 'wpse_78490_child_comments_only' );
+
+function wpse_78490_child_comments_only( $clauses )
+{
+    $clauses['where'] .= ' AND comment_parent = 0';
+    return $clauses;
+}
+
+$count = get_comments( array('post_id' => $post->ID, 'count' => true) );
 				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'jointswp' ) ),
-					number_format_i18n( get_comments_number() ),
+					esc_html( _nx( 'One discussion on &ldquo;%2$s&rdquo;', '%1$s discussions on %2$s', $count , 'comments title', 'jointswp' ) ),
+					number_format_i18n( $count ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			?>
@@ -31,9 +41,9 @@
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // Check for comment navigation. ?>
 
-		<div class="commentlist">
+		<ul class="commentlist">
 			<?php wp_list_comments('type=comment&callback=joints_comments'); ?>
-		</div>
+		</ul>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
@@ -56,6 +66,6 @@
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'jointswp' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(array('class_submit'=>'btn', 'title_reply' => __( '<h5>Write a reply or comment</h5>' ), 'cancel_reply_before' => __( '<span class="waves-effect waves-light">' ), 'cancel_reply_after' => __( '</span>' ), 'comment_field' => '<p class="comment-form-comment"><label class="screen-reader-text" for="comment">' . _x( 'Leave Your Comment Here', 'noun' ) . '</label><textarea id="comment" placeholder="Leave Your Comment Here..." class="textarea" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>')); ?>
+	<?php comment_form(array('class_submit'=>'btn', 'title_reply' => __( '<h5>Add your voice to the discussion</h5>' ), 'cancel_reply_before' => __( '<span class="waves-effect waves-light">' ), 'cancel_reply_after' => __( '</span>' ), 'comment_field' => '<p class="comment-form-comment"><label class="screen-reader-text" for="comment">' . _x( 'Leave Your Comment Here', 'noun' ) . '</label><textarea id="comment" placeholder="Leave Your Comment Here..." class="textarea" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>')); ?>
 
 </div><!-- #comments -->

@@ -110,7 +110,7 @@ function custom_resources() {
 					'capability_type' => 'page',
 					'hierarchical' => true,
 					/* the next one is important, it tells what's enabled in the post editor */
-					'supports' => array( 'title', 'editor', 'author', 'page-attributes', 'excerpt', 'thumbnail')
+					'supports' => array( 'title', 'editor', 'author', 'page-attributes', 'excerpt', 'thumbnail', 'comments')
 			 	) /* end of options */
 			); /* end of register post type */
 

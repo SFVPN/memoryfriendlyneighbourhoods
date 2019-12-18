@@ -143,5 +143,11 @@ wp_embed_register_handler( 'ytnocookie', '#https?://www\.youtube\-nocookie\.com/
 
 add_action('user_register', 'setNetworkrole');
 function setNetworkrole( $user_id ) {
-           update_user_meta( $user_id, 'convener', 'Member' ); 
+           update_user_meta( $user_id, 'convener', 'Member' );
+}
+
+
+add_action( 'init', 'add_editor_styles' );
+function add_editor_styles() {
+    add_editor_style( get_template_directory_uri() . '/assets/css/admin.min.css' );
 }

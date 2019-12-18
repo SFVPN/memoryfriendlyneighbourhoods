@@ -389,9 +389,9 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_59ef24b7d331e",
-                        "operator": "==",
-                        "value": "1"
+                        "field": "field_5de5175b85def",
+                        "operator": "==contains",
+                        "value": "qhfh"
                     }
                 ]
             ],
@@ -416,9 +416,9 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_59ef24b7d331e",
-                        "operator": "==",
-                        "value": "1"
+                        "field": "field_5de5175b85def",
+                        "operator": "==contains",
+                        "value": "qhfh"
                     }
                 ]
             ],
@@ -434,33 +434,14 @@
     "location": [
         [
             {
-                "param": "post_type",
-                "operator": "!=",
-                "value": "post"
-            },
-            {
-                "param": "page_type",
-                "operator": "!=",
-                "value": "front_page"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "!=",
-                "value": "um_directory"
-            },
-            {
-                "param": "page_type",
-                "operator": "!=",
-                "value": "front_page"
-            }
-        ],
-        [
-            {
-                "param": "user_role",
+                "param": "post_template",
                 "operator": "==",
-                "value": "administrator"
+                "value": "default"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "programmes"
             }
         ]
     ],
@@ -472,5 +453,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1575295210
+    "modified": 1576682882
 }

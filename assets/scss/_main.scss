@@ -1012,7 +1012,48 @@ article section {
 }
 }
 
-.video-wrapper {
+#forum h1 {
+  font-size: $h3-fontsize;
+}
+
+.forum-header {
+  color: white;
+  background: rgb(3,72,98);
+  background:linear-gradient(90deg, rgba(3,72,98,1) 0%, rgba(0,57,79,1) 35%);
+}
+
+#forum-container {
+  padding: 2rem 0;
+}
+
+.programme-forum {
+  margin: 4rem 0;
+  a {
+    transition: 350ms;
+  }
+  a:hover {
+    article .col {
+      transition: 350ms;
+      background: color("blue", "lighten-4");
+      color: black;
+    }
+  }
+}
+
+.programme-forum article .col {
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 3px;
+  background: color("blue", "lighten-2");
+  color: black;
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+
+.video-wrapper.col.s12 {
   border: 1px solid #ddd;
   border-radius: 3px;
   padding: 3rem 4rem;
@@ -1060,15 +1101,7 @@ padding: 0 !important;
   margin-top: 4rem;
 }
 
-.single-title,
-.page-title {
 
-}
-
-
-.archive-title {
-
-}
 .resource-page-title {
   font-size: $h3-fontsize;
 
@@ -1332,6 +1365,53 @@ PAGE NAVI STYLES
 /*********************
 COMMENT STYLES
 *********************/
+#comment-wrapper {
+  padding: 2rem 0;
+  //background: color("grey", "lighten-4");
+}
+
+.media-object.col.s12 {
+  padding: 1rem;
+  position: relative;
+}
+
+.depth-1 > .media-object.col.s12 {
+  margin-bottom: 2rem;
+}
+
+
+
+.btn-flat.reply {
+  border: 1px solid color("grey", "darken-1");
+  &:hover, &:focus {
+    background: color("grey", "lighten-4");
+  }
+}
+
+.children .btn-flat.reply {
+  &:hover, &:focus {
+    background: white;
+  }
+}
+
+.comment-author {
+  display: flex;
+  align-items: center;
+}
+
+.comment-author img {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  margin-right: .5rem;
+}
+
+.comment.depth-1 {
+  background: white;
+  border-radius: 3px;
+  padding: 1rem 2rem;
+}
+
 #comments {
   .comments-title {
     margin: 2rem 0;
@@ -1342,6 +1422,7 @@ COMMENT STYLES
 }
 
 #respond {
+  margin-top: 5rem;
 	ul {
 		margin-left: 0px;
 	}
@@ -1382,21 +1463,29 @@ COMMENT STYLES
 	}
 
 	li.depth-1 {
-		margin-left: 0;
-		margin-top: 0;
+		margin: 3rem 0;
     font-size: 1em;
 	}
 
 	li:not(.depth-1) {
-		margin-left: 10px;
+		margin-left: 1.5rem;
 		margin-top: 0;
-		padding-bottom: 0;
+    font-size: .85rem;
 	}
 
+  a.ref-link {
+    color: $secondary-color;
+    display: inline-block;
+    margin-bottom: 1rem;
+    line-height: 1rem;
+    display: flex;
+  }
+
+  .children li.comment {
+    background: color("grey", "lighten-4");
+  }
+
 	li.depth-2, li.depth-3, li.depth-4, li.depth-5 {
-    @extend .z-depth-0;
-    background: whitesmoke;
-    font-size: .85rem;
     .comment_content {
       p {
         font-style: italic;
@@ -1406,6 +1495,13 @@ COMMENT STYLES
 	li.depth-4 {}
 	li.depth-5 {}
 
+  .depth-3 .media-object {
+
+    background: white;
+    .btn-flat.reply {
+      display: none;
+    }
+  }
 	// General comment classes
 	.alt {}
 	.odd {
@@ -1488,13 +1584,10 @@ COMMENT STYLES
 
 	// comment reply link
 
-  span.badge {
-    background: yellow;
-    border-radius: 2px;
-    border: 1px solid $secondary-color;
+  span {
     a {
       color: $secondary-color;
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 	.comment-reply-link {
@@ -1529,6 +1622,21 @@ COMMENT STYLES
 /*********************
 COMMENT FORM STYLES
 *********************/
+
+#commentform {
+  border: 1px solid color("grey", "lighten-2");
+  background: white;
+  border-radius: 3px;
+  padding: 1rem;
+  .acf-label label {
+    font-size: 1rem !important;
+    color: black !important;
+  }
+}
+
+.commentlist li.depth-3 {
+  margin-bottom: 0;
+}
 .respond-form {
 	margin: 1.5em 10px;
 	padding-bottom: 2.2em;
@@ -1591,8 +1699,13 @@ COMMENT FORM STYLES
 textarea#comment {
   height: auto;
   padding: 1em;
-  border-radius: 4px;
-  border: 2px solid whitesmoke;
+  border: 0px solid;
+  border-radius: 3px;
+  background: white;
+}
+
+#respond textarea#comment {
+  border: 1px solid color("grey", "lighten-2");
 }
 
 textarea#comment:focus {
@@ -1615,12 +1728,15 @@ textarea#comment:focus {
 }
 
 a#cancel-comment-reply-link {
-    display: block;
-    background: $primary-color;
-    @extend .white-text;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    color: white;
+    background: color("materialize-red", "lighten-2");
+    border-radius: 3px;
     text-align: center;
-    font-size: 1rem;
     text-transform: uppercase;
+    font-size: 0.8rem;
 }
 
 
@@ -1688,13 +1804,13 @@ input[type="submit"] {
     margin: 1em 0;
     width: 100%;
     border: none;
-    padding: 0.5em;
-    background: color("grey", "darken-4");
+    padding: 0 0.5em;
+    background: color("blue", "darken-1");
     color: white;
     text-transform: uppercase;
     transition: 350ms;
     &:hover, :focus {
-      background: color("grey", "darken-2");
+      background: color("blue", "darken-3");
 }
 }
 

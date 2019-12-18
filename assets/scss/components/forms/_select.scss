@@ -1,12 +1,12 @@
 /* Select Field
    ========================================================================== */
 
-select { display: none; }
+select { display: inline-block; }
 select.browser-default { display: block; }
 
 select {
   background-color: $select-background;
-  width: 100%;
+  width: 50%;
   padding: $select-padding;
   border: $select-border;
   border-radius: $select-radius;
