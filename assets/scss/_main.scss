@@ -1017,9 +1017,9 @@ article section {
 }
 
 .forum-header {
-  color: white;
-  background: rgb(3,72,98);
-  background:linear-gradient(90deg, rgba(3,72,98,1) 0%, rgba(0,57,79,1) 35%);
+  color: #000000;
+  background: rgb(0,214,171);
+  background: linear-gradient(90deg, rgba(0,214,171,1) 0%, rgba(0,179,143,1) 100%);
 }
 
 #forum-container {
@@ -1034,8 +1034,7 @@ article section {
   a:hover {
     article .col {
       transition: 350ms;
-      background: color("blue", "lighten-4");
-      color: black;
+      background: #00d6ab;
     }
   }
 }
@@ -1046,8 +1045,8 @@ article section {
   flex-direction: column;
   justify-content: center;
   border-radius: 3px;
-  background: color("blue", "lighten-2");
-  color: black;
+  background: #00b38f;
+  color: white;
   h2 {
     font-size: 1.25rem;
   }

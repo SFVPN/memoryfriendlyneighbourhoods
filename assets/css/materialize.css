@@ -7187,9 +7187,9 @@ footer.card-content {
   font-size: 2.92rem; }
 
 .forum-header {
-  color: white;
-  background: #034862;
-  background: linear-gradient(90deg, #034862 0%, #00394f 35%); }
+  color: #000000;
+  background: #00d6ab;
+  background: linear-gradient(90deg, #00d6ab 0%, #00b38f 100%); }
 
 #forum-container {
   padding: 2rem 0; }
@@ -7200,8 +7200,7 @@ footer.card-content {
     transition: 350ms; }
   .programme-forum a:hover article .col {
     transition: 350ms;
-    background: #BBDEFB;
-    color: black; }
+    background: #00d6ab; }
 
 .programme-forum article .col {
   height: 10rem;
@@ -7209,8 +7208,8 @@ footer.card-content {
   flex-direction: column;
   justify-content: center;
   border-radius: 3px;
-  background: #64B5F6;
-  color: black; }
+  background: #00b38f;
+  color: white; }
   .programme-forum article .col h2 {
     font-size: 1.25rem; }
 
