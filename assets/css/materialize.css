@@ -7013,9 +7013,14 @@ p.chip.white, .single p.chip#byline, .page-footer li a:hover p.chip.mdi, .page-f
   border: 1px solid #dddddd; }
 
 section.archive-container.col.s12 {
-  padding: 3rem; }
+  width: 70%;
+  margin: 4rem 15%; }
+  @media only screen and (max-width: 600px) {
+    section.archive-container.col.s12 {
+      width: 100%;
+      margin: 0; } }
   section.archive-container.col.s12 article {
-    margin: 2rem 0; }
+    margin: 2rem 0rem; }
 
 form#wp-advanced-search {
   padding: 0 1rem; }

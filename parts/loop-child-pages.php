@@ -21,15 +21,7 @@
 
 
 
-		<?php $register = get_field("network_registration");
-		if ($register) {?>
-			<div id="excerpt" class="fixed-action-btn"><a class="btn-flat red white-text" href="<?php echo get_field("network_registration"); ?>">Join</a></div>
-		<?php } ?>
-
-		<?php $register = get_field("network_registration");
-		if ($register) {?>
-			<div id="excerpt" class="fixed-action-btn"><a class="btn-flat red white-text" href="<?php echo get_field("network_registration"); ?>">Join</a></div>
-		<?php }
+		<?php 
 		if(is_user_logged_in() || current_user_can('editor'))  {
 			$subID = get_field('submission_page', 'option');?>
 			<div id="fixed-sub" class="fixed-action-btn"><a class="btn-floating red white-text" href="<?php echo get_permalink($subID); ?>"><i class="material-icons">add</i></a>
@@ -92,7 +84,7 @@
 					 echo '<div class="video-container">' . $video_link . '
 
 					 </div>';
-					
+
 				 	echo '</div>';
 					endwhile;
 					endif;

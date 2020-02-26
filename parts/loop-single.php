@@ -52,7 +52,7 @@
 		</div>
 	</header>
 
-    <section class="entry-content" itemprop="articleBody">
+    <section class="entry-content container" itemprop="articleBody">
 			<div class="col s12">
 				<?php
 				the_content(); ?>

@@ -752,9 +752,14 @@ p.chip.white {
 }
 
 section.archive-container.col.s12 {
-  padding: 3rem;
+  width: 70%;
+  margin: 4rem 15%;
+  @media #{$small-and-down} {
+    width: 100%;
+    margin: 0;
+  }
   article {
-    margin: 2rem 0;
+    margin: 2rem 0rem;
   }
 }
 
