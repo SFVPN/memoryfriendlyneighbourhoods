@@ -1,12 +1,8 @@
-<?php
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
-/** Template: Custom Profile **/
+<div class="um <?php echo esc_attr( $this->get_class( $mode ) ); ?> um-<?php echo esc_attr( $form_id ); ?> um-role-<?php echo esc_attr( um_user( 'role' ) ); ?> ">
 
-if ( ! defined( 'ABSPATH' ) ) exit; ?>
-
-<div class="custom um <?php echo esc_attr( $this->get_class( $mode ) ); ?> um-<?php echo esc_attr( $form_id ); ?> um-role-<?php echo esc_attr( um_user( 'role' ) ); ?> ">
-
-	<div class="um-form">
+	<div class="um-form" data-mode="<?php echo esc_attr( $mode ) ?>">
 
 		<?php
 		/**
@@ -146,7 +142,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; ?>
 		 */
 		do_action( 'um_profile_menu', $args );
 
-		if ( um_is_on_edit_profile() ) {
+		if ( um_is_on_edit_profile() || UM()->user()->preview ) {
 
 			$nav = 'main';
 			$subnav = UM()->profile()->active_subnav();
@@ -200,9 +196,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; ?>
 				<div class="clear"></div>
 			</div>
 
-		</form>
+			<?php if ( ! UM()->user()->preview ) { ?>
 
-		<?php } else {
+			</form>
+
+			<?php }
+		} else {
 			$menu_enabled = UM()->options()->get( 'profile_menu' );
 			$tabs = UM()->profile()->tabs_active();
 
@@ -215,8 +214,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; ?>
 				<div class="um-profile-body <?php echo esc_attr( $nav . ' ' . $nav . '-' . $subnav ); ?>">
 
 					<?php
-
-
 					// Custom hook to display tabbed content
 					/**
 					 * UM hook
@@ -266,24 +263,22 @@ if ( ! defined( 'ABSPATH' ) ) exit; ?>
 			<?php }
 		}
 
+		$skills = um_user('expertise');
+		$country = um_user('country');
+		$work = um_user('work');
+		//$show_email = um_user('show_email_true');
+		//$show_email = implode(', ', $show_email);
+		$website = um_user('your_website');
 
-			$skills = um_user('expertise');
-			$country = um_user('country');
-			$work = um_user('work');
-			//$show_email = um_user('show_email_true');
-			//$show_email = implode(', ', $show_email);
-			$website = um_user('your_website');
 
-
-				if($skills) {
-					echo '<p class="grey-text center"><span class="profile-interest">Areas of interest: </span>';
-					foreach ($skills as $skill) {
-					echo ' <span><i class="tiny material-icons">check</i> ' . $skill . '</span>';
-				}
-					echo '</p>';
+			if($skills) {
+				echo '<p class="grey-text center"><span class="profile-interest">Areas of interest: </span>';
+				foreach ($skills as $skill) {
+				echo ' <span><i class="tiny material-icons">check</i> ' . $skill . '</span>';
 			}
-			echo '<div class="um-profile-body see-this">' . um_user('description') . '</div>';
-
+				echo '</p>';
+		}
+		echo '<div class="um-profile-body see-this">' . um_user('description') . '</div>';
 
 		do_action( 'um_profile_footer', $args ); ?>
 	</div>

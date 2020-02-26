@@ -1,5 +1,4 @@
-<html>
-<body style="background: #f2f2f2;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;">
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
 <div style="max-width: 560px;padding: 20px;background: #ffffff;border-radius: 5px;margin:40px auto;font-family: Open Sans,Helvetica,Arial;font-size: 15px;color: #666;">
 
@@ -11,9 +10,11 @@
 	
 	<div style="padding: 0 30px 30px 30px;border-bottom: 3px solid #eeeeee;">
 
-		<div style="padding: 30px 0;font-size: 24px;text-align: center;line-height: 40px;">Your registration request has been rejected.</div>
+		<div style="padding: 30px 0;font-size: 24px;text-align: center;line-height: 40px;">You recently updated your account.</div>
+
+		<div style="padding: 10px 0 50px 0;text-align: center;"><a href="{user_account_link}" style="background: #555555;color: #fff;padding: 12px 30px;text-decoration: none;border-radius: 3px;letter-spacing: 0.3px;">Go to your Account</a></div>
 		
-		<div style="padding: 15px;background: #eee;border-radius: 3px;text-align: center;">Please feel free to apply at a future date or <a href="mailto:{admin_email}" style="color: #3ba1da;text-decoration: none">contact us</a> If you want your information to be reviewed again.</div>
+		<div style="padding: 15px;background: #eee;border-radius: 3px;text-align: center;">If you did not make this change and believe your account has been compromised, please <a href="mailto:{admin_email}" style="color: #3ba1da;text-decoration: none;">contact  us</a> ASAP.</div>
 		
 	</div>
 	
@@ -25,6 +26,3 @@
 	</div>
 
 </div>
-
-</body>
-</html>

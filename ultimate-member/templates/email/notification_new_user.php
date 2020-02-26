@@ -1,5 +1,5 @@
-<html>
-<body style="background: #f2f2f2;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;">
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 
 <div style="max-width: 560px;padding: 20px;background: #ffffff;border-radius: 5px;margin:40px auto;font-family: Open Sans,Helvetica,Arial;font-size: 15px;color: #666;">
 
@@ -11,9 +11,16 @@
 	
 	<div style="padding: 0 30px 30px 30px;border-bottom: 3px solid #eeeeee;">
 
-		<div style="padding: 30px 0;font-size: 24px;text-align: center;line-height: 40px;">Your account has been deleted.<span style="display: block;">All your personal details and any uploads have been permanently removed.</span></div>
+		<div style="padding: 30px 0;font-size: 24px;text-align: center;line-height: 40px;">{display_name} has just created an account on {site_name}.</span></div>
+
+		<div style="padding: 10px 0 50px 0;text-align: center;">To view their profile click here: <a href="{user_profile_link}" style="color: #3ba1da;text-decoration: none;">{user_profile_link}</a></div>
 		
-		<div style="padding: 15px;background: #eee;border-radius: 3px;text-align: center;">If your account has been deleted by accident please <a href="mailto:{admin_email}" style="color: #3ba1da;text-decoration: none">contact us</a>.</div>
+		<div style="padding: 0 0 15px 0;">
+		
+			<div style="background: #eee;color: #444;padding: 12px 15px; border-radius: 3px;font-weight: bold;font-size: 16px;">Here is the submitted registration form:<br /><br />
+				{submitted_registration}
+			</div>
+		</div>
 		
 	</div>
 	
@@ -25,6 +32,3 @@
 	</div>
 
 </div>
-
-</body>
-</html>

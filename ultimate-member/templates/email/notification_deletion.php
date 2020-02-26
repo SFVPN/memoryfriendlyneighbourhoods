@@ -1,5 +1,5 @@
-<html>
-<body style="background: #f2f2f2;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;">
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 
 <div style="max-width: 560px;padding: 20px;background: #ffffff;border-radius: 5px;margin:40px auto;font-family: Open Sans,Helvetica,Arial;font-size: 15px;color: #666;">
 
@@ -11,9 +11,7 @@
 	
 	<div style="padding: 0 30px 30px 30px;border-bottom: 3px solid #eeeeee;">
 
-		<div style="padding: 30px 0;font-size: 24px;text-align: center;line-height: 40px;">Thank you for signing up!<span style="display: block;">Your account has to be manually reviewed.</span></div>
-		
-		<div style="padding: 15px;background: #eee;border-radius: 3px;text-align: center;">Please allow us some time to process your request and review your information.</div>
+		<div style="padding: 30px 0;font-size: 24px;text-align: center;line-height: 40px;">{display_name} has just deleted their {site_name} account.</span></div>
 		
 	</div>
 	
@@ -25,6 +23,3 @@
 	</div>
 
 </div>
-
-</body>
-</html>
