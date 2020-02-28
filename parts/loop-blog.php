@@ -31,7 +31,7 @@
 
 						if(is_array($author)) {
 
-							$names[] = '<a href="/profile/' . $author[nickname] . '">' . $author[user_firstname] . ' ' . $author[user_lastname] . '</a>';
+							$names[] = '<a href="/profile/' . $author['nickname'] . '">' . $author['user_firstname'] . ' ' . $author['user_lastname'] . '</a>';
 
 						} else {
 							$names[] = '<a href="/profile/' . $nickname . '">' . $first_name . ' ' . $last_name . '</a>';
