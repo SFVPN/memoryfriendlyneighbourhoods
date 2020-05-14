@@ -3,7 +3,7 @@
 $user = wp_get_current_user();
 
 
-    if(current_user_can('administrator') || ($user->roles[0] == 'um_cdn-member')) {
+//    if(current_user_can('administrator') || ($user->roles[0] == 'um_cdn-member')) {
 
     ?>
 
@@ -15,9 +15,9 @@ $user = wp_get_current_user();
 
   <?php
 
-} else {
-  _e( '<p class="center">You must be a member of the Critical Dementia Network and logged in to view or add comments on blog posts.</p>', 'mfn' );
-}
+//} else {
+//  _e( '<p class="center">You must be a member of the Critical Dementia Network and logged in to view or add comments on blog posts.</p>', 'mfn' );
+//}
 
     ?>
 </div>
