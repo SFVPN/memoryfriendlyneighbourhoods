@@ -25,6 +25,15 @@ $(document).ready(function(){
 );
 
 
+
+document.addEventListener('DOMContentLoaded', function() {
+var elems = document.querySelectorAll('.fixed-action-btn');
+var instances = M.FloatingActionButton.init(elems, {
+  direction: 'left',
+  hoverEnabled: false
+});
+});
+
   $('.modal').modal();
 
 
@@ -32,13 +41,13 @@ $(document).ready(function(){
 
 });
 
-var options = [
-    {selector: '#About', offset: 0, callback: 'Materialize.fadeInImage("#About")' },
-    {selector: '#section-1', offset: 0, callback: 'Materialize.fadeInImage("#section-1")' },
-    {selector: '#section-2', offset: 0, callback: 'Materialize.fadeInImage("#section-2")' },
-    {selector: '#section-3', offset: 0, callback: 'Materialize.fadeInImage("#section-3")' }
-];
-Materialize.scrollFire(options);
+// var options = [
+//     {selector: '#About', offset: 0, callback: 'Materialize.fadeInImage("#About")' },
+//     {selector: '#section-1', offset: 0, callback: 'Materialize.fadeInImage("#section-1")' },
+//     {selector: '#section-2', offset: 0, callback: 'Materialize.fadeInImage("#section-2")' },
+//     {selector: '#section-3', offset: 0, callback: 'Materialize.fadeInImage("#section-3")' }
+// ];
+// Materialize.scrollFire(options);
 
 // $(function() {
 //   $( "#button" ).click(function() {
@@ -102,14 +111,14 @@ Materialize.scrollFire(options);
        $(txt).wrap('<label for="r' + markers[i].value + '"/>');
    };
 
-   var markers = document.querySelectorAll('input[type="checkbox"]'),
-       l = markers.length,
-       i, txt;
-   for (i = l - 1; i >= 0; i--) {
-       txt = markers[i].nextSibling;
-       $(txt).prev().attr('id', 'r' + markers[i].value);
-       $(txt).wrap('<label for="r' + markers[i].value + '"/>');
-   };
+   // var markers = document.querySelectorAll('input[type="checkbox"]'),
+   //     l = markers.length,
+   //     i, txt;
+   // for (i = l - 1; i >= 0; i--) {
+   //     txt = markers[i].nextSibling;
+   //     $(txt).prev().attr('id', 'r' + markers[i].value);
+   //     $(txt).wrap('<label for="r' + markers[i].value + '"/>');
+   // };
 
 
 

@@ -7,6 +7,7 @@ $page = get_field('add_resource', 'option');
  //echo $display_name; // prints the user's display name?>
 
 
+
 		<?php if(is_tax() || is_post_type_archive( 'resources' ) || is_singular('resources')) {?>
 			<div class="fixed-action-btn toolbar">
 		     <a class="btn-floating btn-large amber">

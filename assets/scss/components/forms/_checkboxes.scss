@@ -19,6 +19,15 @@ form p:last-child {
   opacity: 0;
 }
 
+.acf-checkbox-list {
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: relative;
+    opacity: 1;
+    left: 0;
+  }
+}
+
 // Checkbox Styles
 [type="checkbox"] {
   // Text Label Style

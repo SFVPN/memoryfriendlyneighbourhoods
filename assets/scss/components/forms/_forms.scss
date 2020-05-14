@@ -13,6 +13,13 @@ label {
   color: $input-border-color;
 }
 
+.acf-button.button.button-primary {
+  padding: .5rem 1rem;
+  background: $input-border-color;
+  color: white;
+  border-radius: 3px;
+}
+
 @import 'input-fields';
 @import 'radio-buttons';
 @import 'checkboxes';

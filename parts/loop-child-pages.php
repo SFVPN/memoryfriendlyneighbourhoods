@@ -21,17 +21,13 @@
 
 
 
-		<?php 
-		if(is_user_logged_in() || current_user_can('editor'))  {
-			$subID = get_field('submission_page', 'option');?>
-			<div id="fixed-sub" class="fixed-action-btn"><a class="btn-floating red white-text" href="<?php echo get_permalink($subID); ?>"><i class="material-icons">add</i></a>
-			<?php edit_post_link( __( '<i class="material-icons">mode_edit</i>', 'textdomain' ), '', '', null, 'btn-floating grey darken-3 btn-edit-post-link' );?>
-			</div>
-
 		<?php
-
+		global $current_user;
+	 get_currentuserinfo();
+	 // check if current user can edit posts or is the post author
+		if(current_user_can('edit_posts') || $current_user->ID == $post->post_author)  {
+			edit_post_link( __( 'Edit Page', 'textdomain' ), '<div class="fixed-action-btn">','</div>', null, 'btn btn-primary btn-edit-post-link' );
 	 }?>
-
 
 
 	</header> <!-- end article header -->

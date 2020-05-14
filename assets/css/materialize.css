@@ -4210,25 +4210,31 @@ button:focus {
   background-color: #495bc0; }
 
 label {
-  font-size: 0.8rem;
-  color: #9e9e9e; }
+  font-size: 1rem;
+  color: #212121; }
+
+.acf-button.button.button-primary {
+  padding: .5rem 1rem;
+  background: #212121;
+  color: white;
+  border-radius: 3px; }
 
 /* Text Inputs + Textarea
    ========================================================================== */
 /* Style Placeholders */
 ::-webkit-input-placeholder {
-  color: #d1d1d1; }
+  color: #545454; }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  color: #d1d1d1; }
+  color: #545454; }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: #d1d1d1; }
+  color: #545454; }
 
 :-ms-input-placeholder {
-  color: #d1d1d1; }
+  color: #545454; }
 
 /* Text inputs */
 input:not([type]),
@@ -4246,7 +4252,7 @@ input[type=search],
 textarea.materialize-textarea {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 1px solid #212121;
   border-radius: 0;
   outline: none;
   height: 2.5rem;
@@ -4500,7 +4506,7 @@ textarea.materialize-textarea {
   .input-field.col .prefix ~ .validate ~ label {
     width: calc(100% - 3rem - 1.5rem); }
   .input-field label {
-    color: #9e9e9e;
+    color: #212121;
     position: absolute;
     top: 0.8rem;
     left: 0;
@@ -4508,7 +4514,7 @@ textarea.materialize-textarea {
     cursor: text;
     transition: .2s ease-out; }
   .input-field label.active {
-    font-size: 0.8rem;
+    font-size: 1rem;
     transform: translateY(-140%); }
   .input-field .prefix {
     position: absolute;
@@ -4709,6 +4715,12 @@ form p:last-child {
   position: absolute;
   left: -9999px;
   opacity: 0; }
+
+.acf-checkbox-list [type="checkbox"]:not(:checked),
+.acf-checkbox-list [type="checkbox"]:checked {
+  position: relative;
+  opacity: 1;
+  left: 0; }
 
 [type="checkbox"] {
   /* checkbox aspect */ }
@@ -4941,7 +4953,7 @@ select {
     cursor: pointer;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #9e9e9e;
+    border-bottom: 1px solid #212121;
     outline: none;
     height: 2.5rem;
     line-height: 2.5rem;
@@ -4965,7 +4977,7 @@ select {
   .select-wrapper + label {
     position: absolute;
     top: -14px;
-    font-size: 0.8rem; }
+    font-size: 1rem; }
 
 select:disabled {
   color: rgba(0, 0, 0, 0.3); }

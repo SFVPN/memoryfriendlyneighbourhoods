@@ -18,7 +18,9 @@ get_header(); ?>
 
 	</main> <!-- end main -->
 
-	<?php 	if ( !um_is_on_edit_profile() ) {
+	<?php
+
+	if ( !um_is_on_edit_profile() ) {
 		get_template_part( 'parts/content', 'member-contributions' );
 	}?>
 

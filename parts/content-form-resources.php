@@ -12,14 +12,14 @@
       'post_id'		=> 'new_post',
       'post_content' => true,
       'post_title' => true,
-      'field_group' => '1473',
-    //  'fields' => array(field_5dadde0971dab, field_5daddc49010b7,field_5daf03621ebf0, field_5dade67da6945, field_5dade6a4a6946, field_59ef253bd3320, field_59ef256ad3321, field_59ef24b7d331e, field_5de5171c85ded),
+      'field_group' => '689',
+    // 'fields' => array('field_57346973097e8', 'field_5739be88b3e2d','field_59394dca35e71', 'field_59394de135e72', 'field_5936d106c483f', 'field_5936d12bc4840', 'field_59394e1135e73', 'field_59394e3435e74', 'field_594a5669d44ad', 'field_594a5631d44a9'),
       'new_post'		=> array(
-        'post_type'		=> 'programmes',
+        'post_type'		=> 'resources',
         'post_status'		=> 'publish'),
       'return'		=> '%post_url%',
       'html_submit_button'  => '<input type="submit" class="acf-button green darken-2 btn-large" value="%s" />',
-      'submit_value'		=> __("Submit Your Post", 'acf'),
+      'submit_value'		=> __("Submit Your Resource", 'acf'),
     ));
 
 } else {

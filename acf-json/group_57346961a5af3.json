@@ -3,32 +3,12 @@
     "title": "About this resource",
     "fields": [
         {
-            "key": "field_57346973097e8",
-            "label": "Assign to network member",
-            "name": "participants",
-            "type": "user",
-            "instructions": "Please assign this to any relevant Memory Friendly Neighbourhoods network member(s).",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "role": [
-                "sp_member"
-            ],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "array"
-        },
-        {
             "key": "field_5739bcbb1ab30",
-            "label": "What type of resource is this?",
+            "label": "Which network is this resource for?",
             "name": "resource_type",
             "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
+            "instructions": "Please select the network you wish to add this resource to (Critical Dementia Network or Memory Friendly Neighbourhoods).",
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -37,16 +17,36 @@
             },
             "taxonomy": "category",
             "field_type": "checkbox",
-            "allow_null": 0,
             "add_term": 0,
             "save_terms": 1,
             "load_terms": 1,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
+            "key": "field_57346973097e8",
+            "label": "Assign to network member",
+            "name": "participants",
+            "type": "user",
+            "instructions": "Please assign this to any relevant network member(s).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": [
+                "um_cdn-member"
+            ],
+            "allow_null": 1,
+            "multiple": 1,
+            "return_format": "array"
         },
         {
             "key": "field_5739be88b3e2d",
-            "label": "Please assign this resource to a category",
+            "label": "Please assign this resource to any relevant categories",
             "name": "category_of_interest",
             "type": "taxonomy",
             "instructions": "",
@@ -59,19 +59,19 @@
             },
             "taxonomy": "resource-category",
             "field_type": "checkbox",
-            "allow_null": 0,
-            "add_term": 0,
+            "add_term": 1,
             "save_terms": 1,
             "load_terms": 1,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "allow_null": 0
         },
         {
             "key": "field_59394dca35e71",
             "label": "Add video",
             "name": "add_video",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "If you would like to add a video related to this resource, do so here. The video must already be hosted on YouTube, Vimeo etc",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -79,7 +79,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "If you would like to add a video related to this resource, do so here. The video must already be hosted on YouTube, Vimeo etc",
+            "message": "",
             "default_value": 0,
             "ui": 1,
             "ui_on_text": "",
@@ -110,11 +110,11 @@
             "height": ""
         },
         {
-            "key": "field_5936d106c483f",
-            "label": "Add link to external web page\/site",
-            "name": "add_external_link",
+            "key": "field_59394e1135e73",
+            "label": "Upload attachments",
+            "name": "add_attachments",
             "type": "true_false",
-            "instructions": "If you want the primary link for this resource to point to another website, please add the link here.",
+            "instructions": "Select this is you are uploading a related file (eg PDF, Word document). DO NOT upload video files or photographs.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -129,54 +129,11 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5936d12bc4840",
-            "label": "Link to external resource",
-            "name": "external_link",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5936d106c483f",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_59394e1135e73",
-            "label": "Upload attachments",
-            "name": "add_attachments",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Select this is you are uploading a related file (eg PDF)",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_59394e3435e74",
             "label": "Attachments",
             "name": "attachments",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "Click 'Add Attachment' and upload your file.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -196,7 +153,7 @@
             "min": 0,
             "max": 0,
             "layout": "row",
-            "button_label": "Add attachment",
+            "button_label": "Add Attachment",
             "sub_fields": [
                 {
                     "key": "field_59394e3f35e75",
@@ -224,7 +181,7 @@
             "label": "Add external file link",
             "name": "add_external_file_link",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "Select this is you are linking to a file (eg PDF) that is already available on another website.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -232,7 +189,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Select this is you are linking to a file (eg PDF) that is already available on another website.",
+            "message": "",
             "default_value": 0,
             "ui": 1,
             "ui_on_text": "",
@@ -243,7 +200,7 @@
             "label": "Link to external file",
             "name": "external_file",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "Click 'Add Link' and then add the full web address to the file you wish to link to and a short name for this file.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -263,7 +220,7 @@
             "min": 0,
             "max": 0,
             "layout": "row",
-            "button_label": "Add attachment",
+            "button_label": "Add Link",
             "sub_fields": [
                 {
                     "key": "field_594a5631d44ab",
@@ -309,6 +266,49 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_5936d106c483f",
+            "label": "Override resource permalink (ADMIN ONLY)",
+            "name": "add_external_link",
+            "type": "true_false",
+            "instructions": "If you want the primary link for this resource to point to another website, please add the link here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5936d12bc4840",
+            "label": "Alternative permalink",
+            "name": "external_link",
+            "type": "url",
+            "instructions": "Add the full web address you wish to link to",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5936d106c483f",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -349,5 +349,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1551798204
+    "modified": 1589444585
 }

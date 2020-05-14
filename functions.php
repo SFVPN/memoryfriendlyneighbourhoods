@@ -83,6 +83,12 @@ add_action('acf/save_post', 'my_save_post');
       $blogID = get_field('cdn_blog_page', 'option');
       $eventsID = get_field('cdn_events_page', 'option');
       $date = get_field('event_date', $post_id);
+      $comments = get_field('comments_open', $post_id);
+      if($comments) {
+        $status = 'open';
+      } else {
+        $status = 'closed';
+      }
 
       if($date) {
         $my_post = array(
@@ -92,7 +98,8 @@ add_action('acf/save_post', 'my_save_post');
       } else {
         $my_post = array(
             'ID'           => $post_id,
-            'post_parent'   => $blogID
+            'post_parent'   => $blogID,
+            'comment_status' => $status
         );
       }
 

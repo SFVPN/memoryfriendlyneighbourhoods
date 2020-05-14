@@ -39,4 +39,8 @@ get_header(); ?>
 
 <?php
 
+if (comments_open()){
+    get_template_part( 'parts/content', 'blog-comments' );
+}
+
 get_footer(); ?>
