@@ -16,7 +16,7 @@ $user = wp_get_current_user();
   <?php
 
 } else {
-  _e( 'You must be a CDN Member and logged in to comment on blog posts.', 'mfn' );
+  _e( '<p class="center">You must be a member of the Critical Dementia Network and logged in to view or add comments on blog posts.</p>', 'mfn' );
 }
 
     ?>
