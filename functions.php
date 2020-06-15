@@ -178,3 +178,13 @@ if($roles_enabled) { // let us turn this functionality off so we we're not check
 require_once(get_template_directory().'/assets/functions/create_roles.php');
 
 }
+
+add_action('init','login_redirect');
+
+function login_redirect(){
+ global $pagenow;
+ if( 'wp-login.php' == $pagenow ) {
+  wp_redirect(home_url . '/login/');
+  exit();
+ }
+}
