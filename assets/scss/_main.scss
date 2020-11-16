@@ -585,15 +585,11 @@ POSTS & CONTENT STYLES
   z-index: 1000;
 }
 
-#About, #section-1, #section-2, #section-3 {
-  opacity: 0;
-}
-
 .our-networks.row {
   margin-bottom: 0 !important;
 }
 
-#About, #section-1, #section-2, #section-3, .network-home-sections {
+#About, #section-1, #section-2, #section-3, #section-4, .network-home-sections {
   margin-bottom: 0px !important;
   padding: 2rem 0 !important;
   p {
@@ -614,6 +610,13 @@ POSTS & CONTENT STYLES
     margin-top: 2rem;
     border-width: 1px;
     border-style: solid;
+    border-color: #fff;
+    background: #fff;
+    color: #000;
+    font-weight: 400;
+    &:hover, &:focus {
+      border-color: #000;
+    }
   }
 }
 

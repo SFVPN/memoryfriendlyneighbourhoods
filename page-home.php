@@ -66,7 +66,7 @@ get_header(); ?>
 					while ( have_rows('front_page_sections') ) : the_row();?>
 					<div id="<?php echo "section-" . get_row_index();?>" class="row center" style="background: <?php the_sub_field('background_colour'); ?>;"  >
 						<div class="col s12 l8 push-l<?php the_sub_field('push_right'); ?>" style="color: <?php the_sub_field('text_colour'); ?>;">
-							<h4><?php the_sub_field('section_title'); ?></h4>
+							<h2 id="<?php echo "heading-" . get_row_index();?>" class="h4"><?php the_sub_field('section_title'); ?></h2>
 								<?php the_sub_field('section_description'); ?>
 
 						</div>
@@ -75,7 +75,15 @@ get_header(); ?>
 								<img src="<?php the_sub_field('section_image'); ?>">
 						</div>
 						<div class="col s12">
-							<a class="btn-large transparent z-depth-0 waves-effect" style="color: <?php the_sub_field('text_colour'); ?>;" href="<?php the_sub_field('page_link'); ?>"><?php the_sub_field('button_text'); ?></a>
+							<a aria-labelledby="<?php echo "heading-" . get_row_index();?>" class="btn-large z-depth-0 waves-effect"
+							<?php $page_link = get_sub_field('page_link');
+							if($page_link) {
+								echo 'href="' . $page_link .'">';
+							} else {
+								echo 'href="' . get_sub_field('page_link_external') . '">';
+							}
+							?>
+							 <?php the_sub_field('button_text'); ?></a>
 						</div>
 
 					</div>

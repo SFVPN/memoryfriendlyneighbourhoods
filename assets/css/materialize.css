@@ -1972,6 +1972,8 @@ a {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   border-bottom: 1px dotted transparent; }
+  a:hover, a:focus {
+    text-decoration: underline; }
 
 .card a:not(.btn):not(.btn-large):hover {
   color: #414141; }
@@ -6896,30 +6898,33 @@ POSTS & CONTENT STYLES
   padding: 1rem;
   z-index: 1000; }
 
-#About, #section-1, #section-2, #section-3 {
-  opacity: 0; }
-
 .our-networks.row {
   margin-bottom: 0 !important; }
 
-#About, #section-1, #section-2, #section-3, .network-home-sections {
+#About, #section-1, #section-2, #section-3, #section-4, .network-home-sections {
   margin-bottom: 0px !important;
   padding: 2rem 0 !important; }
-  #About p, #section-1 p, #section-2 p, #section-3 p, .network-home-sections p {
+  #About p, #section-1 p, #section-2 p, #section-3 p, #section-4 p, .network-home-sections p {
     font-size: 1.85rem;
     font-weight: 200; }
     @media only screen and (max-width: 600px) {
-      #About p, #section-1 p, #section-2 p, #section-3 p, .network-home-sections p {
+      #About p, #section-1 p, #section-2 p, #section-3 p, #section-4 p, .network-home-sections p {
         font-size: 1.25em; } }
-  #About img, #section-1 img, #section-2 img, #section-3 img, .network-home-sections img {
+  #About img, #section-1 img, #section-2 img, #section-3 img, #section-4 img, .network-home-sections img {
     border-radius: 50%;
     width: 200px;
     height: 200px;
     margin-top: 2.28rem; }
-  #About .btn-large, #section-1 .btn-large, #section-2 .btn-large, #section-3 .btn-large, .network-home-sections .btn-large {
+  #About .btn-large, #section-1 .btn-large, #section-2 .btn-large, #section-3 .btn-large, #section-4 .btn-large, .network-home-sections .btn-large {
     margin-top: 2rem;
     border-width: 1px;
-    border-style: solid; }
+    border-style: solid;
+    border-color: #fff;
+    background: #fff;
+    color: #000;
+    font-weight: 400; }
+    #About .btn-large:hover, #About .btn-large:focus, #section-1 .btn-large:hover, #section-1 .btn-large:focus, #section-2 .btn-large:hover, #section-2 .btn-large:focus, #section-3 .btn-large:hover, #section-3 .btn-large:focus, #section-4 .btn-large:hover, #section-4 .btn-large:focus, .network-home-sections .btn-large:hover, .network-home-sections .btn-large:focus {
+      border-color: #000; }
 
 #child-wrapper {
   padding-bottom: 2rem; }

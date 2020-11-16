@@ -35,6 +35,9 @@ a {
   // Gets rid of tap active state
   -webkit-tap-highlight-color: transparent;
   border-bottom: 1px dotted transparent;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
 }
 
 .card a:not(.btn):hover {
